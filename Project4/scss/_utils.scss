@@ -1,0 +1,16 @@
+// 根据不同设备的屏幕宽度，定义<html>的基准font-size
+@mixin html-font-size() {
+  @each $current-width in $device-widths {
+    @media (min-width: $current-width) {
+      html {
+        $x: $UI-resolution-width / $current-width;  // 计算出是几倍屏
+        font-size: $rem-base-font-size / $x;
+      }
+    }
+  }
+}
+
+// 将设计图标注的px尺寸，转换为相应的CSS
+@function convertPxFormUI($px) {
+  @return $px / $rem-base-font-size * 1rem;
+}
