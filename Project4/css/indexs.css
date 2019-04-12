@@ -48,10 +48,6 @@ p.another-intro {
 body {
   margin: 0px; }
 
-.big {
-  width: 100%;
-  height: 1000px; }
-
 .a {
   background: url("../img/g1.png") no-repeat;
   background-size: 100%;
@@ -64,5 +60,11 @@ body {
   justify-content: space-around;
   color: yellow;
   font-size: 5rem; }
+
+.b {
+  background: url("../img/g2.png") no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 100rem; }
 
 /*# sourceMappingURL=indexs.css.map */
