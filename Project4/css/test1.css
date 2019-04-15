@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @media (min-width: 240px) {
   html {
     font-size: 12.6315789474px; } }
@@ -49,11 +50,46 @@ p.another-intro {
   margin: 0.32rem; }
 
 body {
-  margin: 0px; }
+  margin: 0px;
+  color: white;
+  font-size: 0.4rem;
+  font-family: 微软雅黑; }
 
-.d {
-  width: 10rem;
-  height: 10rem;
-  border: 0.1rem solid blue; }
+.nav {
+  display: flex;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%; }
 
-/*# sourceMappingURL=indexs.css.map */
+.lefts, .right > div {
+  display: flex;
+  align-items: center; }
+
+.left, .right {
+  width: 50%;
+  display: flex;
+  justify-content: space-between; }
+
+.left_left {
+  background: url("../img/LOGO.png") no-repeat;
+  background-size: 100%;
+  width: 1rem;
+  height: 1rem; }
+
+.bjt1, .bjt2, .bjt3 {
+  width: 100%;
+  height: 10rem; }
+
+.bjt1 {
+  background: url("../img/g1.png") no-repeat;
+  background-size: 100%; }
+
+.bjt2 {
+  background: url("../img/g2.png") no-repeat;
+  background-size: 100%; }
+
+.bjt3 {
+  background: url("../img/g3.png") no-repeat;
+  background-size: 100%; }
+
+/*# sourceMappingURL=test1.css.map */

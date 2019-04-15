@@ -1,0 +1,53 @@
+@import "utils","variable";
+@include html-font-size();
+p.intro {
+  font-size: convertPxFormUI(64px);
+}
+p.another-intro {
+  font-size: convertPxFormUI(60px);
+  height: convertPxFormUI(100px);
+  margin: convertPxFormUI(32px);
+}
+body{
+  margin: 0px;
+  color: white;
+  font-size: 0.4rem;
+  font-family: 微软雅黑;
+}
+.nav{
+  display: flex;
+  background: rgba(0,0,0,.5);
+  position: fixed;
+  width: 100%;
+}
+.lefts,.right>div{
+  display: flex;
+  align-items: center;
+}
+.left,.right{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.left_left{
+  background: url("../img/LOGO.png") no-repeat;
+  background-size: 100%;
+  width: 1rem;
+  height: 1rem;
+}
+.bjt1,.bjt2,.bjt3{
+  width: 100%;
+  height: 10rem;
+}
+.bjt1{
+  background: url("../img/g1.png") no-repeat;
+  background-size: 100%;
+}
+.bjt2{
+  background: url("../img/g2.png") no-repeat;
+  background-size: 100%;
+}
+.bjt3{
+  background: url("../img/g3.png") no-repeat;
+  background-size: 100%;
+}
