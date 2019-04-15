@@ -34,10 +34,11 @@ export default {
     }
   },
   mounted() {
-    this.$axios.get('../static/data.json',{
+    this.$axios.get('https://easy-mock.com/mock/5caff09431c675529c365621/example/proxy',{
     })
       .then(res=>{
-        this.message = res.data.links
+        console.log(res)
+        this.message = res.data
         // console.log(this.message)
       })
       .catch(err=>{
