@@ -37,6 +37,12 @@
 @media (min-width: 1440px) {
   html {
     font-size: 75.7894736842px; } }
+@media (min-width: 1600px) {
+  html {
+    font-size: 84.2105263158px; } }
+@media (min-width: 1800px) {
+  html {
+    font-size: 94.7368421053px; } }
 @media (min-width: 1920px) {
   html {
     font-size: 101.0526315789px; } }
