@@ -9,10 +9,11 @@ p.another-intro {
   margin: convertPxFormUI(32px);
 }
 body{
-  margin: 0px;
+  margin: 0rem;
+  padding: 0rem;
   color: white;
-  font-size: 0.4rem;
-  font-family: 微软雅黑;
+  font-size: 0.18rem;
+  font-family: Gadugi;
 }
 .nav{
   display: flex;
@@ -27,7 +28,12 @@ body{
 .left,.right{
   width: 50%;
   display: flex;
+}
+.left{
   justify-content: space-between;
+}
+.right{
+  justify-content: space-around;
 }
 .left_left{
   background: url("../img/LOGO.png") no-repeat;
@@ -37,7 +43,9 @@ body{
 }
 .bjt1,.bjt2,.bjt3{
   width: 100%;
-  height: 10rem;
+  //height: 10rem;
+  //height: calc(10rem - 10px);
+  height: calc(10rem - 10px * 2);
 }
 .bjt1{
   background: url("../img/g1.png") no-repeat;

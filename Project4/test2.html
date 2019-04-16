@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="css/test2.css">
+    <!--<link rel="stylesheet" href="css/test2.css">-->
+    <style>
+        html {
+            font-size: 16px;
+        }
+        @media screen and (min-width: 400px) {
+            html {
+                /* 414px-1000px每100像素宽字体增加1px(18px-22px) */
+                font-size: calc(112.5% + 4 * (100vw - 400px) / 586);
+                /*font-size: calc(18px + 4 * (100vw - 400px) / 586);*/
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="a"></div>
+<div id="div1">一些文本</div>
 </body>
 </html>
