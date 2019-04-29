@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    父组件:
+    <!--父组件:-->
     <ace @Son="parents"></ace>
     <!--son传来的值:{{message}}-->
 <div v-for="a in message">
@@ -11,7 +11,6 @@
     <!--<ace v-bind:message="data"></ace>-->
   </div>
 </template>
-
 <script>
   import ace from '@/components/son'
 export default {
@@ -34,7 +33,7 @@ export default {
     }
   },
   mounted() {
-    this.$axios.get('https://easy-mock.com/mock/5caff09431c675529c365621/example/proxy',{
+    this.$axios.get('/proxy',{
     })
       .then(res=>{
         console.log(res)
@@ -45,6 +44,37 @@ export default {
         console.log(err)
       })
 
+
+
+    // this.$axios.get('/username?cmd=111',{
+    // })
+    //   .then(res=>{
+    //     console.log(res)
+    //     this.messages = res.data
+    //     console.log(this.messages)
+    //   })
+    //   .catch(err=>{
+    //     console.log(err)
+    //   })
+
+
+
+
+
+    // async  getPhotos (){
+    //   try {
+    //     let params = {
+    //       page: 1,
+    //       per_page: 1,
+    //       order_by: 'latest'
+    //     }
+    //     this.$api.unsplash.viewPhotos(params)
+    //     this.photosList = res
+    //     console.log(res)
+    //   } catch (e) {
+    //     console.log(e)
+    //   }
+    // }
 
     // this.$api.get('../static/data.json',{
     // })
@@ -59,6 +89,57 @@ export default {
   }
 }
 </script>
+
+
+
+
+
+<!--<script>-->
+  <!--export default {-->
+    <!--name: 'waterfall',-->
+    <!--data () {-->
+      <!--return {-->
+        <!--photosList: []-->
+      <!--}-->
+    <!--},-->
+    <!--created () {-->
+      <!--this.getPhotos()-->
+       <!--let res = this.$api.unsplash.viewPhotos-->
+<!--console.log(res)-->
+    <!--},-->
+    <!--mounted () {-->
+    <!--},-->
+    <!--computed: {-->
+    <!--},-->
+    <!--watch: {-->
+    <!--},-->
+    <!--methods: {-->
+      <!--// async await 是ES7新特性，本质上是generator函数的语法糖-->
+      <!--async getPhotos () {-->
+        <!--console.log(222)-->
+        <!--// 这里用try catch包裹，请求失败的时候就执行catch里的-->
+        <!--try {-->
+          <!--// let params = {-->
+          <!--//   page: 1,-->
+          <!--//   per_page: 1,-->
+          <!--//   order_by: 'latest'-->
+          <!--// }-->
+          <!--let res = await this.$api.unsplash.viewPhotos-->
+          <!--this.photosList = res-->
+          <!--console.log(res)-->
+        <!--} catch (e) {-->
+          <!--console.log(e)-->
+        <!--}-->
+      <!--}-->
+
+    <!--}-->
+  <!--}-->
+<!--</script>-->
+
+
+
+
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

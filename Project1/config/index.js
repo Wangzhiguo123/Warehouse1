@@ -13,10 +13,10 @@ module.exports = {
     // 跨域
     proxyTable: {
       '/api':{
-        target:' https://easy-mock.com/mock/5caff09431c675529c365621/example',//请求数据后台访问地址
+        target:'https://easy-mock.com/mock/5caff09431c675529c365621/example',//请求数据后台访问地址
         changeOrigin:true,
         pathRewrite:{
-          '^/api':'/api'
+          '^/api':''
         }
       }
     },
