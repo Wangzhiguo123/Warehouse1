@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<input type="text" id="textId">-->
+<!--4276.44-1500=2776.44-->
+<!--3480-->
+<!--<button onclick="wzg()">提交</button>-->
+
+<input input style="width:200px;height:40px" type="text" value="" id="textId">
+<button onclick="sc()">获取</button>
+<div>------------------------------------ajax提交----------------------------------------</div>
+<input input style="width:200px;height:40px" type="text" value="" id="textId2" placeholder="ajax提交">
+<button onclick="tj()">ajax提交</button>
+
+
+<!--封装ajax请求数据地址：https://blog.csdn.net/u012803663/article/details/82312619-->
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    // $.get = function (url,data,callback) {
+    //     var xhr = $.init();
+    //     xhr.onreadystatechange = function () {
+    //         if(xhr.readyState==4 && xhr.status==200){
+    //             callback(xhr.responseText)
+    //         }
+    //     }
+    // }
+
+    // jQuery.billow={
+    //     getAjax:function (opts,successfn,errorfn) {
+    //         //设置默认参数
+    //         var defaults = {
+    //             method:'GET',
+    //             url:'',
+    //             data:'',
+    //             encrypt:true,
+    //             async:true,
+    //             cache:true,
+    //             dataType:'json'
+    //
+    //         }
+    //     }
+    // }
+
+
+
+
+
+
+
+
+    function myAjax(method,url,data,callback,type){
+        //创建兼容 XMLHttpRequest 对象
+        var xhr;
+        if (window.XMLHttpRequest){//IE7+, Firefox, Chrome, Opera, Safari
+            xhr=new XMLHttpRequest();
+        }else{// code for IE6, IE5
+            xhr=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //给请求添加状态变化事件处理函数
+        xhr.onreadystatechange = function (){
+            //判断状态码
+            if(xhr.status==200 && xhr.readyState==4){
+                //根据type参数，判断返回的内容需要进行怎样的处理
+                if(type=='json'){
+                    //获得 json 形式的响应数据，并使用parse方法解析
+                    var res = JSON.parse(xhr.responseText);
+                }else if(type=='xml'){
+                    //获得 XML 形式的响应数据
+                    var res = responseXML;
+                }else{
+                    //获得字符串形式的响应数据
+                    var res = xhr.responseText;
+                }
+                //调用回调函数,并将响应数据传入回调函数
+                callback(res);
+            }
+        };
+
+        //判断data是否有数据
+        var param = '';
+        //这里使用stringify方法将js对象格式化为json字符串
+        if(JSON.stringify(data) != '{}'){
+            url += '?';
+            for(var i in data){
+                param += i+'='+data[i]+'&';   //将js对象重组，拼接成url参数存入param变量中
+            }
+            //使用slice函数提取一部分字符串，这里主要是为了去除拼接的最后一个&字符
+            //slice函数：返回一个新的字符串。包括字符串从 start 开始（包括 start）到 end 结束（不包括 end）为止的所有字符。
+            param = param.slice(0,param.length-1);
+        }
+
+        //判断method是否为get
+        if(method == "get"){
+            //是则将数据拼接在url后面
+            url = url+param;
+        }
+
+
+        //初始化请求
+        url = 'https://easy-mock.com/mock/5caff09431c675529c365621/example'+url
+        xhr.open(method,url,true);
+
+        //如果method == post
+        if(method == "post"){
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            //发送请求
+            xhr.send(param);
+        }else{
+            //发送请求
+            xhr.send(null);
+        }
+
+    }
+    // -------调用--------
+    myAjax('post','/mock',{},(res)=>{
+        console.log(res);
+        // container.innerHTML = res.name;
+    },'json');
+
+    myAjax('get','/proxy',{},(res)=>{
+        console.log(res);
+        // container.innerHTML = res.name;
+    },'json');
+
+
+
+
+
+
+// var a = [1,3,5,,4,5,89,7,5,61,33,8879,45,99,45,66,66,87,69,85,9,9]
+//     console.log(a.sort())
+
+
+
+
+
+
+
+
+
+
+
+
+    function wzg(url,data,callback){
+        // try {
+            $.ajax({
+                url:'https://easy-mock.com/mock/5caff09431c675529c365621/example'+url,
+                type:"POST",
+                data:data,
+                dataType:'json',
+                success:function(data){
+                    console.log('调用成功')
+                    console.log(data)
+                    // try {
+                    //     if(data.code == 0){
+                    //         mui.alert('保存成功')
+                    //     }else{
+                    //         mui.toast('保存失败');
+                    //     }
+                    // } catch(e) {
+                    //     mui.toast('获取数据失败');
+                    // }
+                },
+                // error: function(xhr, textStatus, error) {
+                //     if(textStatus == "error")
+                //         mui.toast('请检查网络连接');
+                // }
+            });
+        // }catch(e) {
+        //     mui.toast("请检查网络连接");
+        // }
+    }
+
+    // 调用
+    // var new_url = '/mock';
+    wzg('/mock',{
+
+     })
+
+
+
+
+
+
+
+
+
+
+    // 2、$.get()方式，简单的 GET 请求功能以取代复杂 $.ajax
+    // $.get("https://easy-mock.com/mock/5caff09431c675529c365621/example/proxy", function(data){//param为参数---键值对方式
+    //     console.log(data);
+    // });
+// $.ajax({
+//     url:'https://easy-mock.com/mock/5caff09431c675529c365621/example/mock',
+//     dataType: 'json',
+//     type: 'post',
+//     // data:{},
+//     // jsonp:'callback',
+//     async:true,
+//     error(XMLHttpRequest,textStautus) {
+//         console.log('错误')
+//         console.log(XMLHttpRequest)
+//         console.log(textStautus)
+//     },
+// success(res) {
+//     console.log('成功')
+//     console.log(res)
+// }
+// })
+
+
+
+
+    function sc(){
+        var str = document.getElementById("textId").value;
+        var url = 'http://35.194.68.198/cgi-bin/username?cmd='+encodeURIComponent(str);
+        window.location.href = url;
+    }
+    // ajax
+    function tj() {
+        var ak = document.getElementById("textId2").value;
+        console.log('获取输入框：'+ak)
+
+        $.ajax({
+            url: "https://easy-mock.com/mock/5caff09431c675529c365621/example/proxy",    // 提交到controller的url路径
+            type: "get",    // 提交方式
+            data: {},  // data为String类型，必须为 Key/Value 格式。
+            dataType: "json",    // 服务器端返回的数据类型
+            // headers : {'Access-Control-Allow-Origin':'*'},
+            success: function (res) {    // 请求成功后的回调函数，其中的参数data为controller返回的map,也就是说,@ResponseBody将返回的map转化为JSON格式的数据，然后通过data这个参数取JSON数据中的值
+                console.log('成功')
+                console.log(res)
+               // window.location.href = url+str
+                // if (data.message == "success") {
+                //     //跳转到系统首页
+                // } else {
+                //
+                // }
+            },
+        });
+
+
+        // tests
+
+
+
+
+    }
+
+    // console.log('--------------------------------------')
+    // setTimeout(function() {
+    //     console.log(1)//最后一个输出
+    // }, 0);
+    // new Promise(function executor(resolve) {
+    //     console.log(2);   //最先输出
+    //     for( var i=0 ; i<10000 ; i++ ) {
+    //         i == 9999 && resolve();
+    //     }
+    //     console.log(3);//第二输出
+    // }).then(function() {
+    //     console.log(4);//第四输出
+    // });
+    // console.log(5);//第三输出
+
+</script>
+</body>
+</html>

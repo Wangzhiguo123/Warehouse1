@@ -5,20 +5,80 @@
     <title>Title</title>
     <!--<link rel="stylesheet" href="css/test2.css">-->
     <style>
-        html {
-            font-size: 16px;
-        }
-        @media screen and (min-width: 400px) {
+        /*html {*/
+            /*font-size: 16px;*/
+        /*}*/
+        /*@media screen and (min-width: 200px) {*/
+            /*html {*/
+                /*!* 414px-1000px每100像素宽字体增加1px(18px-22px) *!*/
+                /*font-size: calc(112.5% + 4 * (100vw - 1000px) / 586);*/
+                /*!*font-size: calc(18px + 4 * (100vw - 400px) / 586);*!*/
+            /*}*/
+        /*}*/
+
+
+        @media (min-width: 240px) {
             html {
-                /* 414px-1000px每100像素宽字体增加1px(18px-22px) */
-                font-size: calc(112.5% + 4 * (100vw - 400px) / 586);
-                /*font-size: calc(18px + 4 * (100vw - 400px) / 586);*/
-            }
+                font-size: 12.6315789474px; } }
+        @media (min-width: 320px) {
+            html {
+                font-size: 16.8421052632px; } }
+        @media (min-width: 360px) {
+            html {
+                font-size: 18.9473684211px; } }
+        @media (min-width: 375px) {
+            html {
+                font-size: 19.7368421053px; } }
+        @media (min-width: 412px) {
+            html {
+                font-size: 21.6842105263px; } }
+        @media (min-width: 480px) {
+            html {
+                font-size: 25.2631578947px; } }
+        @media (min-width: 540px) {
+            html {
+                font-size: 28.4210526316px; } }
+        @media (min-width: 640px) {
+            html {
+                font-size: 33.6842105263px; } }
+        @media (min-width: 720px) {
+            html {
+                font-size: 37.8947368421px; } }
+        @media (min-width: 768px) {
+            html {
+                font-size: 40.4210526316px; } }
+        @media (min-width: 1024px) {
+            html {
+                font-size: 53.8947368421px; } }
+        @media (min-width: 1200px) {
+            html {
+                font-size: 63.1578947368px; } }
+        @media (min-width: 1440px) {
+            html {
+                font-size: 75.7894736842px; } }
+        @media (min-width: 1600px) {
+            html {
+                font-size: 84.2105263158px; } }
+        @media (min-width: 1800px) {
+            html {
+                font-size: 94.7368421053px; } }
+        @media (min-width: 1920px) {
+            html {
+                font-size: 101.0526315789px; } }
+        #div1{
+            font-size: 0.18rem;
+            /*font-size: calc(112.5% + 4 * (100vw - 1000px) / 586);*/
         }
     </style>
 </head>
 <body>
 <div class="a"></div>
-<div id="div1">一些文本</div>
+<div id="div1">对比会发现，文字的大小和图片的大小都明显不一样了，
+        但是，最终给人的排版的感觉却没有什么不舒服的，因为，
+        你仔细看，就会发现，虽然字号差别很大，但是文字的换行
+        位置居然都是一模一样的，这活脱脱等比例缩放的即视感。
+        你说，这么洒脱的效果，什么手机各种分辨率适配还是问题吗？
+        是问题吗？
+</div>
 </body>
 </html>
