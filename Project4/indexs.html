@@ -16,42 +16,47 @@
 <div>------------------------------------ajax提交----------------------------------------</div>
 <input input style="width:200px;height:40px" type="text" value="" id="textId2" placeholder="ajax提交">
 <button onclick="tj()">ajax提交</button>
-
+<div class="test1">创建vue实例的时候将vue-router挂载。但这个时候vue-router挂载一
+    些登录或者不用权限的公用的页面。 当用户登录后，获取用role，将role和路由表每个页
+    面的需要的权限作比较，生成最终用户可访问的路由表。</div>
 
 <!--封装ajax请求数据地址：https://blog.csdn.net/u012803663/article/details/82312619-->
 <script src="js/jquery-1.11.3.js"></script>
 <script>
-    // $.get = function (url,data,callback) {
-    //     var xhr = $.init();
-    //     xhr.onreadystatechange = function () {
-    //         if(xhr.readyState==4 && xhr.status==200){
-    //             callback(xhr.responseText)
-    //         }
+    // 方法一: js设置显示文字长度
+    // window.onload = function(){
+    //     var text = document.getElementsByClassName('sktone'),
+    //         str = text.innerHTML,
+    //         textLeng = 20;
+    //     if(str.length > textLeng ){
+    //         text .innerHTML = str.substring(0,textLeng )+"... ...";
     //     }
     // }
 
-    // jQuery.billow={
-    //     getAjax:function (opts,successfn,errorfn) {
-    //         //设置默认参数
-    //         var defaults = {
-    //             method:'GET',
-    //             url:'',
-    //             data:'',
-    //             encrypt:true,
-    //             async:true,
-    //             cache:true,
-    //             dataType:'json'
-    //
-    //         }
-    //     }
-    // }
-
-
-
-
-
-
-
+// 方法二: jq设置显示文字长度
+    $(function(){
+        var text = $(".test1").text();
+        var flag = text.length > 20 ? true : false;
+        if(flag){
+            $(".test1").html("");
+            $(".test1").append("<p>" + text.substring(0, 20)
+                + "<span id='hide' style='display:none'>" + text.substring(20) + "</span>"
+                +"...</p>")
+                // + "<a href='javascript:;' id='open'>...显示全部</a></p>");
+        }
+        // $("#open").click(function(){
+        //     if(flag){
+        //         $("#open").text("...隐藏");
+        //         $("#hide").show();
+        //         flag = false;
+        //     } else{
+        //         $("#open").text("...显示全部");
+        //         $("#hide").hide();
+        //         flag = true;
+        //     }
+        //
+        // });
+    });
 
     function myAjax(method,url,data,callback,type){
         //创建兼容 XMLHttpRequest 对象
@@ -100,8 +105,6 @@
             //是则将数据拼接在url后面
             url = url+param;
         }
-
-
         //初始化请求
         url = 'https://easy-mock.com/mock/5caff09431c675529c365621/example'+url
         xhr.open(method,url,true);
@@ -129,23 +132,8 @@
     },'json');
 
 
-
-
-
-
 // var a = [1,3,5,,4,5,89,7,5,61,33,8879,45,99,45,66,66,87,69,85,9,9]
 //     console.log(a.sort())
-
-
-
-
-
-
-
-
-
-
-
 
     function wzg(url,data,callback){
         // try {
@@ -183,40 +171,6 @@
 
      })
 
-
-
-
-
-
-
-
-
-
-    // 2、$.get()方式，简单的 GET 请求功能以取代复杂 $.ajax
-    // $.get("https://easy-mock.com/mock/5caff09431c675529c365621/example/proxy", function(data){//param为参数---键值对方式
-    //     console.log(data);
-    // });
-// $.ajax({
-//     url:'https://easy-mock.com/mock/5caff09431c675529c365621/example/mock',
-//     dataType: 'json',
-//     type: 'post',
-//     // data:{},
-//     // jsonp:'callback',
-//     async:true,
-//     error(XMLHttpRequest,textStautus) {
-//         console.log('错误')
-//         console.log(XMLHttpRequest)
-//         console.log(textStautus)
-//     },
-// success(res) {
-//     console.log('成功')
-//     console.log(res)
-// }
-// })
-
-
-
-
     function sc(){
         var str = document.getElementById("textId").value;
         var url = 'http://35.194.68.198/cgi-bin/username?cmd='+encodeURIComponent(str);
@@ -244,16 +198,9 @@
                 // }
             },
         });
-
-
-        // tests
-
-
-
-
     }
 
-    // console.log('--------------------------------------')
+    // console.log('---------------js运行机制题--------------------')
     // setTimeout(function() {
     //     console.log(1)//最后一个输出
     // }, 0);
@@ -267,7 +214,6 @@
     //     console.log(4);//第四输出
     // });
     // console.log(5);//第三输出
-
 </script>
 </body>
 </html>
