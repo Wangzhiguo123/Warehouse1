@@ -1,0 +1,14 @@
+.content_1,.content_2,.content_3{
+    width: 1200px;
+    margin: auto;
+}
+.content_2_choose{
+    display: flex;
+}
+.content_2_img{
+
+}
+.content_3{
+    display: flex;
+    justify-content: space-around;
+}
