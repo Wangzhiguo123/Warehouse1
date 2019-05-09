@@ -1,14 +1,93 @@
+.banner_img{
+    /*width: 100%;*/
+}
+.banner{
+    margin-top: -16px;
+}
 .content_1,.content_2,.content_3{
     width: 1200px;
     margin: auto;
 }
-.content_2_choose{
-    display: flex;
+.content_1{
+    height: 498px;
+}
+.contents{
+    text-align: center;
+    font-size: 24px;
+    line-height: 30px;
+}
+.content_2{
+    height: 616px;
 }
 .content_2_img{
-
+    padding: 60px;
+}
+.content_2_img>div{
+    display: flex;
+}
+.describe{
+    margin-left: 50px;
+}
+.describe>div{
+    width: 450px;
+}
+.describe>div:nth-child(1){
+    font-size: 24px;
+    line-height: 24px;
+    color: #277365;
+}
+.describe>div:nth-child(2){
+    font-size: 14px;
+    line-height: 24px;
+    color: #666666;
+}
+.describe>div:nth-child(3){
+    display: flex;
+    flex-wrap: wrap;
+}
+.xzj{
+    width: 200px;
+    height: 100px;
+}
+.xzj>img:nth-child(1){
+   /*width: 100px;*/
+    /*height: 100px;*/
+}
+.content_2_choose{
+    display: flex;
+    font-size: 16px;
+    line-height: 80px;
+    color: #1a8f92;
+    justify-content: space-between;
+}
+.content_2_choose>div:last-child{
+    color: #ffffff;
+    background: #0b848c;
+    width: 120px;
+    height: 80px;
+    text-align: center  ;
+}
+.content_2_img{
+    background: #ebebeb;
+    height: 440px;
+}
+.gc{
+    width: 40px;
 }
 .content_3{
+    height: 580px;
     display: flex;
-    justify-content: space-around;
+    /*justify-content: space-around;*/
+}
+.content_3_tit{
+    line-height: 36px;
+}
+.videos{
+    width: 650px;
+    height: 400px;
+}
+.videos2{
+    width: 510px;
+    height: 400px;
+    background: url("../img/zhujiao.jpg");
 }

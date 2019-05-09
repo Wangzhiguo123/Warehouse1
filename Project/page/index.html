@@ -6,48 +6,135 @@
 </head>
 <link rel="stylesheet" href="../css/common.css">
 <link rel="stylesheet" href="../css/index.css">
+<style>
+    html, body { font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;}
+    ul, ol { padding: 0;}
+    .banner li { list-style: none; }
+    .banner ul li { float: left; }
+    #b04 .dots { position: absolute; left: 44%; right: 0; bottom: -70px;}
+    #b04 .dots li {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 4px;
+        text-indent: -999em;
+        border: 2px solid #fff;
+        border-radius: 6px;
+        cursor: pointer;
+        opacity: .4;
+        -webkit-transition: background .5s, opacity .5s;
+        -moz-transition: background .5s, opacity .5s;
+        transition: background .5s, opacity .5s;
+    }
+    #b04 .dots li.active
+    {
+        background: #fff;
+        opacity: 1;
+    }
+    #b04 .arrow { position: absolute; top: 200px;}
+    #b04 #al { left: 15px;}
+    #b04 #ar { right: 15px;}
+</style>
 <body>
 <!--最大-->
 <div class="page">
     <!--导航-->
     <div class="nav">
         <div class="nav_tit">
-            <div class="nav_tit_left"></div>
+            <div class="nav_tit_left">
+                <img src="../img/logo.png" alt="">
+            </div>
             <ul class="nav_tit_right">
-                <li class="">HOME</li>
-                <li class="">FEATURES</li>
-                <li class="">NEWS</li>
-                <li class="">MEIDA
+                <li class="">首页</li>
+                <li class="">青朵产品</li>
+                <li class="">教育服务</li>
+                <li class="">关于我们
                     <ul>
-                        <li>meida1</li>
-                        <li>meida2</li>
-                        <li>meida3</li>
-                        <li>meida4</li>
-                        <li>meida5</li>
+                        <li>青朵文化</li>
+                        <li>成功案例</li>
+                        <li>新闻中心</li>
+                        <li>联系我们</li>
+                        <li>加入我们</li>
                     </ul>
                 </li>
             </ul>
         </div>
     </div>
+    <div class="banner">
+        <div class="banner" id="b04">
+            <ul>
+                <li><img src="../img/b1.jpg" alt="" width="100%" height="" ></li>
+                <li><img src="../img/02.jpg" alt="" width="100%" height="" ></li>
+                <li><img src="../img/03.jpg" alt="" width="100%" height="" ></li>
+                <li><img src="../img/04.jpg" alt="" width="100%" height="" ></li>
+                <li><img src="../img/05.jpg" alt="" width="100%" height="" ></li>
+            </ul>
+            <a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al" src="../img/arrowl.png" alt="prev" width="20" height="35"></a>
+            <a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="../img/arrowr.png" alt="next" width="20" height="37"></a>
+        </div>
+    <!--</div>-->
 <!--中间内容-->
-<div class="content_1"></div>
+<div class="content_1">
+<div class="contents">青朵资源</div>
+</div>
 <div class="content_2">
-    <div>标题2</div>
+    <div class="contents">青朵硬件</div>
     <div class="content_2_choose">
-        <div>测试1</div>
-        <div>测试2</div>
-        <div>测试3</div>
-        <div>测试4</div>
-        <div>测试5</div>
+        <div>交互式智能一体机</div>
+        <div>青朵白板软件</div>
+        <div>智慧教育云</div>
+        <div>移动授课</div>
+        <div>问卷系统</div>
+        <div>更多产品</div>
     </div>
-    <div class="content_2_img">这里是信息</div>
+    <div class="content_2_img">
+        <div>
+            <img src="../img/tv.jpg" alt="">
+            <div class="describe">
+                <!--1-->
+                <div>教学一体机D系列</div>
+                <!--2-->
+                <div>交互式智能一体机是集成大屏高清显示、电脑、电视、交互电子白板、
+                    投影、音箱等多项功能于一体的多媒体教学演示与操作平台。
+                    精心雕琢，匠心良制，为课堂教学提供优秀的大屏显示互动授课体验。 </div>
+            <!--3-->
+                <div>
+                <div class="xzj">
+                    <div><img src="../img/t1.png" alt=""></div>
+                    <img src="../img/fgx.jpg" alt="">
+                </div>
+                    <div class="xzj">
+                        <div><img src="../img/t2.png" alt=""></div>
+                        <img src="../img/fgx.jpg" alt="">
+                    </div>
+                    <div class="xzj">
+                        <div><img src="../img/t3.png" alt=""></div>
+                        <img src="../img/fgx.jpg" alt="">
+                    </div>
+                    <div class="xzj">
+                        <div><img src="../img/t4.png" alt=""></div>
+                        <img src="../img/fgx.jpg" alt="">
+                    </div>
+            </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="content_3">
     <div class="content_3_left">
-        <div>青朵视频</div>
+        <div class="content_3_tit">青朵视频</div>
+        <div class="videos">
+            <video width="650" height="400" controls>
+                <source src="movie.mp4" type="video/mp4">
+            </video>
+            
+        </div>
     </div>
+    <div class="gc"></div>
     <div class="content_3_right">
-        <div>救助平台</div>
+        <div class="content_3_tit">助教平台</div>
+        <div class="videos2">
+        </div>
     </div>
 </div>
 
@@ -57,31 +144,44 @@
         <div class="nav_bottom_tit">
             <!--左边-->
             <div class="nav_bottom_tit_left">
-                <div>菜单1</div>
-                <div>菜单2
-                    <div>子菜单1</div>
-                    <div>子菜单1</div>
-                    <div>子菜单1</div>
-                    <div>子菜单1</div>
+                <div>首页</div>
+                <div>青朵产品
+                    <div class="a">青朵资源</div>
+                    <div class="a">青多硬件</div>
                 </div>
-                <div>菜单3</div>
-                <div>菜单4
-                    <div>子菜单1</div>
-                    <div>子菜单1</div>
-                    <div>子菜单1</div>
-                    <div>子菜单1</div>
+                <div>教育服务</div>
+                <div>关于我们
+                    <div class="a">青朵文化</div>
+                    <div class="a">成功案例</div>
+                    <div class="a">新闻中心</div>
+                    <div class="a">联系我们</div>
+                    <div class="a">加入我们</div>
                 </div>
             </div>
             <!--右边-->
             <div class="nav_bottom_tit_right">
-                <div>这是文字</div>
-                <div>
-                    <img src="" alt="">
-                    <div>这是文字</div>
+                <div>青朵教育版权所有粤ICP备1135645号-4    法律声明   投诉建议   动态   联系我们</div>
+                <div class="ewm">
+                    <img src="../img/ewm.jpg" alt="">
+                    <div>关注我们</div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="../js/jquery-1.11.0.min.js"></script>
+<script src="../js/unslider.min.js"></script>
+<script>
+    $(document).ready(function(e) {
+        var unslider04 = $('#b04').unslider({
+                dots: true
+            }),
+            data04 = unslider04.data('unslider');
+        $('.unslider-arrow04').click(function() {
+            var fn = this.className.split(' ')[1];
+            data04[fn]();
+        });
+    });
+</script>
 </body>
 </html>
