@@ -93,9 +93,23 @@ body{
     background-size: 100% 100%;
 }
 .nav_2_tit{
+    width: 1200px;
     height: 76px;
     background: #e1e1e1;
     font-size: 13px;
-    line-height: 40px;
-    color: #ffffff;
+    line-height: 76px;
+    color: #666666;
+}
+.nav_2_tit>ul{
+    display: flex;
+    list-style: none;
+}
+.nav_2_tit>ul>li{
+    width: 90px;
+    text-align: center;
+}
+.contact_us{
+    height: 100%;
+    background-color: #666666;
+    color: white;
 }
