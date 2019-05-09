@@ -11,7 +11,7 @@
     ul, ol { padding: 0;}
     .banner li { list-style: none; }
     .banner ul li { float: left; }
-    #b04 .dots { position: absolute; left: 44%; right: 0; bottom: -70px;}
+    #b04 .dots { position: absolute; left: 44%; right: 0;bottom: 300px}
     #b04 .dots li {
         display: inline-block;
         width: 10px;
@@ -34,6 +34,16 @@
     #b04 .arrow { position: absolute; top: 200px;}
     #b04 #al { left: 15px;}
     #b04 #ar { right: 15px;}
+    .zuo_you{
+        position: absolute;
+        display: flex;
+        justify-content: space-around;
+        top: 145px;
+        width: 97%;
+    }
+    .zuo_you_fg{
+        /*min-width: 400px;*/
+    }
 </style>
 <body>
 <!--最大-->
@@ -63,19 +73,41 @@
     <div class="banner">
         <div class="banner" id="b04">
             <ul>
-                <li><img src="../img/b1.jpg" alt="" width="100%" height="" ></li>
-                <li><img src="../img/02.jpg" alt="" width="100%" height="" ></li>
-                <li><img src="../img/03.jpg" alt="" width="100%" height="" ></li>
-                <li><img src="../img/04.jpg" alt="" width="100%" height="" ></li>
-                <li><img src="../img/05.jpg" alt="" width="100%" height="" ></li>
+                <li><img src="../img/b1.jpg" alt="" width="100%" height="616" ></li>
+                <li><img src="../img/02.jpg" alt="" width="100%" height="616" ></li>
+                <li><img src="../img/03.jpg" alt="" width="100%" height="616" ></li>
+                <li><img src="../img/04.jpg" alt="" width="100%" height="616" ></li>
+                <li><img src="../img/05.jpg" alt="" width="100%" height="616" ></li>
             </ul>
-            <a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al" src="../img/arrowl.png" alt="prev" width="20" height="35"></a>
-            <a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="../img/arrowr.png" alt="next" width="20" height="37"></a>
+            <!--<a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al" src="../img/arrowl.png" alt="prev" width="20" height="35"></a>-->
+            <!--<a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="../img/arrowr.png" alt="next" width="20" height="37"></a>-->
         </div>
     <!--</div>-->
 <!--中间内容-->
 <div class="content_1">
-<div class="contents">青朵资源</div>
+    <div class="bjt"></div>
+    <div class="zuo_you">
+        <div class="zuo"><img class="arrow" src="../img/arrowl.png" alt=""></div>
+        <div class="zuo_you_fg"></div>
+        <div class="you"><img class="arrow" src="../img/arrowr.png" alt=""></div>
+    </div>
+<div class="contents">青朵资源
+    <!--轮播-->
+    <div class="contents_lunbo">
+        <div class="a"><img src="../img/lb1.jpg" alt=""><!--<div>数字课本</div>--></div>
+        <div class="a"><img src="../img/lb2.jpg" alt=""><!--<div>题库</div>--> </div>
+        <div class="a"><img src="../img/lb3.jpg" alt=""><!--<div>精品教案</div>--></div>
+        <div class="b"><img src="../img/logo.png" alt=""><!--<div>数字课本</div>--></div>
+        <div class="b"><img src="../img/video.jpg" alt=""><!--<div>题库</div>--> </div>
+        <div class="b"><img src="../img/zhujiao.jpg" alt=""><!--<div>精品教案</div>--></div>
+    </div>
+    <!--<div class="contents_lunbo b">-->
+
+    <!--</div>-->
+</div>
+
+
+
 </div>
 <div class="content_2">
     <div class="contents">青朵硬件</div>
@@ -96,24 +128,30 @@
                 <!--2-->
                 <div>交互式智能一体机是集成大屏高清显示、电脑、电视、交互电子白板、
                     投影、音箱等多项功能于一体的多媒体教学演示与操作平台。
-                    精心雕琢，匠心良制，为课堂教学提供优秀的大屏显示互动授课体验。 </div>
+                    精心雕琢，匠心良制，为课堂教学提供优秀的大屏显示互动授课体验。
+                    <div><a href="">了解更多</a></div>
+                </div>
             <!--3-->
                 <div>
                 <div class="xzj">
                     <div><img src="../img/t1.png" alt=""></div>
                     <img src="../img/fgx.jpg" alt="">
+                    <div>超窄边设计</div>
                 </div>
                     <div class="xzj">
                         <div><img src="../img/t2.png" alt=""></div>
                         <img src="../img/fgx.jpg" alt="">
+                        <div>支持温度传感器环境光检测</div>
                     </div>
                     <div class="xzj">
                         <div><img src="../img/t3.png" alt=""></div>
                         <img src="../img/fgx.jpg" alt="">
+                        <div>双支持WIFI,可以一边上网<br>一边开热点分享</div>
                     </div>
                     <div class="xzj">
                         <div><img src="../img/t4.png" alt=""></div>
                         <img src="../img/fgx.jpg" alt="">
+                        <div>精确度高，触摸精度<2mm<br>使书写更加准确、平滑、现实</div>
                     </div>
             </div>
             </div>
@@ -182,6 +220,16 @@
             data04[fn]();
         });
     });
+    $(".zuo").click(function () {
+      console.log('z左边')
+        $(".a").show()
+        $(".b").hide()
+    })
+    $(".you").click(function () {
+        console.log('右边')
+        $(".a").hide()
+        $(".b").show()
+    })
 </script>
 </body>
 </html>
