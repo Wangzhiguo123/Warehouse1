@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Empire</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0" user-scalable=no />
+    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32" />
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/features.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100390974-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-100390974-2');
+    </script>
+</head>
+<body style="overflow: hidden">
+<div id="header">
+    <div class="nav no_mobile ">
+        <img src="../images/logo.png" alt="">
+        <ul id="nav_title">
+            <li>HOME</li>
+            <li class="nav_title_hover">FEATURES</li>
+            <li>NEWS</li>
+            <li>MEDIA</li>
+            <li>SUPPORT</li>
+            <!--<li>WIKI</li>-->
+        </ul>
+    </div>
+    <div class="nav mobile" style="display: none">
+        <div id="mobile_logo"><img src="../images/logo.png" alt=""></div>
+        <div id="mobile_nav"><img src="../images/mobile_nav.png" alt=""></div>
+    </div>
+</div>
+<div id="content">
+    <div class="forum_nav">
+        <div class="forum_nav_rotundity rotundity1" style="display: none">
+            <div class="forum_nav_item nav_item5" num="4"><span>Feature</span></div>
+            <div class="forum_nav_item nav_item6" num="2"><span>Guide</span></div>
+            <div class="forum_nav_item nav_item2" num="1"><span>World View</span></div>
+        </div>
+        <div class="forum_nav_rotundity rotundity2">
+            <div class="forum_nav_item nav_item5" num="1"><span>World View</span></div>
+            <div class="forum_nav_item nav_item6" num="3"><span>Ships</span></div>
+            <div class="forum_nav_item nav_item2" num="2"><span>Guide</span></div>
+        </div>
+        <div class="forum_nav_rotundity rotundity3" style="display: none">
+            <div class="forum_nav_item nav_item5" num="2"><span>Guide</span></div>
+            <div class="forum_nav_item nav_item6" num="4"><span>Feature</span></div>
+            <div class="forum_nav_item nav_item2" num="3"><span>Ships</span></div>
+        </div>
+        <div class="forum_nav_rotundity rotundity4" style="display: none">
+            <div class="forum_nav_item nav_item5" num="3"><span>Ships</span></div>
+            <div class="forum_nav_item nav_item6" num="1"><span>World View</span></div>
+            <div class="forum_nav_item nav_item2" num="4"><span>Feature</span></div>
+        </div>
+        <div class="forum_nav_rotundity next_rotundity">
+        </div>
+        <div class="forum_nav_rotundity last_rotundity">
+        </div>
+    </div>
+    <ul>
+        <li id="guide">
+            <div class="forum_content">
+                <div class="forum_btn">
+                    <span class="prev"></span>
+                    <span class="next"></span>
+                </div>
+                <ul class="forum_content_foot guide_foot" style="width: 70%;margin: 0 auto">
+                    <li>
+                        <div class="nav_pic"></div>
+                        <p>进入游戏</p>
+                    </li>
+                    <li>
+                        <div class="nav_pic"></div>
+                        <p>账号管理</p>
+                    </li>
+                    <li class="nav_item_active">
+                        <div class="nav_pic"></div>
+                        <p>基本操作</p>
+                    </li>
+                    <li>
+                        <div class="nav_pic"></div>
+                        <p>多样玩法</p>
+                    </li>
+                    <li>
+                        <div class="nav_pic"></div>
+                        <p>问答解疑</p>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+<div id="modal_box">
+    <div class="modal_box_content">
+        <div class="modal_box_left"><span class="prev"></span></div>
+        <div class="modal_box_center">
+            <ul class="forum_content_foot modal_header">
+                <li class="nav_item_active" num="1">
+                    <div class="nav_pic"></div>
+                    <p>Space Station</p>
+                </li>
+                <li num="2">
+                    <div class="nav_pic"></div>
+                    <p>Galaxy</p>
+                </li>
+                <li num="3">
+                    <div class="nav_pic"></div>
+                    <p>System</p>
+                </li>
+            </ul>
+            <ul class="modal_box_list">
+                <li style="display:block;">
+                    <img src="../images/features/game_action_kj01.png" alt="">
+                </li>
+                <li style="display: none">
+                    <img src="../images/features/game_action_kj02.png" alt="">
+                </li>
+                <li style="display: none">
+                    <img src="../images/features/game_action_kj03.png" alt="">
+                </li>
+            </ul>
+            <ul class="forum_content_foot modal_foot">
+                <li class="nav_item_active">
+                    <div class="nav_pic"></div>
+                    <p>1</p>
+                </li>
+                <li>
+                    <div class="nav_pic"></div>
+                    <p>2</p>
+                </li>
+                <li>
+                    <div class="nav_pic"></div>
+                    <p>3</p>
+                </li>
+            </ul>
+            <em class="modal_off" onclick="javascript:history.go(-1)"></em>
+        </div>
+        <div class="modal_box_right"><span class="next"></span></div>
+    </div>
+</div>
+<div id="footer">
+    <div id="company_logo"><img src="../images/company_logo.png" alt=""></div>
+    <div id="footer_title">
+        <ul>
+            <li onclick="jump('privacy-policy-20170516')"><span>Privacy Policy</span></li>
+            <!--<li><span>legal Documentation</span> |</li>-->
+            <!--<li class="footer_li_hover"><span>Contact Us</span></li>-->
+        </ul>
+        <p>
+            <a href="https://www.facebook.com/NovaEmpireGame" target="_blank"><img src="../images/facebook.png" alt=""></a>
+            <a href="https://www.youtube.com/channel/UCgE7bsxQiIK5qfGxb8gdyiw" target="_blank"><img src="../images/youtube.png" alt=""></a>
+            <a href="https://twitter.com/NovaEmpireGame" target="_blank"><img src="../images/twiter.png" alt=""></a>
+            <a href="https://www.instagram.com/thenovaempire/" target="_blank"><img src="../images/Instagram.png" alt=""></a>
+        </p>
+        <p style="color: #888;font-size: 14px">©2017-2018 Game Bear Technology. All rights reserved.</p>
+    </div>
+</div>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/gameAction.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Empire</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0" user-scalable=no />
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/banner.css">
+</head>
+<body>
+<div id="header">
+    <video autoplay loop  id="bgvid" poster="images/poster.png">
+        <source src="images/jita.mp4" type="video/mp4">
+    </video>
+    <img id="no_video" style="display: none" src="images/no_video.png" alt="">
+    <div class="nav no_mobile ">
+        <img src="images/logo.png" alt="">
+
+        <div class="change_language lf">
+            <p class="a">Language</p>
+            <p class="b">语言</p>
+            <select class="one" name="" id="s1">
+                <option value="1">EN</option>
+                <option value="2">中文</option>
+            </select>
+        </div>
+
+
+        <ul id="nav_title" class="a nav_titles">
+            <li class="nav_title_hover">HOME</li>
+            <li>FEATURES</li>
+            <li>NEWS</li>
+            <li>MEDIA</li>
+			<li>WIKI</li>
+            <li>SUPPORT</li>
+            <!--<li>WIKI</li>-->
+        </ul>
+        <ul id="nav_title" class="b nav_titles">
+            <li class="nav_title_hover">首页</li>
+            <li>特性</li>
+            <li>动态</li>
+            <li>媒体</li>
+            <li>维基</li>
+            <li>支持</li>
+            <!--<li>WIKI</li>-->
+        </ul>
+    </div>
+    <div class="nav mobile" style="display: none">
+        <div id="mobile_logo"><img src="images/logo.png" alt=""></div>
+        <div id="mobile_nav"><img src="images/mobile_nav.png" alt=""></div>
+    </div>
+    <div id="header_center">
+        <!--<div style="text-align: center">-->
+            <img src="images/LOGO-banner.png" alt="">
+        <!--</div>-->
+        <p class="a">Build Your Fleet&nbsp;&nbsp;&nbsp;&nbsp;Conquer The Galaxy</p>
+        <p class="b">建立你的舰队&nbsp;&nbsp;&nbsp;&nbsp;征服银河系</p>
+        <div>
+        <div id="download">
+            <a href="http://m.onelink.me/79b49f0e">
+                <img class="a" src="images/app.png" alt="">
+                <img class="b" src="images/app_cn.png" alt="">
+            </a>
+            <a href="http://m.onelink.me/eac2cdec">
+                <img class="a" src="images/GOOGLE.png" alt="">
+                <img class="b" src="images/GOOGLE_cn.png" alt="">
+            </a>
+            <a href="#">
+                <img class="a" src="images/FaceBooks.png" alt="">
+                <img class="b" src="images/FaceBooks_cn.png" alt="">
+            </a>
+        </div>
+        </div>
+        <!--<div id="download_zh">-->
+            <!--<a href="http://m.onelink.me/79b49f0e"><img src="images/app.png" alt=""></a>-->
+            <!--<a href="http://m.onelink.me/eac2cdec"><img src="images/GOOGLE.png" alt=""></a>-->
+            <!--<a href="javascript:"><img src="images/load.png" alt=""></a>-->
+        <!--</div>-->
+    </div>
+</div>
+<div id="new">
+    <div id="new_left">
+        <img src="images/new_right.png" alt="">
+        <div class="new_titile">
+            <div>
+                <div class="download_title new_titile_list"><span class="a">N</span><span class="a">ews</span>
+                    <span class="b">新闻</span>
+                </div>
+                <div class="Comments a">Announcements and Updates</div>
+                <div class="Comments b">发布和更新</div>
+                <div class="new_btn" onclick="jump('NEWS','NEWS')">
+                    <span class="a">View More</span>
+                    <span class="b">查看更多</span>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div id="new_right">
+        <img src="images/new_left.png" alt="">
+        <div class="new_titile">
+            <div>
+                <div class="download_title new_titile_list a">M<span>edia</span></div>
+            <div class="download_title new_titile_list b"><span>媒</span>体</div>
+                <div class="Comments a">Art, Pictures, Videos</div>
+        <div class="Comments b">美术、图片、视频</div>
+                <div class="new_btn" onclick="jump('MEDIA','MEDIA')">
+                    <span class="a">View More</span>
+                    <span class="b">查看更多</span>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="banner">
+    <div id="banner_pic">
+        <div class="download_title banner_title a"><span>F</span><span>eatures</span></div>
+        <div class="download_title banner_title b"><span>特</span><span>性</span></div>
+    </div>
+    <div class="container">
+        <div id="slide" class="slide" class="index-slide" alt="star">
+            <!-- 轮播图片数量可自行增减 -->
+            <div class="img"><img src="images/banner01.png" tit="Work together to achieve dominance over your foes"></div>
+            <div class="img"><img src="images/banner02.png" tit="Discover a rich and vast galaxy"></div>
+            <div class="img"><img src="images/banner03.png" tit="Organize your fleets and send them into combat"></div>
+            <div class="img"><img src="images/banner04.png" tit="Create and enhance your Space station"></div>
+        </div>
+    </div>
+    <div id="banner_footer">
+        <div style="float: left;width: 37%">
+            <em id="banner_footer_left"></em>
+        </div>
+
+        <span id="banner_footer_title" class="a">Organize your fleets and them into combat</span>
+        <span id="banner_footer_title" class="b">组织你的舰队和他们进入战斗</span>
+        <div style="float: right;width: 37%">
+            <em id="banner_footer_right"></em>
+        </div>
+
+    </div>
+</div>
+<div id="footer">
+    <div id="company_logo"><img src="images/company_logo.png" alt=""></div>
+    <div id="footer_title">
+        <ul>
+            <li onclick="jump('privacy-policy-20170516')"><span>Privacy Policy</span></li>
+            <!--<li><span>legal Documentation</span> |</li>-->
+            <!--<li class="footer_li_hover"><span>Contact Us</span></li>-->
+        </ul>
+        <p>
+            <a href="https://www.facebook.com/NovaEmpireGame" target="_blank"><img src="images/facebook.png" alt=""></a>
+            <a href="https://www.youtube.com/channel/UCgE7bsxQiIK5qfGxb8gdyiw" target="_blank"><img src="images/youtube.png" alt=""></a>
+            <a href="https://twitter.com/NovaEmpireGame" target="_blank"><img src="images/twiter.png" alt=""></a>
+            <a href="https://www.instagram.com/thenovaempire/" target="_blank"><img src="images/Instagram.png" alt=""></a>
+        </p>
+        <p style="color: #888;font-size: 14px">©2017-2018 Game Bear Technology. All rights reserved.</p>
+    </div>
+</div>
+<div class="Navbar-modalContent">
+    <div class="Navbar-left">
+        <div class="Navbar-siteMenuLogo">
+            <img src="images/Navbar-siteMenuLogo.png" alt="">
+        </div>
+        <ul id="accordion" class="accordion">
+
+            <li>
+
+                <div class="link"><span>HOME</span></div>
+
+                <ul class="submenu">
+
+
+
+                </ul>
+
+            </li>
+
+            <li>
+
+                <div class="link"></i><span>FEATURES</span><i class="fa fa-chevron-down"><img src="images/downList.png" alt=""></i></div>
+
+                <ul class="submenu">
+
+                    <!--<li>World View</li>-->
+
+                    <li>Guide</li>
+
+                    <li>Ships</li>
+
+                    <li>Feature</li>
+
+
+                </ul>
+
+            </li>
+
+            <li>
+
+                <div class="link"><span>NEWS</span><i class="fa fa-chevron-down"><img src="images/downList.png" alt=""></i></div>
+
+                <ul class="submenu">
+
+                    <li>All</li>
+
+                    <!--<li>Promotions</li>-->
+
+                    <!--<li>What's news</li>-->
+
+
+                </ul>
+
+            </li>
+
+            <li>
+
+                <div class="link"><span>MEDIA</span><i class="fa fa-chevron-down"><img src="images/downList.png" alt=""></i></div>
+
+                <ul class="submenu">
+
+                    <li>Videos</li>
+
+                    <li>Screenshots</li>
+
+                    <li>Concept Art</li>
+
+
+                </ul>
+
+            </li>
+
+            <li><div class="link"><span>SUPPORT</span></div>
+
+                <ul class="submenu">
+
+
+
+                </ul>
+
+            </li>
+
+            <!--<li><div class="link"><span>WIKI</span></div>-->
+
+                <!--<ul class="submenu">-->
+
+
+
+                <!--</ul>-->
+
+            <!--</li>-->
+
+        </ul>
+        <div class="Navbar-siteMenuLogo">
+            <a href="http://m.onelink.me/79b49f0e"><img src="images/app_store.png" alt=""></a>
+            <a href="http://m.onelink.me/eac2cdec"><img src="images/GOOGLE.png" alt=""></a>
+        </div>
+        <div class="Navbar-modalClose Navbar-icon">
+            <span></span>
+        </div>
+    </div>
+    <div class="Navbar-right">
+
+    </div>
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/common.js"></script>
+<script src="js/home.js"></script>
+<script src="js/index.js"></script>
+<script src="js/banner.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100390974-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-100390974-2');
+</script>
+</body>
+</html>

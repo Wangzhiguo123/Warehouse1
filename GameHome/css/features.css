@@ -1,0 +1,1309 @@
+@font-face{
+    font-family: 'Arial';
+    src : url('../font/arial.ttf');
+}
+@font-face{
+    font-family: 'Optima LT Std';
+    src : url('../font/OptimaLTStd.otf');
+}
+@font-face{
+    font-family: 'FZLTHJWTTF';
+    src : url('../font/FZLTHJW.TTF');
+}
+@font-face{
+    font-family: '方正兰亭纤黑_GBKTTF';
+    src : url('../font/方正兰亭纤黑_GBK.TTF');
+}
+
+#content{
+    font-family: "Optima LT Std";
+    background: url("../images/features/forum_nav_bg.png");
+    background-size: cover;
+    overflow: hidden;
+    border-bottom: 2px solid #fff;
+    box-sizing: border-box;
+    padding:130px 0;
+}
+
+.forum_nav{
+    margin-top: 8em;
+    width: 22%;
+    overflow: hidden;
+    float: left;
+}
+.forum_nav_rotundity{
+    box-sizing: border-box;
+    float:left;
+    width: 500px;
+    height: 500px;
+    border:1px solid rgb(117, 33, 76);
+    border-radius: 50%;
+    position: relative;
+    margin-left: -380px;
+}
+.next_rotundity{
+    width: 450px;
+    height: 450px;
+    margin-left:-475px;
+    margin-top:25px;
+    border:1px solid rgba(117, 33, 76,.6);
+}
+.last_rotundity{
+    width: 350px;
+    height: 350px;
+    margin-left:-425px;
+    margin-top:75px;
+    border:1px solid rgba(117, 33, 76,.2);
+}
+.forum_nav_item{
+    box-sizing: border-box;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background:url("../images/features/forum_nav_pic.png") no-repeat;
+    background-size: 100% 100%;
+    border-radius: 50%;
+}
+.forum_nav_item_active{
+    background:url("../images/features/forum_nav_pic_active.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.nav_item2{
+    top: 225px;
+    left: 475px;
+}
+.nav_item5{
+    top: 46px;
+    left: 400px;
+}
+.nav_item6{
+    top: 402px;
+    left: 400px;
+}
+.forum_nav_item span{
+    position: absolute;
+    top: 12px;
+    left: 55px;
+    display: block;
+    width: 125px;
+    color: #facdfa;
+    font-size: 24px;
+}
+@media screen and (min-width: 1580px) {
+    .forum_nav{
+        width: 14%;
+    }
+}
+@media screen and (max-width: 1365px) {
+    .forum_nav{
+        margin-top: 2em;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .forum_nav{
+        width: 30%;
+    }
+}
+@media screen and (max-width: 935px) {
+    .forum_nav_item span{
+        width: 50px;
+    }
+}
+@media screen and (max-width: 767px) {
+    #content{
+        background: url("../images/features/forum_mobile_bg.png");
+        background-size: cover;
+        padding: 51px 0;
+        height: auto;
+    }
+    #forum_pc_content{
+        display: none;
+    }
+    #forum_mobile_content{
+        display: block !important;
+    }
+    #forum_mobile_list{
+        margin-top: 20px;
+    }
+}
+#forum_list{
+    float: left;
+    width:70%;
+    margin: 0;
+}
+.forum_content{
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.forum_content_top{
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+.forum_content_top li{
+    width: 100%;
+    display: none;
+}
+.forum_btn{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 1362px) {
+    .forum_btn{
+        margin-top: 100px;
+    }
+}
+
+.forum_btn span{
+    cursor: pointer;
+    display: block;
+    width: 49px;
+    height: 83px;
+}
+.prev{
+    float: left;
+    background:url("../images/features/forum_left.png") no-repeat;
+    background-size: 100% 100%;
+}
+.next{
+    float: right;
+    background:url("../images/features/forum_right.png") no-repeat;
+    background-size: 100% 100%;
+}
+.prev:hover{
+    background:url("../images/features/forum_left_ac.png") no-repeat;
+    background-size: 100% 100%;
+}
+.next:hover{
+    background:url("../images/features/forum_right_ac.png") no-repeat;
+    background-size: 100% 100%;
+}
+.forum_content_foot{
+    width: 100%;
+    color: #aaa;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 0 100px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+.forum_content_foot li{
+    cursor: pointer;
+    float: left;
+    box-sizing: border-box;
+}
+.nav_pic{
+    width: 100%;
+    height: 20px;
+    background:url("../images/features/nav.png") no-repeat;
+    background-size: 100% 100%;
+}
+.forum_content_foot li p{
+    text-align: center;
+}
+.nav_item_active .nav_pic{
+     background:url("../images/features/nav_active.png") no-repeat;
+     background-size: 100% 100%;
+ }
+.nav_item_active p{
+    color: #fff;
+}
+/*****************************************************ship****************************************************************/
+.ship_top_left{
+    float: left;
+    width: 61%;
+    padding-top: 100px;
+    /*height: 400px;*/
+    /*line-height: 400px;*/
+}
+.ship_top_right{
+    float: right;
+    width: 38%;
+}
+
+.ship_top_left img,.ship_top_right img{
+    vertical-align: middle;
+    width: 100%;
+}
+.ship_top_right_tit{
+    color: #fff;
+    text-align: left;
+    margin-bottom: 10%;
+}
+.ship_top_right_tit h2{
+    margin: 0;
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+}
+.ship_top_right_tit span{
+    margin: 0;
+    display: inline-block;
+    height: 100px;
+    overflow: auto;
+    font-size: 20px;
+    color: #dfdfdf;
+}
+.ship_foot li{
+    width: 14%;
+}
+
+@media screen and (max-width: 1024px) {
+    .ship_top_right_tit{
+        margin-bottom: 5%;
+    }
+    .ship_top_right_tit h2{
+        font-size: 17px;
+    }
+    .ship_top_right_tit span{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 1023px) {
+.ship_foot{
+display: none;
+}
+
+}
+/*****************************************************word view****************************************************************/
+.word_tit{
+    color: #fff;
+    font-size: 46px;
+    font-weight: normal;
+    margin: 0 0 0 5%;
+
+}
+.word_list{
+    width: 100%;
+    height: 400px;
+    padding: 5% 4% 3% 9%;
+    box-sizing: border-box;
+    background:url("../images/features/word_boder.png") no-repeat;
+    background-size: 100% 100%;
+}
+.word_item{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.word_item p{
+    font-family: "方正兰亭纤黑_GBKTTF";
+    color: #dfdfdf;
+    font-size: 20px;
+    text-indent:2em;
+}
+.word_foot li{
+    width: 16%;
+}
+@media screen and (max-width: 1024px) {
+    .word_foot{
+        display: none;
+    }
+}
+/*****************************************************guide****************************************************************/
+/*进入游戏*/
+.guide_foot{
+    width: 70%;
+    margin: 0 auto;
+}
+.guide_foot li{
+    width: 33%;
+}
+.guide_ico{
+    display: inline-block;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 50px;
+    text-align: center;
+    vertical-align: middle;
+    background:url("../images/features/guide_ico.png") no-repeat;
+    background-size: 100% 100%;
+}
+.guide_content{
+    width: 80%;
+    margin: 0 auto;
+    height: 500px;
+}
+.guide_content p{
+    font-family: FZLTHJWTTF;
+    margin-top: 20px;
+    color: #dfdfdf;
+    font-size: 20px;
+}
+.guide_item{
+    overflow: hidden;
+    margin-top: 15%;
+}
+.box_left,.box_right{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.box_left img{
+    width: 70%;
+}
+.box_right p img{
+    width: 80%;
+}
+@media screen and (max-width: 1150px) {
+    .box_left img{
+        width: 80%;
+    }
+}
+/*账号管理*/
+.account{
+    margin-top: 25%;
+}
+.account a{
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Optima LT Std";
+    font-size: 38px;
+    line-height: 80px;
+    color: #fff;
+    height: 80px;
+    border: 1px solid #fff;
+}
+.account a em{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background:url("../images/features/Facebook.png") no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: 15px;
+    margin-top: -7px;
+}
+.account a:nth-child(2) em{
+    background:url("../images/features/goodle.png") no-repeat;
+    background-size: 100% 100%;
+}
+.account a:hover{
+    color: #fb9a32;
+    border: 1px solid #fb9a32;
+}
+@media screen and (max-width: 1360px) {
+    .guide_content{
+        height: 250px;
+    }
+    .account a{
+        font-size: 20px;
+        line-height: 40px;
+        height: 40px;
+    }
+    .account a em{
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .guide_foot{
+        width: 90%;
+    }
+}
+/*疑惑问答*/
+.problem_top{
+    overflow: hidden;
+    box-sizing: border-box;
+ }
+.problem_top .word_tit{
+    float: left;
+    font-family: FZLTHJWTTF;
+}
+.problem_search{
+    margin-right: 5%;
+    width: 45%;
+    float: right;
+    color: #dfdfdf;
+    overflow: hidden;
+}
+/*搜索框*/
+input.text {
+    float: right;
+    width: 45%;
+    height: 30px;
+    padding: 10px;
+    font-size: 17px;
+    background-color: rgba(0,0,0,.2);
+    border: 1px solid rgba(255,255,255,.2);
+    line-height: 30px;
+    color: rgba(255,255,255,.2);
+    outline:none;
+}
+span.button {
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid rgba(255,255,255,.2);
+    width: 20%;
+    height: 52px;
+    line-height: 52px;
+    background: rgba(207,109,197,.2);
+    font-size: 22px;
+    color: #fff;
+    float: right;
+    text-align: center;
+}
+span.button em{
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    background:url("../images/features/search_icon.png") no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-top: -7px;
+}
+.button_tit{
+    margin-left: 5px;
+}
+.problem{
+    width: 90%;
+    border-bottom: 1px solid #fff;
+    box-sizing: border-box;
+    border-top: 1px solid #fff;
+    overflow: auto;
+    margin-top: 18px;
+}
+.problem_item{
+    margin:15px 0 0 0;
+    overflow: hidden;
+}
+.problem_item .word_tit{
+    float: left;
+    width: 5%;
+    font-size: 24px;
+    margin: 0;
+}
+@media screen and (max-width: 1170px) {
+    .button_tit{
+        display: none;
+    }
+}
+.problem_item .word_tit .guide_ico{
+    font-size: 24px;
+    width: 37px;
+    height: 37px;
+    background:url("../images/features/problem_num.png") no-repeat;
+    background-size: 100% 100%;
+}
+.problem_tit{
+    float: left;
+    width: 93%;
+    margin-left: 2%;
+}
+.problem_tit h4{
+    font-family: "FZLTHJWTTF";
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    width: 95%;
+    font-size: 24px;
+    color: #fff;
+}
+.problem_tit p{
+    margin: 10px 0 0 0;
+    font-family: Arial;
+    color: #aaa;
+    font-size: 20px;
+    overflow: hidden;
+}
+.answer_num{
+    box-sizing: border-box;
+    font-family: "方正兰亭纤黑_GBKTTF";
+    width: 15%;
+    float: left;
+    color: #fff;
+    font-size: 24px;
+    display: block;
+}
+.answer_content{
+    float: left;
+    display: block;
+    width: 85%;
+}
+/*基本操作*/
+.game_action{
+    margin-top: 20px;
+    width: 90%;
+}
+.game_action img{
+    margin-top: 5%;
+    width: 100%;
+}
+@media screen and (max-width: 1023px) {
+    .game_action img{
+        margin-top: 20%;
+    }
+}
+.game_btn_list{
+    position: relative;
+}
+.new_btn{
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    margin: 0 0 -40px -15%;
+    cursor:pointer;
+    font-family: "Optima LT Std";
+    color: #fff;
+    font-size: 20px;
+    width: 25%;
+    background:url("../images/new_btn.png") no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+}
+.new_btn:hover{
+    color: #fb9a32;
+    background-image: url("../images/active_btn.png");
+}
+/*模态框*/
+#modal_box{
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color:#fff;
+    background:rgba(0,0,0,.9);
+}
+.modal_box_content{
+    overflow: hidden;
+    padding: 0 30px;
+}
+.modal_box_left,.modal_box_right{
+    width: 10%;
+    text-align: center;
+    float: left;
+    margin-top: 25%;
+}
+.modal_box_left .prev,.modal_box_right .next{
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    width: 49px;
+    height: 83px;
+}
+.modal_box_center{
+    float: left;
+    width: 80%;
+    margin-top: 4%;
+    position: relative;
+}
+.modal_header,.modal_foot{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.modal_header li,.modal_foot li{
+    width: 33%;
+}
+.modal_box_list{
+    margin: 2% 0;
+}
+.modal_box_list img{
+    width: 100%;
+}
+.modal_off{
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 50px;
+    height: 50px;
+    background:url("../images/features/modal_off.png") no-repeat;
+    background-size: 100% 100%;
+}
+/*多样玩法*/
+.game_play{
+    padding-top: 20px;
+}
+.game_play img{
+    width: 32%;
+    margin: 40px 0;
+}
+
+#mobile_ship{
+    text-align: center;
+    color: #aaa;
+    font-family: "Arial";
+    padding: 0 20px;
+}
+#mobile_ship p{
+    text-align: left;
+    margin: 20px 0;
+    text-indent:2em;
+    width: 100%;
+}
+#mobile_ship img{
+    width: 100%;
+}
+#mobile_word{
+    padding: 0 20px;
+    color: #dfdfdf;
+    font-family:"方正兰亭纤黑_GBKTTF";
+    font-size: 20px;
+}
+#mobile_word p{
+    text-indent:2em;
+}
+
+.mobile_guide_in_icon{
+    width: 70%;
+    margin: 50px auto 20px;
+    overflow: hidden;
+}
+.mobile_guide_in_icon img{
+    width: 50%;
+    float: left;
+}
+.mobile_guide_in_download{
+    width: 60%;
+    margin: 0 auto;
+}
+.mobile_guide_in_download img{
+    width: 100%;
+}
+.mobile_guide_tit{
+    font-family: FZLTHJWTTF;
+    margin-top: 30px;
+    padding: 0 20px;
+    font-size: 20px;
+    color: #aaa;
+    text-indent:2em;
+}
+.mobile_guide_account_content a{
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+    font-family: "Optima LT Std";
+    font-size: 38px;
+    line-height: 80px;
+    color: #fff;
+    height: 80px;
+    border: 1px solid #fff;
+}
+
+.mobile_guide_account_content a em{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background:url("../images/features/Facebook.png") no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    margin-right: 15px;
+    margin-top: -5px;
+}
+.mobile_guide_account_content a:nth-child(2) em{
+    background:url("../images/features/goodle.png") no-repeat;
+    background-size: 100% 100%;
+}
+.mobile_guide_account_content a:hover{
+    color: #fb9a32;
+    border: 1px solid #fb9a32;
+}
+.mobile_guide_game_play_item{
+    padding: 0 10px;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+.mobile_guide_game_play_item img{
+    float: left;
+    width: 45%;
+}
+.mobile_guide_game_play_item img:last-child{
+    float: right;
+}
+.mobile_search_problem{
+    width: 100%;
+    overflow: hidden;
+}
+.mobile_search_problem .button{
+    width: 30%;
+    margin-right: 5%;
+}
+.mobile_search_problem input{
+    margin-left: 5%;
+    width: 53%;
+}
+.mobile_problem_item{
+    padding: 0 5%;
+}
+.mobile_problem_item .word_tit{
+    width: 13%;
+}
+.mobile_problem_item .problem_tit{
+    width: 87%;
+    margin: 0;
+}
+.mobile_guide_game_action h3{
+    color: #fff;
+    padding: 0;
+    margin: 0 0 0 7%;
+    font-size: 40px;
+    font-weight: normal;
+}
+.mobile_guide_game_action_icon{
+    width: 50%;
+}
+.mobile_guide_game_action_icon img,.mobile_guide_game_action_img img{
+    width: 100%;
+}
+.mobile_guide_game_action_img{
+    width: 93%;
+    margin-left: 7%;
+}
+.mobile_guide_game_action_content{
+    font-family:"方正兰亭纤黑_GBKTTF";
+    padding: 0 7%;
+    font-size: 20px;
+    color: #aaa;
+    font-weight: normal;
+    margin-top: 20px;
+}
+.mobile_guide_game_action_content h4{
+    font-family: "FZLTHJWTTF";
+    font-weight: bold;
+    font-size: 30px;
+    color: #fff;
+    margin: 0 0 10px 0;
+}
+.mobile_guide_game_action_content h4 em{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.num1_icon{
+    background:url("../images/features/num1_icon.png") no-repeat;
+    background-size: 100% 100%;
+}
+.num2_icon{
+    background:url("../images/features/num2_icon.png") no-repeat;
+    background-size: 100% 100%;
+}
+.num3_icon{
+    background:url("../images/features/num3_icon.png") no-repeat;
+    background-size: 100% 100%;
+}
+.num4_icon{
+    background:url("../images/features/num4_icon.png") no-repeat;
+    background-size: 100% 100%;
+}
+.num5_icon{
+    background:url("../images/features/num5_icon.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.steps {
+    box-sizing: border-box;
+    float: left;
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgb(117, 33, 76);
+    border-radius: 50%;
+    position: relative;
+    margin-left: -380px;
+}
+
+#steps-menu ul li {
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    border-left: 222px solid transparent;
+    /*border-top: 1px solid transparent;*/
+    left: 50%;
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    transform-origin: 0 0;
+}
+#steps-menu ul li a {
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    text-decoration: none;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    box-sizing: border-box;
+    background:url("../images/features/forum_nav_pic.png") no-repeat;
+    background-size: 100% 100%;
+    border-radius: 50%;
+}
+
+.steps_tit{
+    position: absolute;
+    top: 12px;
+    left: 55px;
+    display: block;
+    width: 125px;
+    height: 50px;
+    color: #facdfa;
+    font-size: 24px;
+}
+.is-active a .steps_tit{
+    color: #fff;
+}
+.step-1 ul li:nth-of-type(1) {
+    transform: rotate(-6deg);
+}
+.step-1 ul li:nth-of-type(1) a {
+    transform: rotate(6deg);
+}
+
+
+.step-1 ul li:nth-of-type(2) {
+    transform: rotate(39deg);
+}
+.step-1 ul li:nth-of-type(2) a {
+    transform: rotate(-39deg);
+}
+
+.step-1 ul li:nth-of-type(3) {
+    transform: rotate(84deg);
+}
+.step-1 ul li:nth-of-type(3) a {
+    transform: rotate(-84deg);
+}
+
+.step-1 ul li:nth-of-type(4) {
+    transform: rotate(129deg);
+}
+.step-1 ul li:nth-of-type(4) a {
+    transform: rotate(-129deg);
+}
+
+.step-1 ul li:nth-of-type(5) {
+    transform: rotate(174deg);
+}
+.step-1 ul li:nth-of-type(5) a {
+    transform: rotate(-174deg);
+}
+
+.step-1 ul li:nth-of-type(6) {
+    transform: rotate(219deg);
+}
+.step-1 ul li:nth-of-type(6) a {
+    transform: rotate(-219deg);
+}
+
+.step-1 ul li:nth-of-type(7) {
+    transform: rotate(264deg);
+}
+.step-1 ul li:nth-of-type(7) a {
+    transform: rotate(-264deg);
+}
+
+.step-1 ul li:nth-of-type(8) {
+    transform: rotate(310deg);
+}
+.step-1 ul li:nth-of-type(8) a {
+    transform: rotate(-310deg);
+}
+
+.step-2 ul li:nth-of-type(1) {
+    transform: rotate(-51deg);
+}
+.step-2 ul li:nth-of-type(1) a {
+    transform: rotate(51deg);
+}
+
+.step-2 ul li:nth-of-type(2) {
+    transform: rotate(-6deg);
+}
+.step-2 ul li:nth-of-type(2) a {
+    transform: rotate(6deg);
+}
+
+.step-2 ul li:nth-of-type(3) {
+    transform: rotate(39deg);
+}
+.step-2 ul li:nth-of-type(3) a {
+    transform: rotate(-39deg);
+}
+
+.step-2 ul li:nth-of-type(4) {
+    transform: rotate(84deg);
+}
+.step-2 ul li:nth-of-type(4) a {
+    transform: rotate(-84deg);
+}
+
+.step-2 ul li:nth-of-type(5) {
+    transform: rotate(129deg);
+}
+.step-2 ul li:nth-of-type(5) a {
+    transform: rotate(-129deg);
+}
+
+.step-2 ul li:nth-of-type(6) {
+    transform: rotate(174deg);
+}
+.step-2 ul li:nth-of-type(6) a {
+    transform: rotate(-174deg);
+}
+
+.step-2 ul li:nth-of-type(7) {
+    transform: rotate(219deg);
+}
+.step-2 ul li:nth-of-type(7) a {
+    transform: rotate(-219deg);
+}
+
+.step-2 ul li:nth-of-type(8) {
+    transform: rotate(264deg);
+}
+.step-2 ul li:nth-of-type(8) a {
+    transform: rotate(-264deg);
+}
+
+.step-3 ul li:nth-of-type(1) {
+    transform: rotate(-96deg);
+}
+.step-3 ul li:nth-of-type(1) a {
+    transform: rotate(96deg);
+}
+
+.step-3 ul li:nth-of-type(2) {
+    transform: rotate(-51deg);
+}
+.step-3 ul li:nth-of-type(2) a {
+    transform: rotate(51deg);
+}
+
+.step-3 ul li:nth-of-type(3) {
+    transform: rotate(-6deg);
+}
+.step-3 ul li:nth-of-type(3) a {
+    transform: rotate(6deg);
+}
+
+.step-3 ul li:nth-of-type(4) {
+    transform: rotate(39deg);
+}
+.step-3 ul li:nth-of-type(4) a {
+    transform: rotate(-39deg);
+}
+
+.step-3 ul li:nth-of-type(5) {
+    transform: rotate(84deg);
+}
+.step-3 ul li:nth-of-type(5) a {
+    transform: rotate(-84deg);
+}
+
+.step-3 ul li:nth-of-type(6) {
+    transform: rotate(129deg);
+}
+.step-3 ul li:nth-of-type(6) a {
+    transform: rotate(-129deg);
+}
+
+.step-3 ul li:nth-of-type(7) {
+    transform: rotate(174deg);
+}
+.step-3 ul li:nth-of-type(7) a{
+    transform: rotate(-174deg);
+}
+
+.step-3 ul li:nth-of-type(8) {
+    transform: rotate(219deg);
+}
+.step-3 ul li:nth-of-type(8) a {
+    transform: rotate(-219deg);
+}
+
+.step-4 ul li:nth-of-type(1) {
+    transform: rotate(-141deg);
+}
+.step-4 ul li:nth-of-type(1) a {
+    transform: rotate(141deg);
+}
+
+.step-4 ul li:nth-of-type(2) {
+    transform: rotate(-96deg);
+}
+.step-4 ul li:nth-of-type(2) a {
+    transform: rotate(96deg);
+}
+
+.step-4 ul li:nth-of-type(3) {
+    transform: rotate(-51deg);
+}
+.step-4 ul li:nth-of-type(3) a {
+    transform: rotate(51deg);
+}
+
+.step-4 ul li:nth-of-type(4) {
+    transform: rotate(-6deg);
+}
+.step-4 ul li:nth-of-type(4) a {
+    transform: rotate(6deg);
+}
+
+.step-4 ul li:nth-of-type(5) {
+    transform: rotate(39deg);
+}
+.step-4 ul li:nth-of-type(5) a {
+    transform: rotate(-39deg);
+}
+
+.step-4 ul li:nth-of-type(6) {
+    transform: rotate(84deg);
+}
+.step-4 ul li:nth-of-type(6) a {
+    transform: rotate(-84deg);
+}
+
+.step-4 ul li:nth-of-type(7) {
+    transform: rotate(129deg);
+}
+.step-4 ul li:nth-of-type(7) a{
+    transform: rotate(-129deg);
+}
+
+.step-4 ul li:nth-of-type(8) {
+    transform: rotate(174deg);
+}
+.step-4 ul li:nth-of-type(8) a {
+    transform: rotate(-174deg);
+}
+
+.step-5 ul li:nth-of-type(1) {
+    transform: rotate(-186deg);
+}
+.step-5 ul li:nth-of-type(1) a {
+    transform: rotate(186deg);
+}
+
+.step-5 ul li:nth-of-type(2) {
+    transform: rotate(-141deg);
+}
+.step-5 ul li:nth-of-type(2) a {
+    transform: rotate(141deg);
+}
+
+.step-5 ul li:nth-of-type(3) {
+    transform: rotate(-96deg);
+}
+.step-5 ul li:nth-of-type(3) a {
+    transform: rotate(96deg);
+}
+
+.step-5 ul li:nth-of-type(4) {
+    transform: rotate(-51deg);
+}
+.step-5 ul li:nth-of-type(4) a {
+    transform: rotate(51deg);
+}
+
+.step-5 ul li:nth-of-type(5) {
+    transform: rotate(-6deg);
+}
+.step-5 ul li:nth-of-type(5) a {
+    transform: rotate(6deg);
+}
+
+.step-5 ul li:nth-of-type(6) {
+    transform: rotate(39deg);
+}
+.step-5 ul li:nth-of-type(6) a {
+    transform: rotate(-39deg);
+}
+
+.step-5 ul li:nth-of-type(7) {
+    transform: rotate(84deg);
+}
+.step-5 ul li:nth-of-type(7) a{
+    transform: rotate(-84deg);
+}
+
+.step-5 ul li:nth-of-type(8) {
+    transform: rotate(129deg);
+}
+.step-5 ul li:nth-of-type(8) a {
+    transform: rotate(-129deg);
+}
+
+.step-6 ul li:nth-of-type(1) {
+    transform: rotate(-231deg);
+}
+.step-6 ul li:nth-of-type(1) a {
+    transform: rotate(231deg);
+}
+
+.step-6 ul li:nth-of-type(2) {
+    transform: rotate(-186deg);
+}
+.step-6 ul li:nth-of-type(2) a {
+    transform: rotate(186deg);
+}
+
+.step-6 ul li:nth-of-type(3) {
+    transform: rotate(-141deg);
+}
+.step-6 ul li:nth-of-type(3) a {
+    transform: rotate(141deg);
+}
+
+.step-6 ul li:nth-of-type(4) {
+    transform: rotate(-96deg);
+}
+.step-6 ul li:nth-of-type(4) a {
+    transform: rotate(96deg);
+}
+
+.step-6 ul li:nth-of-type(5) {
+    transform: rotate(-51deg);
+}
+.step-6 ul li:nth-of-type(5) a {
+    transform: rotate(51deg);
+}
+
+.step-6 ul li:nth-of-type(6) {
+    transform: rotate(-6deg);
+}
+.step-6 ul li:nth-of-type(6) a {
+    transform: rotate(6deg);
+}
+
+.step-6 ul li:nth-of-type(7) {
+    transform: rotate(39deg);
+}
+.step-6 ul li:nth-of-type(7) a{
+    transform: rotate(-39deg);
+}
+
+.step-6 ul li:nth-of-type(8) {
+    transform: rotate(84deg);
+}
+.step-6 ul li:nth-of-type(8) a {
+    transform: rotate(-84deg);
+}
+
+.step-7 ul li:nth-of-type(1) {
+    transform: rotate(-276deg);
+}
+.step-7 ul li:nth-of-type(1) a {
+    transform: rotate(276deg);
+}
+
+.step-7 ul li:nth-of-type(2) {
+    transform: rotate(-231deg);
+}
+.step-7 ul li:nth-of-type(2) a {
+    transform: rotate(231deg);
+}
+
+.step-7 ul li:nth-of-type(3) {
+    transform: rotate(-186deg);
+}
+.step-7 ul li:nth-of-type(3) a {
+    transform: rotate(186deg);
+}
+
+.step-7 ul li:nth-of-type(4) {
+    transform: rotate(-141deg);
+}
+.step-7 ul li:nth-of-type(4) a {
+    transform: rotate(141deg);
+}
+
+.step-7 ul li:nth-of-type(5) {
+    transform: rotate(-96deg);
+}
+.step-7 ul li:nth-of-type(5) a {
+    transform: rotate(96deg);
+}
+
+.step-7 ul li:nth-of-type(6) {
+    transform: rotate(-51deg);
+}
+.step-7 ul li:nth-of-type(6) a {
+    transform: rotate(51deg);
+}
+
+.step-7 ul li:nth-of-type(7) {
+    transform: rotate(-6deg);
+}
+.step-7 ul li:nth-of-type(7) a{
+    transform: rotate(6deg);
+}
+.step-7 ul li:nth-of-type(8) {
+    transform: rotate(39deg);
+}
+.step-7 ul li:nth-of-type(8) a {
+    transform: rotate(-39deg);
+}
+
+.step-8 ul li:nth-of-type(1) {
+    transform: rotate(-321deg);
+}
+.step-8 ul li:nth-of-type(1) a {
+    transform: rotate(321deg);
+}
+
+.step-8 ul li:nth-of-type(2) {
+    transform: rotate(-276deg);
+}
+.step-8 ul li:nth-of-type(2) a {
+    transform: rotate(276deg);
+}
+
+.step-8 ul li:nth-of-type(3) {
+    transform: rotate(-231deg);
+}
+.step-8 ul li:nth-of-type(3) a {
+    transform: rotate(231deg);
+}
+
+.step-8 ul li:nth-of-type(4) {
+    transform: rotate(-186deg);
+}
+.step-8 ul li:nth-of-type(4) a {
+    transform: rotate(186deg);
+}
+
+.step-8 ul li:nth-of-type(5) {
+    transform: rotate(-141deg);
+}
+.step-8 ul li:nth-of-type(5) a {
+    transform: rotate(141deg);
+}
+
+.step-8 ul li:nth-of-type(6) {
+    transform: rotate(-96deg);
+}
+.step-8 ul li:nth-of-type(6) a {
+    transform: rotate(96deg);
+}
+
+.step-8 ul li:nth-of-type(7) {
+    transform: rotate(-51deg);
+}
+.step-8 ul li:nth-of-type(7) a{
+    transform: rotate(51deg);
+}
+
+.step-8 ul li:nth-of-type(8) {
+    transform: rotate(-6deg);
+}
+.step-8 ul li:nth-of-type(8) a {
+    transform: rotate(6deg);
+}

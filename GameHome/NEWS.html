@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Empire</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0" user-scalable=no />
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/new.css">
+</head>
+<body>
+<div id="header">
+    <div class="nav no_mobile ">
+        <img src="images/logo.png" alt="">
+        <div class="change_language lf">
+            <p class="a">Language</p>
+            <p class="b">语言</p>
+            <select class="one" name="" id="s1">
+                <option value="1">EN</option>
+                <option value="2">中文</option>
+            </select>
+        </div>
+        <ul id="nav_title" class="nav_titles a">
+            <li>HOME</li>
+            <li>FEATURES</li>
+            <li class="nav_title_hover">NEWS</li>
+            <li>MEDIA</li>
+			<li>WIKI</li>
+            <li>SUPPORT</li>
+            <!--<li>WIKI</li>-->
+        </ul>
+        <ul id="nav_title" class="nav_titles b">
+            <li>首页</li>
+            <li>特性</li>
+            <li class="nav_title_hover">动态</li>
+            <li>媒体</li>
+            <li>维基</li>
+            <li>支持</li>
+            <!--<li>WIKI</li>-->
+        </ul>
+    </div>
+    <div class="nav mobile" style="display: none">
+        <div id="mobile_logo"><img src="images/logo.png" alt=""></div>
+        <div id="mobile_nav"><img src="images/mobile_nav.png" alt=""></div>
+    </div>
+</div>
+<div id="content">
+   <div id="content_list">
+       <div id="content_list_left">
+           <span id="filter" class="a">Filter</span>
+           <span id="filter" class="b">过滤</span>
+           <ul id="filter_nav">
+               <!--<li class="filter_active">All</li>-->
+               <!--<li>Promotions</li>-->
+               <!--<li>What's news</li>-->
+           </ul>
+           <div class="Navbar-siteMenuLogo filter_Logo">
+               <img src="images/pic.png" alt="">
+               <a href="http://m.onelink.me/79b49f0e"><img src="images/app_store.png" alt=""></a>
+               <a href="http://m.onelink.me/eac2cdec"><img src="images/GOOGLE.png" alt=""></a>
+           </div>
+       </div>
+       <div id="content_list_box">
+           <div id="content_list_right">
+               <h3 class="a">NEWS\<span id="new_nav" class="a">All</span></h3>
+               <h3 class="b">新闻\<span id="new_nav" class="b">全部</span></h3>
+
+               <dl class="new_list">
+                   <!--<dd class="new_item">-->
+                   <!--<div class="new_pic">-->
+                   <!--<img src="images/new/new01.png" alt="">-->
+                   <!--</div>-->
+                   <!--<div class="new_item_content">-->
+                   <!--<h2>December 23 Update Notes</h2>-->
+                   <!--<p class="new_item_tit">The most threatened elite fleet of pirates will cruise through the galaxy looling for and striking.....</p>-->
+                   <!--<p class="show_more">show more >></p>-->
+                   <!--<div class="date">[promotions]<span> December 23,2017</span></div>-->
+                   <!--</div>-->
+                   <!--</dd>-->
+               </dl>
+               <!--<div class="new_btn">-->
+                   <!--<span>Next Page<em class="next_icon"></em></span>-->
+                   <!--<span><em class="pre_icon"></em>Previous Page</span>-->
+               <!--</div>-->
+           </div>
+       </div>
+   </div>
+</div>
+<div id="footer">
+    <div id="company_logo"><img src="images/company_logo.png" alt=""></div>
+    <div id="footer_title">
+        <ul>
+            <li onclick="jump('privacy-policy-20170516')"><span>Privacy Policy</span></li>
+            <!--<li><span>legal Documentation</span> |</li>-->
+            <!--<li class="footer_li_hover"><span>Contact Us</span></li>-->
+        </ul>
+        <p>
+            <a href="https://www.facebook.com/NovaEmpireGame" target="_blank"><img src="images/facebook.png" alt=""></a>
+            <a href="https://www.youtube.com/channel/UCgE7bsxQiIK5qfGxb8gdyiw" target="_blank"><img src="images/youtube.png" alt=""></a>
+            <a href="https://twitter.com/NovaEmpireGame" target="_blank"><img src="images/twiter.png" alt=""></a>
+            <a href="https://www.instagram.com/thenovaempire/" target="_blank"><img src="images/Instagram.png" alt=""></a>
+        </p>
+        <p style="color: #888;font-size: 14px">©2017-2018 Game Bear Technology. All rights reserved.</p>
+    </div>
+</div>
+<div class="Navbar-modalContent">
+    <div class="Navbar-left">
+        <div class="Navbar-siteMenuLogo">
+            <img src="images/Navbar-siteMenuLogo.png" alt="">
+        </div>
+        <ul id="accordion" class="accordion">
+
+            <li>
+
+                <div class="link"><span>HOME</span></div>
+
+                <ul class="submenu">
+
+
+
+                </ul>
+
+            </li>
+
+            <li>
+
+                <div class="link"></i><span>FEATURES</span><i class="fa fa-chevron-down"><img src="images/downList.png" alt=""></i></div>
+
+                <ul class="submenu">
+
+                    <!--<li>World View</li>-->
+
+                    <li>Guide</li>
+
+                    <li>Ships</li>
+
+                    <li>Feature</li>
+
+
+                </ul>
+
+            </li>
+
+            <li>
+
+                <div class="link"><span>NEWS</span><i class="fa fa-chevron-down"><img src="images/downList.png" alt=""></i></div>
+
+                <ul class="submenu">
+
+                    <li>All</li>
+
+                    <!--<li>Promotions</li>-->
+
+                    <!--<li>What's news</li>-->
+
+
+                </ul>
+
+            </li>
+
+            <li>
+
+                <div class="link"><span>MEDIA</span><i class="fa fa-chevron-down"><img src="images/downList.png" alt=""></i></div>
+
+                <ul class="submenu">
+
+                    <li>Videos</li>
+
+                    <li>Screenshots</li>
+
+                    <li>Concept Art</li>
+
+
+                </ul>
+
+            </li>
+
+            <li><div class="link"><span>SUPPORT</span></div>
+
+                <ul class="submenu">
+
+
+
+                </ul>
+
+            </li>
+
+            <!--<li><div class="link"><span>WIKI</span></div>-->
+
+            <!--<ul class="submenu">-->
+
+
+
+            <!--</ul>-->
+
+            <!--</li>-->
+
+        </ul>
+        <div class="Navbar-siteMenuLogo">
+            <a href="http://m.onelink.me/79b49f0e"><img src="images/app_store.png" alt=""></a>
+            <a href="http://m.onelink.me/eac2cdec"><img src="images/GOOGLE.png" alt=""></a>
+        </div>
+        <div class="Navbar-modalClose Navbar-icon">
+            <span></span>
+        </div>
+    </div>
+    <div class="Navbar-right">
+
+    </div>
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/index.js"></script>
+<script src="js/new.js"></script>
+<script src="js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100390974-2"></script>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-100390974-2');
+</script>
+</body>
+</html>
