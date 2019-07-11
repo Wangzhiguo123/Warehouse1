@@ -39,34 +39,36 @@ var addEnter = true,
     noRepeat = true,
     jobArr = [],
     phoneArr = [],
+    arr = [],
     tdStr = '',
     trIndex,
     hasNullMes = false,
     tarInp = $('#xztb input'),
+    // arr=[],
     tarSel = $('#xztb select');
-var str = [
-    {'name':'张三','id':22,'tel':13547895624,'mc':'------','dj':'三级','sf':'专家'},
-    {'name':'李四','id':17,'tel':13547895623,'mc':'------','dj':'三级','sf':'专家'},
-    {'name':'王五','id':28,'tel':13547895621,'mc':'------','dj':'三级','sf':'专家'},
-    {'name':'赵六','id':9,'tel':13547895622,'mc':'------','dj':'三级','sf':'专家'},
-    {'name':'苏七','id':40,'tel':13547895629,'mc':'------','dj':'三级','sf':'专家'}
-]
-$.each(str,function (data,item) {
-    $('#show_tbody').append(
-        '<tr>'+
-        '<td>'+item.name+'</td>'+
-        '<td>'+item.id+'</td>'+
-        '<td>'+item.tel+'</td>'+
-        '<td>'+item.mc+'</td>'+
-        '<td>'+item.dj+'</td>'+
-        '<td>'+item.sf+'</td>'+
-        '<td>'+
-        '<a href="#" class="edit">'+'编辑'+'</a>'+
-        '<a href="#" class="del">'+'删除'+'</a>'+
-        '</td>'+
-        '</tr>'
-    );
-})
+
+    myAjax('get','/proxy',{},(res)=>{
+    arr.push(res)
+        // return(sj())
+    // container.innerHTML = res.name;
+        $.each(arr[0],function sj(data,item) {
+            $('#show_tbody').append(
+                '<tr>'+
+                '<td>'+item.name+'</td>'+
+                '<td>'+item.id+'</td>'+
+                '<td>'+item.tel+'</td>'+
+                '<td>'+item.mc+'</td>'+
+                '<td>'+item.dj+'</td>'+
+                '<td>'+item.sf+'</td>'+
+                '<td>'+
+                '<a href="#" class="edit">'+'编辑'+'</a>'+
+                '<a href="#" class="del">'+'删除'+'</a>'+
+                '</td>'+
+                '</tr>'
+            );
+        })
+        methods.wzg('tr>td:last-child>:last-child')
+},'json');
 
 var methods = {
 
@@ -98,7 +100,7 @@ var methods = {
 
         }
     },
-    // 测试
+    // 代理删除
     wzg: function (dom) {
     console.log('dom1')
     $(dom).click(function () {
