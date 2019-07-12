@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index3</title>
+</head>
+<style>
+</style>
+<!--<img src="img/ch_icon.png" alt="">-->
+<img src="" alt="">
+<img src="" alt="">
+<div class="easy"></div>
+<input type="text" class="ace">
+<button class="ace_2">提交</button>
+<body>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/a.js"></script>
+<script>
+    var x
+
+    // console.log(6**3)
+
+
+    $('.ace_2').click(function () {
+        var aa = $('.ace').val()
+        // 三元运算符
+        aa>18 ? console.log(aa+'>18'):console.log(aa+'<18')
+    })
+    // $('p').parent('.selected')
+    
+    wzg1()
+    let s = 'hello'
+    var k ='汪'
+    s.startsWith('hello')
+    console.log(s.startsWith('hello'))
+    console.log(s.repeat(2))
+    console.log(k.length)
+
+var foo = function (value) {
+    console.log('foo:'+ value)
+}
+    var callbacks2 = $.Callbacks();
+
+    callbacks2.add(foo);
+    callbacks2.fire('aha')
+    callbacks2.fire('adc');
+    console.log(callbacks2.fired())
+
+
+    let set = new Set([
+        'red','green','blue'
+    ]);
+    let arr =[...set];
+    // 2400
+    // 3200
+    // 1.5times
+    // cpu   graphics  |box  power   ssd                memory
+    // 1487 +  1239 +  |130 + 115 +  246(256g)+416(512g)+ 393
+    // 1114
+    // gtx1660 1319
+    // 180/0.2=900days
+
+    // free:- 125(Point card)
+    // total: about 3610(rx 590 8g) - 100(Point card)
+    //              899(rx 580 8g 2048sp/2304sp) (lds score:15w-16w)     lds score
+    // 3610-125(Point card)-5 = 3480 20w  price：↑26%  performance：↑(25%--33%)
+    //              vs 2400             price：↑45%  performance：↑40%
+//     3000
+//     3930+416
+//     radiator:37
+    // display:452,total_about:4353
+    // var that = this
+    // that.data =this.data
+// var data =100
+//     console.log('主板'+1487+'显卡'+1114+'机箱'+130+'电源'+115+'固态一'+246+'固态二'+416+'内存'+393+'显示器'+452+'    '+
+//     'total:'+parseInt(1487+1114+130+115+246+416+393+452+37)
+//     )
+    var [a,b,c] = [1,3,5]
+    console.log('这是a:'+a,'这是b:'+b,'这是c:'+c)
+    var sk = [9,9,a,2]
+var x =4
+    x **= 3//求幂运算符 ‘**’
+    console.log(x)
+    console.log(sk.includes(a))
+    console.log(10**2)
+    function a() {
+        var data = 100
+        console.log(aaaaa)
+        // number(1.11)
+    }
+// 0.1*3*365*5=547.5
+//     547.5*0.55=301.125
+
+
+function b(){
+        console.log('bbbbb')
+    }
+    // let [a, b] = await Promise.all([a(), b()]);
+$(function(data){
+    // console.log(data)
+})
+    // const config = {
+        // entry:''
+    // }
+
+
+    // $('img').each(function (i) {
+        // this.src='test'+i+'.jpg'
+    // })
+
+
+$('').click(function () {
+    $('div').show('slow');
+    // $('div').animate()
+})
+console.log('------------------------------------------------------------')
+    // a sample logging function to be added to a callbacks list
+    var foo = function( value ){
+        console.log( 'foo:' + value );
+    }
+
+    var callbacks = $.Callbacks();
+
+    // add the function 'foo' to the list
+    callbacks.add( foo );
+
+    // fire the items on the list
+    callbacks.fire( 'hello' ); // outputs: 'foo: hello'
+    callbacks.fire( 'world '); // outputs: 'foo: world'
+
+    // test to establish if the callbacks have been called
+    console.log( callbacks.fired() );
+</script>
+</body>
+</html>

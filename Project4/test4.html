@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test4</title>
+    <style>
+        #schname{
+            background-color:#ffffff;
+            border: 1px solid #e4e4e4;
+            /*height: 30px;*/
+            position: absolute;
+            /*display: none;*/
+            z-index: 9999999;
+        }
+        #schname tr:hover{
+            background-color: #e4e4e4;
+            cursor: pointer;
+        }
+        #schname tr td{
+
+            padding-right: 30px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="seachgroup">
+        <input type="text" id="named">
+        <table  id="schname" >
+
+        </table>
+    </div>
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    var websites = [
+        ["1231","账上1","1342333111"],
+        ["1232","账上2","452354234234"],
+        ["1233","账上3","33333344444"],
+        ["1234","账上4","55555555"],
+        ["99a22222222222","ak4","s5555555"],
+        ["99a2111111111111111111","ak4","s5555555"],
+    ];
+    $(function() {
+
+//使得下拉框的宽度和输入框保持一致
+        $("#schname").css("width",$("#named").width());
+
+//监听输入框
+        $("#named").keyup(function (){
+            var html="";
+            if($("#named").val().length>0){
+
+                var len=websites.length>10?10:websites.length;//最多显示10行
+                for(var i=0;i< len;i++){
+                    if(websites[i][0].toLowerCase().indexOf($("#named").val().toLowerCase())>=0)
+                    {
+                        html+="<tr><td style='color: red;font-weight: bold'>"+websites[i][0]+"</td></tr>";
+                    }
+                    else if(websites[i][0].toLowerCase().indexOf($("#named").val().toLowerCase())>=0 && websites[i][1].toLowerCase().indexOf($("#named").val().toLowerCase())>=0 && websites[i][2].toLowerCase().indexOf($("#named").val().toLowerCase())<0)
+                    {
+                        html+="<tr><td style='color: red;font-weight: bold'>"+websites[i][0]+"</td><td style='color: blue;font-weight: bold'>"+websites[i][1]+"</td><td >"+websites[i][2]+"</td></tr>";
+                    }
+                    else if(websites[i][0].toLowerCase().indexOf($("#named").val().toLowerCase())>=0 && websites[i][1].toLowerCase().indexOf($("#named").val().toLowerCase())<0 && websites[i][2].toLowerCase().indexOf($("#named").val().toLowerCase())>=0)
+                    {
+                        html+="<tr><td style='color: red;font-weight: bold'>"+websites[i][0]+"</td><td >"+websites[i][1]+"</td><td style='color: pink;font-weight: bold'>"+websites[i][2]+"</td></tr>";
+                    }
+                    else if(websites[i][0].toLowerCase().indexOf($("#named").val().toLowerCase())<0 && websites[i][1].toLowerCase().indexOf($("#named").val().toLowerCase())>=0 && websites[i][2].toLowerCase().indexOf($("#named").val().toLowerCase())>=0)
+                    {
+                        html+="<tr><td >"+websites[i][0]+"</td><td style='color: blue;font-weight: bold'>"+websites[i][1]+"</td><td style='color: pink;font-weight: bold' >"+websites[i][2]+"</td></tr>";
+                    }
+
+                    else if(websites[i][0].toLowerCase().indexOf($("#named").val().toLowerCase())<0 && websites[i][1].toLowerCase().indexOf($("#named").val().toLowerCase())>=0 && websites[i][2].toLowerCase().indexOf($("#named").val().toLowerCase())<0)
+                    {
+                        html+="<tr><td>"+websites[i][0]+"</td><td  style='color: blue';>"+websites[i][1]+"</td><td font-weight: bold'>"+websites[i][2]+"</td></tr>";
+                    }
+                    else if(websites[i][0].toLowerCase().indexOf($("#named").val().toLowerCase())>=0 && websites[i][1].toLowerCase().indexOf($("#named").val().toLowerCase())<0 && websites[i][2].toLowerCase().indexOf($("#named").val().toLowerCase())<0)
+                    {
+                        html+="<tr><td style='color: red;font-weight: bold'>"+websites[i][0]+"</td><td >"+websites[i][1]+"</td><td >"+websites[i][2]+"</td></tr>";
+                    }
+                    else if(websites[i][0].toLowerCase().indexOf($("#named").val().toLowerCase())<0 && websites[i][1].toLowerCase().indexOf($("#named").val().toLowerCase())<0 && websites[i][2].toLowerCase().indexOf($("#named").val().toLowerCase())>=0)
+                    {
+                        html+="<tr><td >"+websites[i][0]+"</td><td >"+websites[i][1]+"</td><td style='color: pink;font-weight: bold'>"+websites[i][2]+"</td></tr>";
+                    }
+
+                }
+                if($("#schname").html()==""){
+                    html+="<tr><td >无对应用户</td></tr>";
+                }
+                $("#schname").html(html);
+                $("#schname").css("display","table");
+            }else{
+                $("#schname").css("display","none");
+            }
+
+        });
+
+//      这里是点击事件处理
+        $('#schname').on('click', 'tr', function() {
+
+            if($(this).text()=="无对应用户"){
+                return;//没有匹配值返回否则做相应处理
+            }
+            $("#named").val($(this).text());
+            $("#schname").css("display","none");
+        });
+
+    });
+</script>
+</body>
+</html>

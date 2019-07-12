@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index4</title>
+    <style>
+        table td:nth-child(odd){
+            background: #1d7db1;
+        }
+        td,th{
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+
+            text-align: center;
+            border:1px solid gainsboro;
+            color: gray();
+        }
+         td:last-child{
+            color: red;
+             width: 100px;
+             display: flex;
+             justify-content: space-around;
+             cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<input class="ee" type="text" placeholder="输入关键字查询" name="gjz">
+<button class="search">查询</button>
+<table class="a">
+    <tr>
+        <th style="color: red">姓名</th>
+        <th>年龄</th>
+        <th>成绩</th>
+        <th>操作</th>
+    </tr>
+</table>
+<div class="new">新增</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    var str = [
+        {'name':'zs','age':22,'score':100},
+        {'name':'ls','age':17,'score':96},
+        {'name':'ww','age':28,'score':78},
+        {'name':'zl','age':9,'score':44},
+        {'name':'sq','age':40,'score':88},
+    ]
+    $(function () {
+        data()
+    })
+    console.log(str)
+    $.each(str,function (wzg,item) {
+        $('.a').append(
+            '<tr>'+
+                '<td>'+item.name+'</td>'+
+            '<td>'+item.age+'</td>'+
+                '<td>'+item.score+'</td>'+
+            '<td>'+
+                '<span>'+'删除'+'</span>'+
+                '<span>'+'修改'+'</span>'+
+            '</td>'+
+                '</tr>'
+        );
+    })
+
+    // 新增
+    $('.new').click(function () {
+        var str =
+            '<tr>'+
+            '<td>'+'</td>'+
+            '<td>'+'</td>'+
+            '<td>'+'</td>'+
+            '<td>'+
+            '<span>'+'删除'+'</span>'+
+            '<span>'+'修改'+'</span>'+
+            '</td>'+
+            '</tr>'
+        $('.a').append(str)
+        dels('tr>td:last-child>:first-child')
+        data();
+        })
+    // 删除
+    $('tr>td:last-child>:first-child').click(function del() {
+        console.log(this)
+        $(this).parent().parent().remove();
+
+    // obj = $("tr > td:last-child>:first-child")
+    })
+    function dels(dom) {
+        $(dom).click(function () {
+            $(this).parent().parent().remove();
+        })
+    }
+    function data() {
+        console.log('获取数据')
+    }
+$('.search').click( function () {
+    var name = $(".ee").val()
+console.log(name)
+})
+
+</script>
+</body>
+</html>

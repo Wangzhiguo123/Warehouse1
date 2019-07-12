@@ -5,13 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-
+<style>
+    #container{
+        height: 1000px;
+    }
+</style>
 <!--<input type="text" id="textId">-->
 <!--4276.44-1500=2776.44-->
 <!--3480-->
 <!--<button onclick="wzg()">提交</button>-->
 
-<input input style="width:200px;height:40px" type="text" value="" id="textId">
+<input style="width:200px;height:40px" type="text" value="" id="textId">
 <button onclick="sc()">获取</button>
 <div>------------------------------------ajax提交----------------------------------------</div>
 <input input style="width:200px;height:40px" type="text" value="" id="textId2" placeholder="ajax提交">
@@ -20,8 +24,10 @@
     些登录或者不用权限的公用的页面。 当用户登录后，获取用role，将role和路由表每个页
     面的需要的权限作比较，生成最终用户可访问的路由表。</div>
 
+<div id="container"></div>
 <!--封装ajax请求数据地址：https://blog.csdn.net/u012803663/article/details/82312619-->
 <script src="js/jquery-1.11.3.js"></script>
+<script src="js/a.js"></script>
 <script>
     // 方法一: js设置显示文字长度
     // window.onload = function(){
@@ -32,7 +38,6 @@
     //         text .innerHTML = str.substring(0,textLeng )+"... ...";
     //     }
     // }
-
 // 方法二: jq设置显示文字长度
     $(function(){
         var text = $(".test1").text();
@@ -57,69 +62,6 @@
         //
         // });
     });
-
-    function myAjax(method,url,data,callback,type){
-        //创建兼容 XMLHttpRequest 对象
-        var xhr;
-        if (window.XMLHttpRequest){//IE7+, Firefox, Chrome, Opera, Safari
-            xhr=new XMLHttpRequest();
-        }else{// code for IE6, IE5
-            xhr=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-
-        //给请求添加状态变化事件处理函数
-        xhr.onreadystatechange = function (){
-            //判断状态码
-            if(xhr.status==200 && xhr.readyState==4){
-                //根据type参数，判断返回的内容需要进行怎样的处理
-                if(type=='json'){
-                    //获得 json 形式的响应数据，并使用parse方法解析
-                    var res = JSON.parse(xhr.responseText);
-                }else if(type=='xml'){
-                    //获得 XML 形式的响应数据
-                    var res = responseXML;
-                }else{
-                    //获得字符串形式的响应数据
-                    var res = xhr.responseText;
-                }
-                //调用回调函数,并将响应数据传入回调函数
-                callback(res);
-            }
-        };
-
-        //判断data是否有数据
-        var param = '';
-        //这里使用stringify方法将js对象格式化为json字符串
-        if(JSON.stringify(data) != '{}'){
-            url += '?';
-            for(var i in data){
-                param += i+'='+data[i]+'&';   //将js对象重组，拼接成url参数存入param变量中
-            }
-            //使用slice函数提取一部分字符串，这里主要是为了去除拼接的最后一个&字符
-            //slice函数：返回一个新的字符串。包括字符串从 start 开始（包括 start）到 end 结束（不包括 end）为止的所有字符。
-            param = param.slice(0,param.length-1);
-        }
-
-        //判断method是否为get
-        if(method == "get"){
-            //是则将数据拼接在url后面
-            url = url+param;
-        }
-        //初始化请求
-        url = 'https://easy-mock.com/mock/5caff09431c675529c365621/example'+url
-        xhr.open(method,url,true);
-
-        //如果method == post
-        if(method == "post"){
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            //发送请求
-            xhr.send(param);
-        }else{
-            //发送请求
-            xhr.send(null);
-        }
-
-    }
     // -------调用--------
     myAjax('post','/mock',{},(res)=>{
         console.log(res);
@@ -143,8 +85,8 @@
                 data:data,
                 dataType:'json',
                 success:function(data){
-                    console.log('调用成功')
-                    console.log(data)
+                    // console.log('调用成功')
+                    // console.log(data)
                     // try {
                     //     if(data.code == 0){
                     //         mui.alert('保存成功')
@@ -199,6 +141,50 @@
             },
         });
     }
+
+
+
+
+
+
+    var loadDiv = '<div class="loading">' +
+            // 加载图片+
+        // '<img src="loading.gif" width="100px" height="100px" >' +
+        '</div>';
+    //监听窗口的鼠标滚轮事件
+    $(window).scroll(function() {
+        // console.log(1111)
+        //当滚轮滚动到文档最末位，也就是拉到了最底下
+        // console.log('滑动的高度:'+$(window).scrollTop())
+        // console.log('document的高度:'+$(document).height())
+        // console.log('window的高度:'+$(window).height())
+        if( $(window).scrollTop() == $(document).height() - $(window).height()-1 ) {
+            //避免多次滚轮触发事件造成图片的多次追加，加上此判断
+            console.log('滑动了')
+            if($('#container .loading').length == 0) {
+                //将图片插入到内部的内容最末位
+                $('#container').append(loadDiv);
+                console.log("成功")
+            }
+            //发送ajax请求获取数据
+            // $.ajax({
+            //     type: "POST",
+            //     url: "load.php",
+            //     success: function(data){
+            //         //加载成功,移除用于提示用户的动态gif图片
+            //         $('#container .loading').remove();
+            //         //追加后端返回的数据
+            //         $('#container').append(data);
+            //     }
+            // });
+        }
+    });
+
+
+
+
+
+
 
     // console.log('---------------js运行机制题--------------------')
     // setTimeout(function() {

@@ -69,6 +69,35 @@
             font-size: 0.18rem;
             /*font-size: calc(112.5% + 4 * (100vw - 1000px) / 586);*/
         }
+body{
+    margin: 0px;
+}
+        ul{
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+            position: absolute;
+            /*width: 100%;*/
+            margin: 0;
+            z-index: 10;
+        }
+        li{
+            border: 1px solid black;
+        }
+        .if{
+            position: relative;
+            z-index: 9;
+            border: 0;
+            height: 10rem;
+        }
+        .footer{
+            position: absolute;
+            bottom: 0;
+            z-index: 9;
+            height: 200px;
+            width: 100%;
+            background: red;
+        }
     </style>
 </head>
 <body>
@@ -80,5 +109,26 @@
         你说，这么洒脱的效果，什么手机各种分辨率适配还是问题吗？
         是问题吗？
 </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <iframe class="if" src="a1.html" frameborder="1" width="100%" height="100%"></iframe>
+<!--<div class="footer"></div>-->
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    // $("iframe").attr('src','a1.html')
+    $('li').click(function () {
+        // if(){
+        //
+        // }
+        $(this).css('color','red').siblings().css('color','black')
+        // s=$(this).index()+1+'.html'
+        // console.log('a'+$(this).text()+'.html')
+        $("iframe").attr('src','a'+$(this).text()+'.html')
+    })
+    console.log($(this).text())
+</script>
 </body>
 </html>
