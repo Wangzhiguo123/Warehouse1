@@ -1,11 +1,26 @@
 <template>
+  <div>
+    父组件
   <div class="hello">
     <!--父组件:-->
+<!--<keep-alive>11111111</keep-alive>-->
+    <keep-alive>
+
+
+    </keep-alive>
+    <div class="" >s</div>
+    -----------------------------子组件-------------------------------
+    <!--<keep-alive>-->
     <ace @Son="parents"></ace>
     <!--son传来的值:{{message}}-->
 <div v-for="a in message">
   <span>{{a.name}}</span>
   <a @click="wzg">{{a.url}}</a>
+  <div class="easy">
+    <!--{{easy}}-->
+    <div v-bind:'{{a.name}}'></div>
+  </div>
+    <!--</keep-alive>-->
   </div>
     <!--{{message}}-->
     <!--<ace v-bind:message="data"></ace>-->
@@ -30,9 +45,11 @@ export default {
     wzg(e){
       // this.$router.push(e.target.innerText)
       window.location.replace(e.target.innerText);//重定向
+
     }
   },
   mounted() {
+    console.log('99a2')
     this.$axios.get('/proxy',{
     })
       .then(res=>{
@@ -44,6 +61,15 @@ export default {
         console.log(err)
       })
 
+    //
+    this.$axios.post('/mock',{
+    })
+      .then(res=>{
+        console.log(res)
+      })
+      .catch(err=>{
+        console.log(err)
+      })
 
 
     // this.$axios.get('/username?cmd=111',{
@@ -86,6 +112,10 @@ export default {
     //   })
 
 
+  },
+  // 组件实例化之后
+  created(){
+    console.log('99a2')
   }
 }
 </script>

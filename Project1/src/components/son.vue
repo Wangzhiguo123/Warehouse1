@@ -4,7 +4,7 @@
       <button @click="Click">发送</button>
 <div value="123" @click="wzg">测试</div>
       <p>{{data}}</p>
-      <div>123456789</div>
+      <div>这是son组件</div>
     </div>
 </template>
 
@@ -24,7 +24,10 @@
         wzg(event){
             console.log(event.currentTarget)
         }
-      }
+      },
+      actions:{
+
+      },
     }
 </script>
 
