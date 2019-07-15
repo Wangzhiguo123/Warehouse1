@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <title>Reward configuration</title>
 </head>
+<style>
+    .k{
+        border: 1px solid black;
+        width: 300px;
+        height: 300px;
+    }
+</style>
 <body>
 <div>
+    <div class="k"></div>
     <input type="text" class="a" id="ex">
     <div class="a_1"></div>
+    <input class="b" type=" text" placeholder="测试多行数据">
+    <button class="tj">data</button>
     <!---------------------------------------------------->
-
-
-
+    <!--一键复制-->
+    <div id="copy1" class="copy">99A2</div>
+    <button class="tj2">复制</button>
 
 
 </div>
@@ -20,6 +30,39 @@
     $('.a').on('input',function () {
         $(".a_1").text($(this).val()*5);
     })
+// ------------------------
+// 单文本框多数据提交
+    $('.tj').click(function () {
+        console.log($('.b').val().split(" "))
+        // var arr=$('.b').val().split(" ")
+        // console.log(arr)
+        // console.log($('.b').val().split(","))
+    })
+
+//       一键复制
+    $('.tj2').click(function () {
+
+    })
+    var s = $('.copy').text()
+    console.log(s)
+    var clipboard = new Clipboard('s',{
+        text: function(trigger) {
+            alert("复制成功！");
+            // return trigger.getAttribute('s');
+        }
+    });
+
+
+
+    // function setCopyLink() {
+    //     $("#txt_CopyLink").val(document.URL)
+    //         .focus(function () {
+    //             $(this).css({ "background-color": "#ddd" }).select();
+    //             copyToClipboard($("#txt_CopyLink").val());
+    //         }).blur(function () {
+    //         $(this).css({ "background-color": "#fff" });
+    //     });
+    // }
 </script>
 </body>
 </html>
