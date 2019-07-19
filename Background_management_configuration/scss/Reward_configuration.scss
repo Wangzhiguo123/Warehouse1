@@ -1,0 +1,156 @@
+.title {
+  padding: 12px 0;
+  width: 100%;
+  margin: 0 0 50px 0;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  background: #3ea2ee;
+}
+.person_search {
+  height: auto;
+  overflow: hidden;
+  background: #fff;
+  margin: 20px 0;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+//最大盒子
+.box {
+  //margin-bottom: 50px;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+}
+.search_input {
+  /* width: 200px; */
+  height: 35px;
+  line-height: 35px;
+  margin: 15px 10px 0 0;
+  float: left;
+}
+.input-group {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+}
+.search_input span {
+  margin-left: 15px;
+  font-size: 13px;
+  color: #666;
+  display: inline-block;
+  float: left;
+}
+.form-control {
+  color: #3ea2ee !important;
+}
+.search_input {
+border-radius: 3px;
+  height: 35px;
+  line-height: 35px;
+  margin: 15px 10px 0 0;
+  float: left;
+}
+//.search_input
+.search_input .search_btn {
+  width: 80px;
+  height: 35px;
+  font-size: 13px;
+  background: #3ea2ee;
+  border: none;
+  border-radius: 3px;
+  margin-left: 15px;
+  line-height: 1.0;
+  text-align: center;
+}
+.search_btn{
+  color: white;
+}
+.form-control{
+  border-radius: 3px;
+  border: 1px solid #dfdfdf;
+  text-indent: 1em;
+  width: 5rem;
+  font-size: 0.1rem;
+}
+.box_left{
+  width: 60%;
+}
+.box_right{
+  width: 38%;
+}
+.reward{
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.edit{
+  cursor: pointer;
+}
+.no_data{
+  text-align: center;
+}
+.bjk{
+  background: white;
+  //border: 1px solid #f0f0f0;
+}
+#xztb{
+  height: 200px;
+}
+.a1>tr{
+  width: 200px;
+}
+.srk{
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  text-indent: 1em;
+}
+.config{
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0 ;
+}
+.config div{
+  margin: 10px 0;
+}
+.config div:nth-child(1){
+  color: #ffc42e;
+  font-size: 20px;
+}
+.return_search{
+  display: flex;
+  align-items: center;
+}
+.return_search>div:nth-child(1){
+  width: 50%;
+}
+.select{
+  font-size: 0.9rem;
+}
+.select>div{
+  margin: 10px 0;
+}
+.select>input{
+  width: 70%;
+  border: 1px solid #dfdfdf;
+  text-indent: 1em;
+  height: 2rem;
+  border-radius: 3px;
+}
+.select_search{
+  width: 20%;
+  height: 40px;
+  background: #3ea2ee;
+  border: none;
+  border-radius: 3px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}

@@ -1,0 +1,72 @@
+@import "utils","variable";
+@include html-font-size();
+p.intro {
+  font-size: convertPxFormUI(64px);
+}
+
+p.another-intro {
+  font-size: convertPxFormUI(60px);
+  height: convertPxFormUI(100px);
+  margin: convertPxFormUI(32px);
+}
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: 1.5;
+}
+.table th{
+  border-top: 1px solid #f0f0f0 !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  color: #595e66 !important;
+  background: #f5f7fa;
+  font-size: 13px;
+  text-align: center;
+  font-weight: 600 !important;
+}
+.table td, .table th{
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+.table td, .table th{
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  width: 20%;
+}
+
+.table td{
+  color: #61666e;
+  font-size: 12px;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+.del{
+  cursor: pointer;
+}
+.del:hover{
+  color: red;
+}
+table{
+  display: block;
+  height: 30rem;
+  overflow-y: scroll;
+}
+a{
+  color: #479eff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.table tr:hover{
+  background: #f5f7fa !important;
+}
+body{
+  margin: 0px;
+}
+

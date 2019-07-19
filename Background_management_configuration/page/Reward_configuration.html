@@ -3,66 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <title>Reward configuration</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/Reward_configuration.css">
 </head>
-<style>
-    .k{
-        border: 1px solid black;
-        width: 300px;
-        height: 300px;
-    }
-</style>
 <body>
-<div>
-    <div class="k"></div>
-    <input type="text" class="a" id="ex">
-    <div class="a_1"></div>
-    <input class="b" type=" text" placeholder="测试多行数据">
-    <button class="tj">data</button>
-    <!---------------------------------------------------->
-    <!--一键复制-->
-    <div id="copy1" class="copy">99A2</div>
-    <button class="tj2">复制</button>
-
-
+<!--<div>-->
+    <!--<div class="k"></div>-->
+    <!--<input type="text" class="a" id="ex">-->
+    <!--<div class="a_1"></div>-->
+    <!--<input class="b" type=" text" placeholder="测试多行数据">-->
+    <!--<button class="tj">data</button>-->
+    <!--&lt;!&ndash;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+    <!--&lt;!&ndash;一键复制&ndash;&gt;-->
+    <!--<div id="copy1" class="copy">99A2</div>-->
+    <!--<button class="tj2">复制</button>-->
+<!--</div>-->
+<!--表格列表-->
+<div class="title">奖励配置</div>
+<div class="box">
+    <!--搜索输入框及查询、重置按钮-->
+    <div class="box_left">
+    <div class="container content_width">
+        <div class="person_search">
+            <div class="search_input">
+                <div class="input-group mb-3">
+                    <span>type：</span>
+                    <input id="Ktext" type="text" class="form-control" placeholder="资源">
+                </div>
+            </div>
+            <div class="search_input">
+                <div class="input-group mb-3" hidden>
+                    <span>id：</span>
+                    <input id="job_num" type="text" class="form-control" placeholder="单行输入">
+                </div>
+            </div>
+            <div class="search_input">
+                <div class="input-group mb-3" hidden>
+                    <span>name：</span>
+                    <input id="job_num2" type="text" class="form-control" placeholder="单行输入">
+                </div>
+            </div>
+            <div class="search_input">
+                <button class="btn btn-primary search_btn" type="button" id="search_btn">筛选</button>
+                <!--<button class="btn btn-primary search_btn" type="button" id="back_btn">重置</button>-->
+            </div>
+        </div>
+        <div class="line"></div>
+    </div>
+<table id="tb" class="table">
+    <!--<div>搜索</div>-->
+    <thead>
+    <tr>
+        <th>图标</th>
+        <th>reward_type</th>
+        <th>reward_id</th>
+        <th>名称</th>
+        <th>介绍</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody id="show_tbody">
+    <!--渲染数据-->
+    </tbody>
+</table>
+    </div>
+    <div class="box_right">
+        <div class="bjk">
+            <div class="person_search reward">奖励包</div>
+            <table id="xztb" class="table">
+                <!--新修改弹窗的样式-->
+                <thead>
+                <tr>
+                    <th>图标</th>
+                    <th>名称</th>
+                    <th>type</th>
+                    <th>数量</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody class="a1">
+                <!--data-->
+                </tbody>
+            </table>
+            <div class="config">
+                <div>配置</div>
+                <div class="config_1 sk"><strong>type</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="config_2 sk"><strong>id</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="config_3 sk"><strong>count</strong>&nbsp;&nbsp;&nbsp;</div>
+            </div>
+        </div>
+        <!--反向查询-->
+        <div class="return_search">
+        <div>
+            <div class="select"><div>type</div><input type="text"></div>
+            <div class="select"><div>id</div><input type="text"></div>
+            <div class="select"><div>count</div><input type="text"></div>
+        </div>
+        <div class="select_search">反查</div>
+        </div>
+    </div>
 </div>
+
+<!--<script src="../js/bootbox.min.js"></script>-->
 <script src="../js/jquery.min.js"></script>
+<script src="../js/myajax.js"></script>
+<script src="../js/Reward_configuration.js"></script>
 <script>
-    $('.a').on('input',function () {
-        $(".a_1").text($(this).val()*5);
-    })
+    // $('.a').on('input',function () {
+    //     $(".config_1 span").text($(this).val());
+    // })
 // ------------------------
 // 单文本框多数据提交
     $('.tj').click(function () {
         console.log($('.b').val().split(" "))
-        // var arr=$('.b').val().split(" ")
-        // console.log(arr)
-        // console.log($('.b').val().split(","))
     })
 
-//       一键复制
-    $('.tj2').click(function () {
 
-    })
-    var s = $('.copy').text()
-    console.log(s)
-    var clipboard = new Clipboard('s',{
-        text: function(trigger) {
-            alert("复制成功！");
-            // return trigger.getAttribute('s');
-        }
-    });
-
-
-
-    // function setCopyLink() {
-    //     $("#txt_CopyLink").val(document.URL)
-    //         .focus(function () {
-    //             $(this).css({ "background-color": "#ddd" }).select();
-    //             copyToClipboard($("#txt_CopyLink").val());
-    //         }).blur(function () {
-    //         $(this).css({ "background-color": "#fff" });
-    //     });
+    // 10.10.77.36:8080/rewards
+    // https://easy-mock.com/mock/5caff09431c675529c365621/example/proxy
+    // $.ajax({
+    //     url:'10.10.77.36:8080/rewards',//地址
+    //     // url:'https://easy-mock.com/mock/5caff09431c675529c365621/example/proxy',
+    //     dataType:'jsonp',//数据类型
+    //     type:'POST',//类型
+    //     // type:'GET',
+    //     timeout:20000,//超时
+    //     //请求成功
+    //     success:function(data,status){
+    //         console.log(data)
+    //     },
+    //     //失败/超时
+    //     error:function(XMLHttpRequest,textStatus,errorThrown){
+    //         console.log(errorThrown)
+    //         if(textStatus==='timeout'){
+    //             alert('請求超時');
+    //             setTimeout(function(){
+    //                 alert('重新请求');
+    //             },2000);
+    //         }
+    //     }
+    // })
+    // $.ajax({
+    //     type:"POST",
+    //     // url:"service.php?number="+$("#keyword").val(),
+    //     url:'https://10.10.77.36:8080/rewards',
+    //     dataType:"jsonp",
+    //     // jsonp:'callback',
+    //     success:function(data){
+    //         console.log('成功')
+    //         console.log(data)
+    //     if(data.success){
+    //
+    //         // $("searchResult").html(data.msg);
+    //     }else{
+    //         $("#searchResult").html("出现错误：" + data.msg);
+    //     }
+    // },
+    // error:function(jqXHR){
+    //         console.log(error)
+    //     alert("发生错误："+ jqXHR.status);
     // }
+    // });
 </script>
 </body>
 </html>
