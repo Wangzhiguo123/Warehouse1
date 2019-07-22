@@ -2,7 +2,7 @@
 var arr=[],
     newdata=[],
     tarInp = $('#xztb span'),
-    config = $('.config span'),
+    // config = $('.config span'),
     z = 0,
     tarSel = $('.a1 input');
 myAjax('get','/proxy',{},(res)=>{
@@ -37,6 +37,7 @@ $('#show_tbody').on('click','.edit', function () {
     addEnter = false;
     $(this).parents('tr').addClass('has_case');
     methods.editHandle(trIndex);
+    console.log(123)
 })
 // 删除事件
     function wzg(dom) {
@@ -74,9 +75,17 @@ var methods = {
         }
         console.log('type:'+nameVal+'id:'+id)
         console.log(name)
+        var param ={
+            'Id':id,
+            'Type':nameVal,
+            'Match':name
+        }
+
+        util(param,(res)=>{
+            console.log(res)
+        })
     },
     // 编辑
-
     editHandle: function (the_index) {
         z+=1;//第单击一次i的值加1；
         // console.log(arr[0][the_index])
@@ -129,7 +138,6 @@ var methods = {
         // console.log(newdata)
         // 单个新增数据
         // console.log(nowConArr)
-        //这的数据拿到了的 我只是挨个插入
         // console.log(arr)
         $('.a1').append(
             '<tr>'+
@@ -162,7 +170,7 @@ var methods = {
         $('.config_3').append(
             '<span>'+arr[0][the_index].RewardId+'|'+'</span>'
         )
-        console.log(z)
+        // console.log(z)
         // if (z>0){
         //     $('.config_1 span').eq(z).text(123556)
         // }
@@ -205,17 +213,17 @@ var methods = {
         })
 
 
-        for (var j=0;j<tarSel.length;j++) {
-            // tarInp.eq(j).html(nowConArr[j])
-            // tarInp.eq(j).val(123)
-        }
-        for (var k=0;k<config.length;k++) {
-            // config.eq(k).html(nowConArr[k])
-        }
-        // console.log(config)
-        for (var p=0;p<tarSel.length;p++) {
-            var the_p = p+tarInp.length;
-            tarSel.eq(p).val(nowConArr[the_p]);
-        }
+        // for (var j=0;j<tarSel.length;j++) {
+        //     // tarInp.eq(j).html(nowConArr[j])
+        //     // tarInp.eq(j).val(123)
+        // }
+        // for (var k=0;k<config.length;k++) {
+        //     // config.eq(k).html(nowConArr[k])
+        // }
+        // // console.log(config)
+        // for (var p=0;p<tarSel.length;p++) {
+        //     var the_p = p+tarInp.length;
+        //     tarSel.eq(p).val(nowConArr[the_p]);
+        // }
     },
 }

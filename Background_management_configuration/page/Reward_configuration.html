@@ -118,52 +118,47 @@
         console.log($('.b').val().split(" "))
     })
 
-
-    // 10.10.77.36:8080/rewards
-    // https://easy-mock.com/mock/5caff09431c675529c365621/example/proxy
-    // $.ajax({
-    //     url:'10.10.77.36:8080/rewards',//地址
-    //     // url:'https://easy-mock.com/mock/5caff09431c675529c365621/example/proxy',
-    //     dataType:'jsonp',//数据类型
-    //     type:'POST',//类型
-    //     // type:'GET',
-    //     timeout:20000,//超时
-    //     //请求成功
-    //     success:function(data,status){
-    //         console.log(data)
-    //     },
-    //     //失败/超时
-    //     error:function(XMLHttpRequest,textStatus,errorThrown){
-    //         console.log(errorThrown)
-    //         if(textStatus==='timeout'){
-    //             alert('請求超時');
-    //             setTimeout(function(){
-    //                 alert('重新请求');
-    //             },2000);
-    //         }
-    //     }
-    // })
-    // $.ajax({
-    //     type:"POST",
-    //     // url:"service.php?number="+$("#keyword").val(),
-    //     url:'https://10.10.77.36:8080/rewards',
-    //     dataType:"jsonp",
-    //     // jsonp:'callback',
-    //     success:function(data){
-    //         console.log('成功')
-    //         console.log(data)
-    //     if(data.success){
-    //
-    //         // $("searchResult").html(data.msg);
-    //     }else{
-    //         $("#searchResult").html("出现错误：" + data.msg);
-    //     }
-    // },
-    // error:function(jqXHR){
-    //         console.log(error)
-    //     alert("发生错误："+ jqXHR.status);
-    // }
-    // });
+function util(param,res){
+        $.ajax({
+            type:"POST",
+            // url:"service.php?number="+$("#keyword").val(),
+            url:'http://gogs.sleepbanana.com:8080/rewards',
+            dataType:"json",
+            // data:{
+            //     'Id':1
+            // },
+            data:param,
+            contentType: "application/json;charset=utf-8",//这个参数也是header参数
+            // success:function(res){
+            //     console.log(res)
+            //     // console.log(data.msg)
+            //     // if(data.success){
+            //     //     // $("searchResult").html(data.msg);
+            //     // }else{
+            //     //     $("#searchResult").html("出现错误：" + data.msg);
+            //     // }
+            // },
+            success:res,
+            error:function(jqXHR){
+                // console.log(error)
+                alert("发生错误："+ jqXHR.status);
+            }
+        });
+}
+// var param ={
+//         'Id':2111,
+//         'Type':20,
+//         'Match':[
+//             '宝箱',
+//             '礼包'
+//         ]
+// }
+    // 应该使用encodeURIComponent()进行转码　　
+    //encodeURIComponent(param)
+// console.log(encodeURIComponent(param))
+// util(param,(res)=>{
+// console.log(res)
+// })
 </script>
 </body>
 </html>
