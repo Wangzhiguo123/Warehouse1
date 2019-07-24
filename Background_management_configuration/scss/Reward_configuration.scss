@@ -1,7 +1,7 @@
 .title {
   padding: 12px 0;
   width: 100%;
-  margin: 0 0 50px 0;
+  margin: 0 0 25px 0;
   font-size: 18px;
   color: #fff;
   text-align: center;
@@ -72,6 +72,7 @@ border-radius: 3px;
 }
 .search_btn{
   color: white;
+  cursor: pointer;
 }
 .form-control{
   border-radius: 3px;
@@ -81,10 +82,20 @@ border-radius: 3px;
   font-size: 0.1rem;
 }
 .box_left{
-  width: 60%;
+  width: 70%;
+}
+//图片
+.tupian{
+  width: 4rem;
+}
+.tupian_sm{
+  width: 1.5rem;
+}
+.cz{
+  width: 5rem;
 }
 .box_right{
-  width: 38%;
+  width: 28%;
 }
 .reward{
   line-height: 50px;
@@ -102,7 +113,7 @@ border-radius: 3px;
   //border: 1px solid #f0f0f0;
 }
 #xztb{
-  height: 200px;
+  height: 300px;
 }
 .a1>tr{
   width: 200px;
@@ -111,10 +122,15 @@ border-radius: 3px;
   border: 1px solid #dfdfdf;
   border-radius: 3px;
   text-indent: 1em;
+  width: 3rem;
 }
 .config{
   border-top: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0 ;
+}
+.sk>span{
+  //color: blue;
+  font-size: 0.8rem;
 }
 .config div{
   margin: 10px 0;

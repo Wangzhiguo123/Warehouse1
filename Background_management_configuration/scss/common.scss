@@ -45,6 +45,7 @@ table {
   color: #61666e;
   font-size: 12px;
   text-align: center;
+  vertical-align: middle;
   border-bottom: 1px solid #f0f0f0 !important;
 }
 .del{
@@ -55,7 +56,7 @@ table {
 }
 table{
   display: block;
-  height: 30rem;
+  height: 35rem;
   overflow-y: scroll;
 }
 a{

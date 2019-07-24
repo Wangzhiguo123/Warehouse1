@@ -78,7 +78,7 @@
                     <th>名称</th>
                     <th>type</th>
                     <th>数量</th>
-                    <th>操作</th>
+                    <th class="cz">操作</th>
                 </tr>
                 </thead>
                 <tbody class="a1">
@@ -118,47 +118,6 @@
         console.log($('.b').val().split(" "))
     })
 
-function util(param,res){
-        $.ajax({
-            type:"POST",
-            // url:"service.php?number="+$("#keyword").val(),
-            url:'http://gogs.sleepbanana.com:8080/rewards',
-            dataType:"json",
-            // data:{
-            //     'Id':1
-            // },
-            data:param,
-            contentType: "application/json;charset=utf-8",//这个参数也是header参数
-            // success:function(res){
-            //     console.log(res)
-            //     // console.log(data.msg)
-            //     // if(data.success){
-            //     //     // $("searchResult").html(data.msg);
-            //     // }else{
-            //     //     $("#searchResult").html("出现错误：" + data.msg);
-            //     // }
-            // },
-            success:res,
-            error:function(jqXHR){
-                // console.log(error)
-                alert("发生错误："+ jqXHR.status);
-            }
-        });
-}
-// var param ={
-//         'Id':2111,
-//         'Type':20,
-//         'Match':[
-//             '宝箱',
-//             '礼包'
-//         ]
-// }
-    // 应该使用encodeURIComponent()进行转码　　
-    //encodeURIComponent(param)
-// console.log(encodeURIComponent(param))
-// util(param,(res)=>{
-// console.log(res)
-// })
 </script>
 </body>
 </html>

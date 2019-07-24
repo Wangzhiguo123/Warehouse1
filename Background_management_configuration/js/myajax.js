@@ -73,3 +73,28 @@ function myAjax(method,url,data,callback,type){
         xhr.send(null);
     }
 }
+// 正式
+function util(param,res){
+    $.ajax({
+        type:"POST",
+        // url:"service.php?number="+$("#keyword").val(),
+        url:'http://gogs.sleepbanana.com:8080/rewards',
+        dataType:"json",
+        data:param,
+        contentType: "application/json;charset=utf-8",//这个参数也是header参数
+        // success:function(res){
+        //     console.log(res)
+        //     // console.log(data.msg)
+        //     // if(data.success){
+        //     //     // $("searchResult").html(data.msg);
+        //     // }else{
+        //     //     $("#searchResult").html("出现错误：" + data.msg);
+        //     // }
+        // },
+        success:res,
+        error:function(jqXHR){
+            // console.log(error)
+            // alert("发生错误："+ jqXHR.status);
+        }
+    });
+}

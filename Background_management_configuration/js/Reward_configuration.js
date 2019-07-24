@@ -1,32 +1,38 @@
 // 渲染数据
 var arr=[],
+    b=[],
     newdata=[],
     tarInp = $('#xztb span'),
     // config = $('.config span'),
     z = 0,
-    tarSel = $('.a1 input');
-myAjax('get','/proxy',{},(res)=>{
-    arr.push(res)
-    //这是初始化数据 也不用管
-    $.each(arr[0],function sj(data,item) {
-        $('#show_tbody').append(
-            '<tr>'+
-            '<td>'+item.RewardId+'</td>'+
-            '<td>'+item.RewardName+'</td>'+
-            '<td>'+item.RewardType+'</td>'+
-            '<td>'+item.RewardIcon+'</td>'+
-            '<td>'+item.RewardDesn+'</td>'+
-            // '<td>'+item.sf+'</td>'+
-            '<td>'+
-            '<a class="edit">'+'★'+'</a>'+
-            // '<a href="#" class="del">'+'删除'+'</a>'+
-            '</td>'+
-            '</tr>'
-        );
-    })
-    // methods.wzg('.del')
-},'json');
-
+    tarSel = $('.a1 input'),
+    str={
+        1:"资源",
+        2:"道具",
+        3:"联盟经验",
+        4: "个人经验",
+        5:"VIP点数",
+        6:"cash",
+        7:"英雄",
+        8:"碎片",
+        9:"联盟道具",
+        10:"舰船",
+        11:"联盟资源",
+        12:"BUFF",
+        13:"黑市币",
+        14:"上架联盟舰船",
+        15:"上架联盟物资",
+        16:"玩家头像",
+        17:"模组升级材料",
+        18:"核心",
+        19:"模组",
+        20:"类星体碎片"
+}
+// ---------------
+// var yearArray = new Array(2009, 2009, 2008, 2010, 2009, 2010)
+// console.log($.unique(yearArray.sort()))
+// console.log($.unique(yearArray))
+//----------------
 // 筛选事件
 $('#search_btn').click(function () {
     methods.seachName();
@@ -37,7 +43,6 @@ $('#show_tbody').on('click','.edit', function () {
     addEnter = false;
     $(this).parents('tr').addClass('has_case');
     methods.editHandle(trIndex);
-    console.log(123)
 })
 // 删除事件
     function wzg(dom) {
@@ -47,7 +52,6 @@ $('#show_tbody').on('click','.edit', function () {
         $(this).parents('tr').remove()
     })
 }
-
 // 具体方法
 var methods = {
     // 筛选
@@ -63,31 +67,52 @@ var methods = {
             alert('type值不能为空')
             return;
         }
-        for (var c=0;c<a.length;c++) {
-            var txt = $('td:first', a.eq(c)).html().trim();
-            nameArr.push(txt);
-        }
-        a.hide();
-        for (var i=0;i<nameArr.length;i++) {
-            if (nameArr[i].indexOf(nameVal)>-1) {
-                a.eq(i).show();
-            }
-        }
-        console.log('type:'+nameVal+'id:'+id)
-        console.log(name)
-        var param ={
-            'Id':id,
-            'Type':nameVal,
-            'Match':name
-        }
+        // for (var c=0;c<a.length;c++) {
+        //     var txt = $('td:first', a.eq(c)).html().trim();
+        //     nameArr.push(txt);
+        // }
+        // a.hide();
+        // for (var i=0;i<nameArr.length;i++) {
+        //     if (nameArr[i].indexOf(nameVal)>-1) {
+        //         a.eq(i).show();
+        //     }
+        // }
 
-        util(param,(res)=>{
-            console.log(res)
+        var param ={
+            "Id":parseInt(id),
+            "Type":parseInt(nameVal),
+            "Match":name
+        }
+        util(JSON.stringify(param),(res)=>{
+            arr.push(res.data)
+
+            // console.log(arr)
+            $("#show_tbody tr").remove();
+            $.each(res.data,function (data,item) {
+                $('#show_tbody').append(
+                    '<tr>'+
+                    '<td>'+
+                    '<img class="tupian" src="../img/'+item.RewardIcon+'">'+
+                    '</td>'+
+                    '<td class="zz">'+item.RewardType+"."+str[item.RewardType]+'</td>'+
+                    '<td>'+item.RewardId+'</td>'+
+                    '<td>'+item.RewardName+'</td>'+
+                    '<td>'+item.RewardDesc+'</td>'+
+                    '<td>'+
+                    '<a class="edit">'+'★'+'</a>'+
+                    // '<a href="#" class="del">'+'删除'+'</a>'+
+                    '</td>'+
+                    '</tr>'
+                );
+            })
+            res.data =null
+             b=arr
+            arr =[]
         })
     },
     // 编辑
     editHandle: function (the_index) {
-        z+=1;//第单击一次i的值加1；
+        // z+=1;//第单击一次i的值加1；
         // console.log(arr[0][the_index])
         // 这你不用管  我只是单纯从左边将数据移入右边
         var tar = $('#show_tbody tr').eq(the_index);
@@ -99,6 +124,12 @@ var methods = {
             nowConArr.push(a);
             // newdata.push(a);
         }
+        /*console.log()
+        *
+        *
+        *
+        *
+        * */
         // $(this).attr(z)
         // Array.prototype.unique1 = function(){
         //     var res = [this[0]];
@@ -141,65 +172,58 @@ var methods = {
         // console.log(arr)
         $('.a1').append(
             '<tr>'+
-            '<td>'+arr[0][the_index].RewardId+'</td>'+
-            '<td>'+arr[0][the_index].RewardName+'</td>'+
-            '<td>'+arr[0][the_index].RewardType+'</td>'+
+            '<td>'+
+            '<img class="tupian_sm" src="../img/'+b[0][the_index].RewardIcon+'">'+'</td>'+
+            '<td>'+b[0][the_index].RewardName+'</td>'+
+            '<td>'+str[b[0][the_index].RewardType]+'</td>'+
             '<td>'+'<input type="text" class="srk">'+
             '<td class="del">'+'删除'+'</td>'+
             // '<td class="test">'+'测试'+'</td>'+
             '</tr>'
         )
-
-        // console.log($('.a1').html())
+        $(".del").off("click");
 // 将数据引到input
         var ak = $('.a1 input');
         var bk =$('.a1').children('tr').length
-        ak.eq(bk-1).val(arr[0][the_index].RewardId)
-// console.log(bk)
-        // for (var s=0;s<ak.length;s++) {
-        //     .eq(ak.length).val(arr[0][the_index].RewardId)
-        // }
-        // ak.val(arr[0][the_index].RewardId)
+        ak.eq(bk-1).val(b[0][the_index].RewardType)
         // 增添配置参数
         $('.config_1').append(
-            '<span>'+arr[0][the_index].RewardId+'|'+'</span>'
+            '<span>'+b[0][the_index].RewardType+'|'+'</span>'
         )
         $('.config_2').append(
-            '<span>'+arr[0][the_index].RewardType+'|'+'</span>'
+            '<span>'+b[0][the_index].RewardId+'|'+'</span>'
         )
         $('.config_3').append(
-            '<span>'+arr[0][the_index].RewardId+'|'+'</span>'
+            '<span>'+b[0][the_index].RewardType+'|'+'</span>'
         )
-        // console.log(z)
-        // if (z>0){
-        //     $('.config_1 span').eq(z).text(123556)
-        // }
-//         var es = $('.config_1 span').length
-//         for (var i=0;i<es;i++){
-//             // $('.config_1 span').addClass(z+'a')
-// console.log(i)
-//         }
 
+        // var myList=new Array("Li","Wei","zhong","Shao","Ran");
+        // var portableList=myList.join("|");
 
         $('.del').click(function() {
-            // console.log($('.del'))
-            var x=$(this).parent().index()
-            // console.log(x)
-            // console.log($(this))
-            // console.log($(this).parents('tr').html())
-            // console.log($('.a1 tr').eq(x).html())
-            // var a=$('.del').length
-            // 2019.7.17 18:36
-            // 可以获取到当前父元素tr所在表格的下标
-            // 可以获取到同上者相对应的具体参数值
-            // console.log(this)
-            // console.log($('.config_1 span').eq(xb).html())
+            var i=$(this).parent().index()
+            $('.config_1 span').eq(i).remove()
+            $('.config_2 span').eq(i).remove()
+            $('.config_3 span').eq(i).remove()
+            // wzg('.del')
+            $(this).parent('tr').remove()
 
-            $('.config_1 span').eq(x).remove()
-            $('.config_2 span').eq(x).remove()
-            $('.config_3 span').eq(x).remove()
-            wzg('.del')
-
+            // var e =$(this).parent()
+            // auto(a,e)
+            // adc(e)
+            // /*点击之后调用的函数*/
+            // function  auto(callback,e){
+            //     $('.config_1 span').eq(x).remove()
+            //     $('.config_2 span').eq(x).remove()
+            //     $('.config_3 span').eq(x).remove()
+            //     callback&&callback();
+            // }
+            // /*回调函数*/
+            // function a(){
+            //     // console.log(e.html())
+            //     // $(e).remove()
+            //     console.log('我是点击之后的回调函数')
+            // }
         })
         //实时监听输入框值
         $('.srk').on('input',function () {
@@ -208,10 +232,9 @@ var methods = {
             // 元素下标
             var indexs =$(this).parents('tr').index()
             $('.config_1 span').eq(indexs).text($(this).val()+'|')
-            $('.config_2 span').eq(indexs).text($(this).val()+'|')
+            // $('.config_2 span').eq(indexs).text($(this).val()+'|')
             $('.config_3 span').eq(indexs).text($(this).val()+'|')
         })
-
 
         // for (var j=0;j<tarSel.length;j++) {
         //     // tarInp.eq(j).html(nowConArr[j])
