@@ -40,14 +40,6 @@ $('#show_tbody').on('click','.edit', function () {
     $(this).parents('tr').addClass('has_case');
     methods.editHandle(trIndex);
 })
-// 删除事件
-    function wzg(dom) {
-    $(dom).click(function () {
-        // 可以获取到同上者相对应的具体参数值
-        // console.log(this)
-        $(this).parents('tr').remove()
-    })
-}
 // 具体方法
 var methods = {
     // 筛选
@@ -61,10 +53,6 @@ var methods = {
             alert('type值不能为空')
             return;
         }
-        // for (var c=0;c<a.length;c++) {
-        //     var txt = $('td:first', a.eq(c)).html().trim();
-        //     nameArr.push(txt);
-        // }
         // a.hide();
         // for (var i=0;i<nameArr.length;i++) {
         //     if (nameArr[i].indexOf(nameVal)>-1) {
