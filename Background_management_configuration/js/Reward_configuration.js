@@ -100,6 +100,7 @@ var methods = {
         var type = $("input[name='type']").val().split("|"),
             id = $("input[name='id']").val().split("|"),
             count = $("input[name='count']").val().split("|"),
+            i = 0 ,
             param ={
             "Type":type,
             "Id":id,
@@ -114,6 +115,7 @@ var methods = {
                     }
                     $(".a1").empty();
                     $(".sk span").remove();
+                    console.log(res.data)
                     $.each(res.data,function (data,item) {
                         $('.a1').append(
                             '<tr>'+
@@ -121,7 +123,7 @@ var methods = {
                             '<img class="tupian_sm" src="../img/'+item.RewardIcon+'">'+ '</td>'+
                             '<td>'+item.RewardName+'</td>'+
                             '<td>'+str[item.RewardType]+'</td>'+
-                            '<td>'+item.RewardType+'</td>'+
+                            '<td>'+count[(i++)]+'</td>'+
                             '<td class="del">'+'删除'+'</td>'+
                             '</tr>'
                         );
@@ -230,8 +232,8 @@ var methods = {
             // 元素下标
             var indexs =$(this).parents('tr').index()
             config.data1.splice(indexs,1,parseInt($(this).val()))
-            $('.config_1 span,.config_3 span').empty()
-            $('.config_1,.config_3').append(
+            $('.config_3 span').empty()
+            $('.config_3').append(
                 '<span>'+config.data1.join("|")+'</span>'
             )
             // $('.config_1 span').eq(indexs).text($(this).val()+'|')
