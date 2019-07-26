@@ -2,6 +2,10 @@
 var arr=[],
     b=[],//被筛选的数据
     z = 0,
+    config={
+      data1:[],
+    data2:[]
+    },
     str={
         1:"资源",
         2:"道具",
@@ -45,7 +49,7 @@ var methods = {
     // 筛选
     seachName: function () {
         var a = $('#show_tbody tr'),
-            nameVal = $('#Ktext').val().trim(),//type资源
+            nameVal = $('.sp option:selected').val().trim(),//type资源
             id = $('#job_num').val().trim(), //id
             name = $('#job_num2').val().split(" ");//name(支持多个)
 
@@ -67,6 +71,7 @@ var methods = {
         }
         util('rewards',JSON.stringify(param),(res)=>{
             arr.push(res.data)
+            // console.log(arr)
             $("#show_tbody tr").remove();
             $.each(res.data,function (data,item) {
                 $('#show_tbody').append(
@@ -87,6 +92,7 @@ var methods = {
             res.data =null
              b=arr
             arr =[]
+
         })
     },
     // 反查
@@ -187,32 +193,43 @@ var methods = {
         var ak = $('.a1 input');
         var bk =$('.a1').children('tr').length
         ak.eq(bk-1).val(b[0][the_index].RewardType)
-
         // 增添配置参数
-        $('.config_1').append(
-            '<span>'+b[0][the_index].RewardType+'|'+'</span>'
+        config.data1.push(b[0][the_index].RewardType)
+        config.data2.push(b[0][the_index].RewardId)
+        $('.sk span').empty()
+        $('.config_1,.config_3').append(
+            // '<span>'+b[0][the_index].RewardType+'|'+'</span>'
+            '<span>'+config.data1.join("|")+'</span>'
         )
         $('.config_2').append(
-            '<span>'+b[0][the_index].RewardId+'|'+'</span>'
-        )
-        $('.config_3').append(
-            '<span>'+b[0][the_index].RewardType+'|'+'</span>'
+            // '<span>'+b[0][the_index].RewardId+'|'+'</span>'
+            '<span>'+config.data2.join("|")+'</span>'
         )
 
         $('.del').click(function() {
             var i=$(this).parent().index()
-            $('.config_1 span').eq(i).remove()
-            $('.config_2 span').eq(i).remove()
-            $('.config_3 span').eq(i).remove()
+            config.data1.splice(i,1)
+            config.data2.splice(i,1)
+            $('.sk span').empty()
+            $('.config_1,.config_3').append(
+                '<span>'+config.data1.join("|")+'</span>'
+            )
+            $('.config_2').append(
+                '<span>'+config.data2.join("|")+'</span>'
+            )
             $(this).parent('tr').remove()
-
         })
         //实时监听输入框值
         $('.srk').on('input',function () {
             // 元素下标
             var indexs =$(this).parents('tr').index()
-            $('.config_1 span').eq(indexs).text($(this).val()+'|')
-            $('.config_3 span').eq(indexs).text($(this).val()+'|')
+            config.data1.splice(indexs,1,parseInt($(this).val()))
+            $('.config_1 span,.config_3 span').empty()
+            $('.config_1,.config_3').append(
+                '<span>'+config.data1.join("|")+'</span>'
+            )
+            // $('.config_1 span').eq(indexs).text($(this).val()+'|')
+            // $('.config_3 span').eq(indexs).text($(this).val()+'|')
         })
     },
 }
