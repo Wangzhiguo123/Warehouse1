@@ -1,5 +1,5 @@
 // 正式
-function util(api,param,res){
+function util(api,param,res,xhr){
     $.ajax({
         type:"POST",
         url:'http://gogs.sleepbanana.com:8080/'+api,
@@ -16,6 +16,7 @@ function util(api,param,res){
         //     // }
         // },
         success:res,
+        complete:xhr
         // error:function(jqXHR,error){
             // console.log(jqXHR)
             // alert("发生错误"+ jqXHR.status);

@@ -69,30 +69,30 @@ var methods = {
             "Type":parseInt(nameVal),
             "Match":name
         }
-        util('rewards',JSON.stringify(param),(res)=>{
-            arr.push(res.data)
-            // console.log(arr)
-            $("#show_tbody tr").remove();
-            $.each(res.data,function (data,item) {
-                $('#show_tbody').append(
-                    '<tr>'+
-                    '<td>'+
-                    '<img class="tupian" src="../img/'+item.RewardIcon+'">'+
-                    '</td>'+
-                    '<td class="zz">'+item.RewardType+"."+str[item.RewardType]+'</td>'+
-                    '<td>'+item.RewardId+'</td>'+
-                    '<td>'+item.RewardName+'</td>'+
-                    '<td>'+item.RewardDesc+'</td>'+
-                    '<td>'+
-                    '<a class="edit">'+'★'+'</a>'+
-                    '</td>'+
-                    '</tr>'
-                );
-            })
-            res.data =null
-             b=arr
-            arr =[]
-
+        util('rewards',JSON.stringify(param),(res,xhr)=>{
+            if (xhr=='success'){
+                arr.push(res.data)
+                $("#show_tbody tr").remove();
+                $.each(res.data,function (data,item) {
+                    $('#show_tbody').append(
+                        '<tr>'+
+                        '<td>'+
+                        '<img class="tupian" src="../img/'+item.RewardIcon+'">'+
+                        '</td>'+
+                        '<td class="zz">'+item.RewardType+"."+str[item.RewardType]+'</td>'+
+                        '<td>'+item.RewardId+'</td>'+
+                        '<td>'+item.RewardName+'</td>'+
+                        '<td>'+item.RewardDesc+'</td>'+
+                        '<td>'+
+                        '<a class="edit">'+'★'+'</a>'+
+                        '</td>'+
+                        '</tr>'
+                    );
+                })
+                res.data =null
+                b=arr
+                arr =[]
+            }
         })
     },
     // 反查
@@ -106,25 +106,31 @@ var methods = {
             "Count":count,
         };
         if (param.Type.length==param.Id.length && param.Type.length==param.Count.length && param.Type!=""&& param.Id!=""&& param.Count!="") {
-            util('reward_parse',JSON.stringify(param),(res)=>{
-                $(".a1").empty();
-                $(".sk span").remove();
-                $.each(res.data,function (data,item) {
-                    $('.a1').append(
-                        '<tr>'+
-                        '<td>'+
-                        '<img class="tupian_sm" src="../img/'+item.RewardIcon+'">'+ '</td>'+
-                        '<td>'+item.RewardName+'</td>'+
-                        '<td>'+str[item.RewardType]+'</td>'+
-                        '<td>'+item.RewardType+'</td>'+
-                        '<td class="del">'+'删除'+'</td>'+
-                        '</tr>'
-                    );
-                })
-                $(".del").off("click");
-                $('.del').click(function () {
-                    $(this).parent('tr').remove()
-                })
+            util('reward_parse',JSON.stringify(param),(res,xhr)=>{
+                if (xhr=='success'){
+                    config={
+                        data1:[],
+                        data2:[]
+                    }
+                    $(".a1").empty();
+                    $(".sk span").remove();
+                    $.each(res.data,function (data,item) {
+                        $('.a1').append(
+                            '<tr>'+
+                            '<td>'+
+                            '<img class="tupian_sm" src="../img/'+item.RewardIcon+'">'+ '</td>'+
+                            '<td>'+item.RewardName+'</td>'+
+                            '<td>'+str[item.RewardType]+'</td>'+
+                            '<td>'+item.RewardType+'</td>'+
+                            '<td class="del">'+'删除'+'</td>'+
+                            '</tr>'
+                        );
+                    })
+                    $(".del").off("click");
+                    $('.del').click(function () {
+                        $(this).parent('tr').remove()
+                    })
+                }
             })
         } else {
             alert("请保证三个参数长度相同且每个输入框不为空再查询！")
