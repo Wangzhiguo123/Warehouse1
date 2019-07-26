@@ -115,7 +115,6 @@ var methods = {
                     }
                     $(".a1").empty();
                     $(".sk span").remove();
-                    console.log(res.data)
                     $.each(res.data,function (data,item) {
                         $('.a1').append(
                             '<tr>'+

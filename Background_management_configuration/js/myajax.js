@@ -16,12 +16,13 @@ function util(api,param,res,xhr){
         //     // }
         // },
         success:res,
-        complete:xhr
-        // error:function(jqXHR,error){
-            // console.log(jqXHR)
+        complete:xhr,
+        error:function(jqXHR,xhr){
+            alert(xhr+'：木有数据')
+            // console.log(error)
             // alert("发生错误"+ jqXHR.status);
             // alert(jqXHR)
             // console.log("ERR_EMPTY_RESPONSE")
-        // }
+        }
     });
 }
