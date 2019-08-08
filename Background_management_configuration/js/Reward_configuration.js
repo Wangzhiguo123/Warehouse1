@@ -3,6 +3,7 @@ var arr=[],
     b=[],//被筛选的数据
     z = 0,
     config={
+    data0:[],
       data1:[],
     data2:[]
     },
@@ -28,7 +29,6 @@ var arr=[],
         19:"模组",
         20:"类星体碎片"
 }
-
 // 筛选事件
 $('#search_btn').click(function () {
     methods.seachName();
@@ -110,6 +110,7 @@ var methods = {
             util('reward_parse',JSON.stringify(param),(res,xhr)=>{
                 if (xhr=='success'){
                     config={
+                        data0:[],
                         data1:[],
                         data2:[]
                     }
@@ -201,24 +202,30 @@ var methods = {
         var bk =$('.a1').children('tr').length
         ak.eq(bk-1).val(b[0][the_index].RewardType)
         // 增添配置参数
+        config.data0.push(b[0][the_index].RewardType)
         config.data1.push(b[0][the_index].RewardType)
         config.data2.push(b[0][the_index].RewardId)
         $('.sk span').empty()
-        $('.config_1,.config_3').append(
-            // '<span>'+b[0][the_index].RewardType+'|'+'</span>'
+        $('.config_1').append(
+            '<span>'+config.data0.join("|")+'</span>'
+        )
+        $('.config_3').append(
             '<span>'+config.data1.join("|")+'</span>'
         )
         $('.config_2').append(
-            // '<span>'+b[0][the_index].RewardId+'|'+'</span>'
             '<span>'+config.data2.join("|")+'</span>'
         )
 
         $('.del').click(function() {
             var i=$(this).parent().index()
+            config.data0.splice(i,1)
             config.data1.splice(i,1)
             config.data2.splice(i,1)
             $('.sk span').empty()
-            $('.config_1,.config_3').append(
+            $('.config_1').append(
+                '<span>'+config.data0.join("|")+'</span>'
+            )
+            $('.config_3').append(
                 '<span>'+config.data1.join("|")+'</span>'
             )
             $('.config_2').append(

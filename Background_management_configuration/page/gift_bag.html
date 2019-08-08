@@ -3,8 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <title>gift_bag</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/common2.css">
+    <link rel="stylesheet" href="../css/gift_bag.css">
 </head>
 <body>
-
+<div class="title">礼包管理</div>
+<div class="box">
+    <div class="box_1">
+<div class="search_input">
+    <div class="input-group mb-3" hidden>
+        <input id="job_num2" type="text" class="form-control" placeholder="请输入礼包名称">
+    </div>
+</div>
+<div class="search_input">
+    <button class="btn btn-primary search_btn" type="button" id="search_btn">搜索</button>
+</div>
+    <div class="select">
+        <span class="es select_a">高级筛选</span>
+        <span class="es select_b">普通筛选</span>
+    </div>
+    <div class="clear"></div>
+    </div>
+    <div class="select_box">
+        <div class="search_input">
+            <div class="input-group mb-3" hidden>
+                <span>礼包ID　：</span>
+                <input type="text" class="form-control" placeholder="单行输入">
+            </div>
+        </div>
+        <div class="search_input">
+            <div class="input-group mb-3" hidden>
+                <span>礼包名称：</span>
+                <input type="text" class="form-control" placeholder="单行输入">
+            </div>
+        </div>
+        <div class="search_input">
+            <div class="input-group mb-3" hidden>
+                <span>服务器组：</span>
+                <input type="text" class="form-control" placeholder="单行输入">
+            </div>
+        </div>
+        <div class="search_input">
+            <div class="input-group mb-3" hidden>
+                <span>服务器　：</span>
+                <input type="text" class="form-control" placeholder="单行输入">
+            </div>
+        </div>
+        <div class="search_input">
+            <div class="input-group mb-3" hidden>
+                <span>礼包价格：</span>
+                <select name="" class="form-control sp">
+                    <option value="1">$30</option>
+                    <option value="2">$40</option>
+                </select>
+            </div>
+        </div>
+        <div class="search_input">
+            <div class="input-group mb-3" hidden>
+                <span>时　　间：</span>
+                <input type="text" class="form-control" placeholder="单行输入">
+            </div>
+        </div>
+        <div class="search_input">
+            <div class="input-group mb-3">
+                <span>event限制：</span>
+                <select name="" class="form-control sp">
+                    <option value="1">1.类别</option>
+                    <option value="2">2.xx</option>
+                </select>
+            </div>
+        </div>
+        <div class="search_input">
+            <div class="input-group mb-3" hidden>
+                <input type="text" class="form-control" placeholder="参数">
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="tables">
+        <table>
+            <thead>
+            <tr>
+                <th>礼包ID</th>
+                <th>礼包名称</th>
+                <th>服务器</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>其他条件</th>
+                <th>价格</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<td>12345</td>-->
+            <!--<td>12345</td>-->
+            <!--<td>12345</td>-->
+            <!--<td>12345</td>-->
+            <!--<td>12345</td>-->
+            <!--<td>12345</td>-->
+            <!--<td>12345</td>-->
+            <!--<td>-->
+                <!--<span>礼包内容</span>|-->
+                <!--<span>修改时间</span>|-->
+                <!--<span>服务器组</span>|-->
+                <!--<span>更多</span>-->
+            <!--</td>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/myajax.js"></script>
+<script src="../js/gift_bag.js"></script>
 </body>
 </html>

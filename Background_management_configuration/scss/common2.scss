@@ -1,0 +1,81 @@
+.box{
+  margin: 20px;
+}
+.search_input {
+  border-radius: 3px;
+  height: 35px;
+  line-height: 35px;
+  margin: 15px 10px 0 0;
+  float: left;
+}
+.input-group {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+}
+.search_input span {
+  font-size: 13px;
+  color: #666;
+  display: inline-block;
+  float: left;
+}
+.form-control {
+  border-radius: 3px;
+  border: 1px solid #dfdfdf;
+  text-indent: 1em;
+  width: 10rem;
+  font-size: 0.1rem;
+  color: #3ea2ee !important;
+  height: 35px;
+}
+.search_input .search_btn {
+  width: 80px;
+  height: 35px;
+  font-size: 13px;
+  background: #3ea2ee;
+  border: none;
+  border-radius: 3px;
+  margin-left: 15px;
+  line-height: 1.0;
+  text-align: center;
+}
+.search_btn {
+  color: white;
+  cursor: pointer;
+}
+//公共表格
+table {
+  display: block;
+  height: 30rem;
+  font-size: 0.5rem;
+  overflow-y: scroll;
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: 1.5;
+  width: 100%;
+}
+table th {
+  border-top: 1px solid #f0f0f0 !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  color: #595e66 !important;
+  background: #f5f7fa;
+  text-align: center;
+}
+table td,table th {
+  padding: 0.75rem 0;
+  vertical-align: top;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
+  width: 13rem;
+}
+table td span{
+    cursor: pointer;
+    color: #479eff;
+    text-decoration: none;
+    font-size: 0.5rem;
+}
