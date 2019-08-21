@@ -17,13 +17,9 @@
   <span>{{a.name}}</span>
   <a @click="wzg">{{a.url}}</a>
   <div class="easy">
-    <!--{{easy}}-->
     <div v-bind:'{{a.name}}'></div>
   </div>
-    <!--</keep-alive>-->
   </div>
-    <!--{{message}}-->
-    <!--<ace v-bind:message="data"></ace>-->
   </div>
 </template>
 <script>
@@ -55,21 +51,20 @@ export default {
       .then(res=>{
         console.log(res)
         this.message = res.data
-        // console.log(this.message)
       })
       .catch(err=>{
         console.log(err)
       })
 
     //
-    this.$axios.post('/mock',{
-    })
-      .then(res=>{
-        console.log(res)
-      })
-      .catch(err=>{
-        console.log(err)
-      })
+    // this.$axios.post('/mock',{
+    // })
+    //   .then(res=>{
+    //     console.log(res)
+    //   })
+    //   .catch(err=>{
+    //     console.log(err)
+    //   })
 
 
     // this.$axios.get('/username?cmd=111',{

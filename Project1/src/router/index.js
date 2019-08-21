@@ -6,6 +6,12 @@ import Test1 from '@/components/test1'
 import Wzg1 from '@/page/Wzg1'
 import Product1 from '@/components/Product1'
 import Product2 from '@/components/Product2'
+import T1 from '@/components/t1'
+import T2 from '@/components/t2'
+import T3 from '@/components/t3'
+import T4 from '@/components/t4'
+import A1 from '@/components/a1'
+import B1 from '@/components/b1'
 
 Vue.use(Router)
 
@@ -40,6 +46,36 @@ export default new Router({
       path:'/p2',
       name:'Product2',
       component:Product2
+    },
+    {
+      path:'/t1',
+      name:'T1',
+      component:T1
+    },
+    {
+      path:'/t2',
+      name:'T2',
+      component:T2
+    },
+    {
+      path:'/t3',
+      name:'T3',
+      component:T3
+    },
+    {
+      path:'/t4',
+      name:'T4',
+      component:T4
+    },
+    {
+      path:'/a1',
+      name:'A1',
+      component:A1
+    },
+    {
+      path:'/b1',
+      name:'B1',
+      component:B1
     }
   ]
 })
