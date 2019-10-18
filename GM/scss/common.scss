@@ -1,0 +1,45 @@
+@import "utils","variable";
+@include html-font-size();
+p.intro {
+  font-size: convertPxFormUI(64px);
+}
+
+p.another-intro {
+  font-size: convertPxFormUI(60px);
+  height: convertPxFormUI(100px);
+  margin: convertPxFormUI(32px);
+}
+.title {
+  padding: 12px 0;
+  width: 100%;
+  margin: 0 0 25px 0;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  background: #3ea2ee;
+}
+.box{
+  display: flex;
+  justify-content: space-around;
+}
+.menu{
+  width: 20%;
+  height: 500px;
+}
+.content{
+  width: 70%;
+}
+.menu,.content{
+  border: 1px solid black;
+}
+.menu_title{
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 20px 0;
+  cursor: pointer;
+  background: rgba(215, 215, 215, 1);
+}
+.menu_title:hover{
+  color: blue;
+}
