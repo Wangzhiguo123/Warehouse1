@@ -24,22 +24,46 @@ p.another-intro {
 }
 .menu{
   width: 20%;
-  height: 500px;
+  background: #d7d7d7;
 }
 .content{
   width: 70%;
 }
-.menu,.content{
-  border: 1px solid black;
-}
 .menu_title{
   padding: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 12px;
   text-align: center;
   margin: 20px 0;
   cursor: pointer;
-  background: rgba(215, 215, 215, 1);
+}
+ul{
+  list-style: none;
+  padding: 0;
+}
+.child_title{
+  font-size: 12px;
+  line-height: 30px;
+  color: black;
+  background: white;
+}
+.child_title:hover {
+  color: #baabff;
 }
 .menu_title:hover{
-  color: blue;
+  color: #baabff;
+}
+//所有元素的输入框
+.input_box{
+  //border: 1px solid black;
+  //width: 50%;
+  //margin: auto;
+}
+.input_box>div{
+  margin: 10px 0;
+}
+.input_box>div>span{
+  width: 80px;
+}
+.introduce{
+  color: #FF0000;
 }

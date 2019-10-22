@@ -14,7 +14,7 @@ $(function () {
             type: 'POST',
             // 最新接口
             //http://10.10.77.180/cgi-bin/pgamegm
-            // url: 'http://35.194.68.198/cgi-bin/dengtg',
+            url: 'http://10.10.77.180/cgi-bin/pgamegm',
             data: url,
             dataType: 'json',
             crossDomain: true,
@@ -22,11 +22,20 @@ $(function () {
                 withCredentials: true
             },
             success: function (data) {
-                if(data[0].id == '0'){
-                    // location.href = 'http://35.194.68.198/tg/tg.html';
-                    location.href='../main.html'
-                }else {
-                    alert('账号或者密码错误，请重新输入！')
+                console.log(data[0].data)
+                if(data[0].data=='0'){
+                    location.href='../page/main.html'
+                }else if(data[0].data=='1'){
+                    alert('密码错误！')
+                    // location.href='../page/login.html'
+                }else if(data[0].data=='2'){
+                    alert('账号错误！')
+                }else if(data[0].data=='2'){
+                    alert('账号或密码错误，请重新输入！')
+                }else if(data[0].data=='4'){
+                    alert('无权访问！')
+                }else if(data[0].data=='5'){
+                    alert('参数错误！')
                 }
 
             }

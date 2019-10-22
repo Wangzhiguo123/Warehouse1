@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>tg</title>
-    <link rel="icon" type="image/png" href="image/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../image/favicon-32x32.png" sizes="32x32" />
 </head>
 <style>
     #box{
@@ -64,64 +64,64 @@
 <div id="btn">提交</div>
 <!--<div class="a"> 11</div>-->
 </body>
-<script src="js/jquery-1.11.3.js"></script>
+<script src="../js/jquery-1.11.3.js"></script>
 <script>
-    // wzg-------------------------------------------------------
-    var list=
-        ['adc','apc','ajax','unity3d','h5','php','java','python','IBM','android','ios','qa','qe','ui','send_mail'];
-    for(var j=0;j<list.length;j++){
-        $('#div_items').append('<div class="div_item">'+list[j]+'</div>')
-    }
-    //弹出列表框
-    $("#cmd").click(function () {
-        $("#div_items").css('display', 'block');
-        return false;
-    });     //隐藏列表框
-
-
-    $("body").click(function () {
-        $("#div_items").css('display', 'none');
-    });     //移入移出效果
-
-
-    $(".div_item").hover(function () {
-        $(this).css('background-color', '#1C86EE').css('color', 'white');
-    }, function () {
-        $(this).css('background-color', 'white').css('color', 'black');
-    });     //文本框输入
-
-    $("#cmd").bind("input propertychange",function(event){
-        console.log($("#cmd").val())
-    });
-    $("#cmd").focus(function () {
-        $("#div_items").css('display', 'block');//只要输入就显示列表框
-        if ($("#cmd").val().length <= 0) {
-            $(".div_item").css('display', 'block');//如果什么都没填，跳出，保持全部显示状态
-            return;
-        }
-        $(".div_item").css('display', 'none');//如果填了，先将所有的选项隐藏
-        for (var i = 0; i < $(".div_item").length;i++) {
-            //模糊匹配，将所有匹配项显示
-            var items=$(".div_item").eq(i).text();
-            var txt=$("#cmd").val();
-            if(items.indexOf(txt)>-1){
-                $(".div_item").eq(i).css('display','block');
-            }
-        }
-    });
-
-    //文本框点击赋值
-    $(".div_item").click(function () {
-        $("#cmd").val($(this).text());
-        console.log('赋值成功'+$(this).text())
-        var list2 = $(this).text();
-        // console.log(list2)
-        if(list2 == 'send_mail'){
-            $('#send_mail').show()
-        }else {
-            $('#send_mail').hide()
-        }
-    });
+    // // wzg-------------------------------------------------------
+    // var list=
+    //     ['adc','apc','ajax','unity3d','h5','php','java','python','IBM','android','ios','qa','qe','ui','send_mail'];
+    // for(var j=0;j<list.length;j++){
+    //     $('#div_items').append('<div class="div_item">'+list[j]+'</div>')
+    // }
+    // //弹出列表框
+    // $("#cmd").click(function () {
+    //     $("#div_items").css('display', 'block');
+    //     return false;
+    // });     //隐藏列表框
+    //
+    //
+    // $("body").click(function () {
+    //     $("#div_items").css('display', 'none');
+    // });     //移入移出效果
+    //
+    //
+    // $(".div_item").hover(function () {
+    //     $(this).css('background-color', '#1C86EE').css('color', 'white');
+    // }, function () {
+    //     $(this).css('background-color', 'white').css('color', 'black');
+    // });     //文本框输入
+    //
+    // $("#cmd").bind("input propertychange",function(event){
+    //     console.log($("#cmd").val())
+    // });
+    // $("#cmd").focus(function () {
+    //     $("#div_items").css('display', 'block');//只要输入就显示列表框
+    //     if ($("#cmd").val().length <= 0) {
+    //         $(".div_item").css('display', 'block');//如果什么都没填，跳出，保持全部显示状态
+    //         return;
+    //     }
+    //     $(".div_item").css('display', 'none');//如果填了，先将所有的选项隐藏
+    //     for (var i = 0; i < $(".div_item").length;i++) {
+    //         //模糊匹配，将所有匹配项显示
+    //         var items=$(".div_item").eq(i).text();
+    //         var txt=$("#cmd").val();
+    //         if(items.indexOf(txt)>-1){
+    //             $(".div_item").eq(i).css('display','block');
+    //         }
+    //     }
+    // });
+    //
+    // //文本框点击赋值
+    // $(".div_item").click(function () {
+    //     $("#cmd").val($(this).text());
+    //     console.log('赋值成功'+$(this).text())
+    //     var list2 = $(this).text();
+    //     // console.log(list2)
+    //     if(list2 == 'send_mail'){
+    //         $('#send_mail').show()
+    //     }else {
+    //         $('#send_mail').hide()
+    //     }
+    // });
     // -------------------------------------------------------------------
     $(function () {
         init();
@@ -148,7 +148,7 @@
                 success: function(data){
                     if(data.Result=='login'){
                         alert('您还未登录,请登录！');
-                        location.href = 'http://35.194.68.198/tg/index.html';
+                        location.href = 'login.html';
                     }else if(data.Result=='-1'){
                         alert('参数错误，请输入正确的参数！');
                         console.log(data)
@@ -184,7 +184,7 @@
                 if(data){
                     if(data.Result=='login'){
                         alert('您还未登录,请登录！');
-                        location.href = 'http://35.194.68.198/tg/index.html';
+                        location.href = 'login.html';
                     }else{
                         //var item = data.replace(/\[|]/g,'');
                         //var type = item.replace(/\"/g, "");

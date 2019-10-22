@@ -1,6 +1,6 @@
 {
     "data": [
-    {"title": "GM命令","subtitle": [{"data":""}]},
+    {"title": "GM命令","subtitle": [{"data":""},{"data":""},{"data":""}]},
     {"title": "账号查询","subtitle": [{"data":"角色ID查询"},{"data":"账号信息查询"},{"data":"绑定邮箱查询"}]},
     {"title": "账号管理","subtitle":[{"data":"账号绑定"},{"data":"密码查询"},{"data":"修改密码"}]},
     {"title": "操作记录查询","subtitle": [{"data":"GM操作记录"},{"data":"账号操作记录"},{"data":"封号记录"}]}

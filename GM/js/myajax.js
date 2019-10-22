@@ -1,11 +1,17 @@
 // 正式
-function util(param,res,xhr){
+function utils(api,type,param,res,xhr){
     $.ajax({
-        type:"GET",
+        type:type,
         // url:'http://gogs.sleepbanana.com:8080/'+api,
-        url:'js/data.json',
-        // url:'http://10.10.77.180/cgi-bin/pgamegm?cmd=1&from=lu&pwd=123',
+        url:'../js/data.json',
+        // http://10.10.77.180/cgi-bin/pgamegm?cmd=1&from=lu&pwd=123
+        // pgamegm?cmd=1&from=lu&pwd=123
+        // url:'http://10.10.77.180/cgi-bin/'+api,
         dataType:"json",
+        crossDomain: true,
+        xhrFields: {
+            withCredentials: true
+        },
         data:param,
         contentType: "application/json;charset=utf-8",
         // success:function(res){

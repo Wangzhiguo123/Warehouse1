@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主界面</title>
+    <!--<link rel="icon" type="image/png" href="../image/favicon-32x32.png" sizes="32x32" />-->
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+<div class="title">GM</div>
+<div class="box">
+    <div class="menu">
+    </div>
+    <div class="content">
+
+        <iframe id="ifr" src="" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+</div>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/myajax.js"></script>
+<script src="../js/login.js"></script>
+<script>
+    // 事件触发
+
+
+    // 事件处理
+    var methods = {
+// GM命令
+        gm_command:function(){
+            var param={
+                'cmd':2
+            }
+            utils('pgamegm','GET',param,(res,xhr)=>{
+                if(res.data==undefined){
+                    if(res[0].data[0]=='3'){
+                        alert('尚未登录！点击将直接跳转到登录页面！')
+                        location.href='login.html'
+                    }
+                }
+                $.each(res.data,function (data,item) {
+                    $('.menu').append(
+                        '<ul class="parents_ul">'+
+                        '<li class="menu_title">'+item.title +
+                        '<ul class="child_ul">'+
+                        '<li class="child_title">'+item.subtitle[0].data+'</li>'+
+                        '<li class="child_title">'+item.subtitle[1].data+'</li>'+
+                        '<li class="child_title">'+item.subtitle[2].data+'</li>'+
+                        '</ul>'+
+                        '</li>'
+                        +'</ul>'
+                    )
+                    // 二
+//         html +=
+//             '<ul>'+
+//             '<li>'+item.title+'</li>'+
+//                 // '<ul>'+
+//             // '<li class="a">'+'</li>'
+//             // +'</ul>'+
+//             '</ul>'
+//
+//         $.each(item.subtitle,function (data2,item2) {
+//         // if(item.type==item.subtitle[i].type){
+//         html +=
+//         // '<ul>'+
+//         '<li>'+item2.subtitle.data+'</li>'
+// // '</ul>'
+//
+//         })
+                })
+
+                $('.menu_title').click(function () {
+                    if ($(this).text()=='GM命令'){
+                        var data = $(this).text()
+                        methods.ifr_nav(data)
+                    }
+                })
+                $('.child_title').click(function () {
+                    var data =$(this).text()
+                    methods.ifr_nav(data)
+                })
+            })
+
+        },
+        // iframe导航
+        ifr_nav:function (data) {
+                console.log(data)
+                if (data=='GM命令'){
+                    data='tg'
+                } else if(data=='角色ID查询'){
+                    data='role_id'
+                } else if(data=='账号信息查询'){
+                    data='account_information'
+                } else if(data=='绑定邮箱查询'){
+                    data='binding_email'
+                } else if(data=='账号绑定'){
+
+                } else if(data=='密码查询'){
+
+                } else if(data=='修改密码'){
+
+                } else if(data=='GM操作记录'){
+
+                } else if(data=='账号操作记录'){
+
+                } else if(data=='封号记录'){
+
+                } else{
+                    console.log('无【'+data+'】的页面数据')
+                }
+                $("#ifr").attr("src", ''+data+'.html');//JQuery动态加载iframe。
+        },
+
+    }
+    //初始化
+    methods.gm_command()
+</script>
+</body>
+</html>
