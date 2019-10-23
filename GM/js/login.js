@@ -14,7 +14,9 @@ $(function () {
             type: 'POST',
             // 最新接口
             //http://10.10.77.180/cgi-bin/pgamegm
-            url: 'http://10.10.77.180/cgi-bin/pgamegm',
+            // 10.10.77.83/cgi-bin/pgamegm?cmd=1
+            // url: 'http://10.10.77.180/cgi-bin/pgamegm',
+            url:'http://10.10.77.83/cgi-bin/pgamegm',
             data: url,
             dataType: 'json',
             crossDomain: true,

@@ -2,11 +2,9 @@
 function utils(api,type,param,res,xhr){
     $.ajax({
         type:type,
-        // url:'http://gogs.sleepbanana.com:8080/'+api,
         url:'../js/data.json',
-        // http://10.10.77.180/cgi-bin/pgamegm?cmd=1&from=lu&pwd=123
-        // pgamegm?cmd=1&from=lu&pwd=123
         // url:'http://10.10.77.180/cgi-bin/'+api,
+        // url:'http://10.10.77.83/cgi-bin/'+api,
         dataType:"json",
         crossDomain: true,
         xhrFields: {

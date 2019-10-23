@@ -59,11 +59,20 @@ ul{
   //margin: auto;
 }
 .input_box>div{
-  margin: 10px 0;
+  margin: 20px 0;
 }
 .input_box>div>span{
   width: 80px;
+  font-size: 18px;
+}
+.input_box>div>input{
+  width: 300px;
+  height: 30px;
+  text-indent: 1em;
 }
 .introduce{
   color: #FF0000;
+}
+.btn{
+  width: 100px;
 }

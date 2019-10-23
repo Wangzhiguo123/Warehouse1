@@ -142,7 +142,8 @@
             console.log(url)
             $.ajax({
                 type: 'GET',
-                url: 'http://35.194.68.198/cgi-bin/gm',//接收数组
+                // url: 'http://35.194.68.198/cgi-bin/gm',//接收数组
+                url:'http://10.10.77.83/cgi-bin/pgm',
                 data: url,
                 dataType: 'json',
                 success: function(data){
@@ -178,7 +179,8 @@
        var str = '';
         $.ajax({
             type: 'GET',
-            url: 'http://35.194.68.198/cgi-bin/gm',
+            // url: 'http://35.194.68.198/cgi-bin/gm',
+            url:'http://10.10.77.83/cgi-bin/pgm',
 	    dataType:'json',
             success: function(data){
                 if(data){

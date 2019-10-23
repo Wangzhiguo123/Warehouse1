@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>change_pwd</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+<div class="input_box">
+    <div><span>账号名:</span><input class="name" type="text"></div>
+    <div><span>新密码:</span><input class="pwd" type="password"></div>
+    <button class="btn">查询</button>
+</div>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/myajax.js"></script>
+<script>
+    $('.btn').click(function () {
+        var param={
+            'cmd':'3',
+            'name':$('.name').val(),
+            'pwd':$('.pwd').val(),
+            'type':'2',
+            'try':'16095123'
+        }
+        console.log(param)
+        utils('bindname','GET',param,(res,xhr)=>{
+            console.log(res)
+            // if(res.data==undefined){
+            // }
+            $.each(res.data,function (data,item) {
+                $('body').append(
+                )
+            })
+
+        })
+    })
+</script>
+</body>
+</html>
