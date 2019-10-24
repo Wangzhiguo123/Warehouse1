@@ -7,8 +7,19 @@
 </head>
 <body>
 <div class="input_box">
-    <div><span>UID:</span><input type="text"></div>
+    <div><span>UID:</span><input class="uin" type="text"></div>
     <button class="btn">提交</button>
 </div>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/myajax.js"></script>
+<script>
+    $('.btn').click(function () {
+        var param={
+            // 'cmd':'3',
+            'uin':$('.uin').val(),
+        }
+        location.href='http://10.10.77.83/cgi-bin/pgmquery?cmd=3&uin='+param.uin
+    })
+</script>
 </body>
 </html>

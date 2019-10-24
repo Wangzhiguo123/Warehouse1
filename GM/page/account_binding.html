@@ -12,6 +12,7 @@
     <div><span>密　码:</span><input class="pwd" type="password"></div>
     <div class="introduce">*输入任意一个条件查询账号与绑定邮箱的相互对应关系</div>
     <button class="btn">提交</button>
+    <div class="texts"></div>
 </div>
 <script src="../js/jquery-1.11.3.js"></script>
 <script src="../js/myajax.js"></script>
@@ -28,8 +29,17 @@
         console.log(param)
         utils('bindname','GET',param,(res,xhr)=>{
             console.log(res)
-            // if(res.data==undefined){
-            // }
+            if(res.content.Result=='-1'){
+                alert('数据错误！')
+            }else if(res.content.Result=='0'){
+                $.each(res.content,function (data,item) {
+                    $('.texts').append(
+                        '<div class="">'+'账号名:'+item.name+'</div>'+
+                        '<div class="">'+'密码:'+item.pwd+'</div>'+
+                        '<div class="">'+'id:'+item.id+'</div>'
+                    )
+                })
+            }
         })
     })
 </script>
