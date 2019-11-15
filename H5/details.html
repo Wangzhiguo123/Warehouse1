@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>details</title>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        body{
+            background-color: #1C232C;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <!--热点推荐-->
+    <div class="recommended">
+        <div>热点 <span style="color: #dbdbdb;font-size: 46px">推荐</span></div>
+        <div><img src="img/shut_down.png" alt=""></div>
+    </div>
+    <div class="details_content">
+        <!--子元素1-->
+        <div>
+            <!--遮罩层-->
+            <div class="mask"></div>
+            <!--更新公告-->
+            <div class="update_announcement">
+                <div>更新公告</div>
+                <div>时间:
+                <div class="time"></div>
+                </div>
+            </div>
+            <!--图片-->
+            <img src="img/news.png" alt="">
+        </div>
+        <!--子元素2-->
+        <div class="details_data">
+            <!--这里渲染数据-->
+        </div>
+        <!--返回-->
+        <div class="return">返回</div>
+    </div>
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/myajax.js"></script>
+<script>
+    // 获取后台参数
+    (function ($) {
+        $.getUrlParam = function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]); return null;
+        }
+    })(jQuery);
+    // uid为上一个页面传过来的参名
+    var index = $.getUrlParam('index');
+
+utils('','GET',{},(res,xhr)=>{
+        $('.time').append(res.data[index].time)
+        $('.details_data').append(res.data[index].content)
+    })
+
+$('.return').click(function () {
+    history.go(-1);
+})
+</script>
+</body>
+</html>

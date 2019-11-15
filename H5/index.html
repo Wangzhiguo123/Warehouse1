@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        body{
+            background-color: #1C232C;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            font-size: 18px;
+        }
+        .swiper-slide>img{
+            width: 100%;
+            /*height: 100%;*/
+        }
+        .data-box {
+            font-size: 20px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+<!--热点推荐-->
+    <div class="recommended">
+        <div>热点 <span style="color: #dbdbdb;font-size: 46px">推荐</span></div>
+        <div><img src="img/shut_down.png" alt=""></div>
+    </div>
+<div class="contents">
+    <div class="left">
+        <!--海报-->
+        <div>
+                <!-- Swiper -->
+                <div class="swiper-container swiper-container-initialized swiper-container-horizontal lb1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/activity.png" alt="">
+                            <div class="describe">
+                                <div>
+                                    <div>"安平"文明利用这颗星球的引力</div>
+                                    <!--时间-->
+                                    <div>剩余时间:
+                                        <div class="data-box" id="dateShow1" data-date="2019/11/13 23:59:59">
+                                            <span class="date-tiem d">00</span>天
+                                            <span class="date-tiem h">00</span>时
+                                            <span class="date-tiem m">00</span>分
+                                            <span class="date-s s">00</span>秒
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div>前往活动</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide"><img src="img/activity.png" alt=""></div>
+                        <div class="swiper-slide"><img src="img/activity.png" alt=""></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"style="bottom: 60px">
+                        <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span>
+                        <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span>
+                        <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span>
+                        <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 4"></span>
+                        <!--<span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span>-->
+                        <!--<span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span>-->
+                        <!--<span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 7"></span>-->
+                        <!--<span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 8"></span>-->
+                        <!--<span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 9"></span>-->
+                        <!--<span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 10"></span>-->
+                    </div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+        </div>
+        <!--动态-->
+        <div class="dynamic">
+            <!--这里渲染动态-->
+        </div>
+    </div>
+    <div class="right">
+        <!--轮播-->
+        <div>
+            <!-- Swiper -->
+            <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="lb_describe">
+                            <div>每日限购一次</div>
+                            <div>超值稀有道具,招募强力英雄</div>
+                            <div>详情</div>
+                        </div>
+                        <img src="img/gift_bag.png" alt=""></div>
+                    <div class="swiper-slide"><img src="img/gift_bag.png" alt=""></div>
+                    <div class="swiper-slide"><img src="img/gift_bag.png" alt=""></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+                    <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span>
+                    <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span>
+                    <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span>
+                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 4"></span>
+                    <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span>
+                    <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span>
+                    <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 7"></span>
+                    <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 8"></span>
+                    <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 9"></span>
+                    <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 10"></span>
+                </div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/leftTime.js"></script>
+<script src="js/myajax.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        autoplay:{
+          delay:3000,
+        },
+        // spaceBetween: 30,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+    //倒计时
+    $(function(){
+        //日期倒计时,现在距离下面的日期
+        // var data_show = $('.data-box');
+        var date_show = '2019/11/15 23:59:59';
+        // for(var i=1;i<=data_show.length;i++){
+        //     function_name($("#dateShow"+i).data("date"),"#dateShow"+i);
+        // }
+        function_name(date_show,"#dateShow1");
+        function function_name(time,obj) {
+            $.leftTime(time,function(d){
+                if(d.status){
+                    var $dateShow1=$(obj);
+                    $dateShow1.find(".d").html(d.d);
+                    $dateShow1.find(".h").html(d.h);
+                    $dateShow1.find(".m").html(d.m);
+                    $dateShow1.find(".s").html(d.s);
+                    // 此处用于判断时间到期执行的操作
+                    // if ($dateShow1.find(".d").html()=='01'){
+                    //     $('.describe>div>div:nth-child(2)').hide()
+                    // }
+                }
+            });
+        }
+    });
+        utils('','GET',{},(res,xhr)=>{
+            $.each(res.data,function (data,item) {
+                $('.dynamic').append(
+                    '<div class="news">'+
+                    '<div>'+item.content+'</div>'+
+                    '<div>'+item.time +'</div>'+
+                    '</div>'
+                )
+            })
+        })
+    // 事件委派(将事件委派在父元素上)
+    $('.dynamic').on('click','.news',function(){
+        // console.log($(this).text())
+        // 下标
+        var a = $('.news', '.dynamic').index($(this))
+        // console.log(a)
+        window.location.href='details.html?'+'index='+a
+    })
+</script>
+</body>
+</html>
