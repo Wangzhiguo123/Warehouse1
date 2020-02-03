@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择模板</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+<h2>停服公告>选择模板</h2>
+<div>
+    <button class="return">返回</button>
+    <div class="describes">xml生成成功！</div>
+    <div class="select_template">选择模板
+    <div class="maintenance a">临时维护</div>
+    <div class="stop_updating a">停服更新</div>
+    <div class="emergency_maintenance a">紧急维护</br>(无开服时间)</div>
+    </div>
+    <div class="b">
+    <div class="describes">临时维护模板生成成功
+        <div class="previews">预览</div>
+    </div>
+    <button class="submits">提交</button>
+        <div class="submits_ok">提交成功,请通知前端开发人员同步！</div>
+    </div>
+</div>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/myajax.js"></script>
+<script>
+    // 返回
+    $('.return').click(function () {
+        window.history.back(-1);
+    })
+    /* 选择模板*/
+    // 临时维护
+//     $('.maintenance').click(function () {
+//     $('.b').show()
+// })
+    $('.a').click(function () {
+        if ($(this).index()=='0'){
+            window.open('http://10.10.77.80/xml/server_config_emergency.xml')
+        }else if($(this).index()=='1'){
+            window.open('http://10.10.77.80/xml/server_config_update.xml')
+        }else if($(this).index()=='2'){
+            window.open('http://10.10.77.80/xml/server_config_emergency_notime.xml')
+        }
+    })
+
+    // 预览
+    $('.previews').click(function () {
+        location.href=''
+    })
+    // 提交
+    $('.submits').click(function () {
+        $('.submits_ok').show()
+    })
+</script>
+</body>
+</html>

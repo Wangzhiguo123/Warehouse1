@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>choose_time</title>
+    <link rel="stylesheet" href="../css/dateTime.css">
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+<h2>停服公告</h2>
+<div class="input_box">
+    <div><span>停服　　时间:</span><input class="name" type="text" placeholder="请输入10位时间戳"></div>
+    <div class="mycontainer">
+        <span>预计开服时间:</span>
+        <!--<input type="text" placeholder="请选择日期" id="date">-->
+        <input type="text" placeholder="2019-10-1" id="date2">
+        <!--<input type="text" placeholder="请选择时间" id="time">-->
+        <input type="text" placeholder="18:30" id="time2">
+        <!--<input type="text" placeholder="请选择日期和时间" id="datetime">-->
+        </div>
+    <div><span>判定:</span>
+        <select name="" id="" class="xz">
+            <option value="1">开服</option>
+            <option value="0">停服</option>
+        </select>
+    <button class="btn">生成xml</button>
+    <div class="texts"></div>
+</div>
+</div>
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script src="../js/dateTime.min.js"></script>
+    <script src="../js/myajax.js"></script>
+    <script>
+        window.onload=function(){
+            var totleTp = 0;
+            var tppiao = document.getElementsByClassName("tppiao");
+            for(var i=0;i<tppiao.length;i++){totleTp+=parseInt(tppiao[i].innerHTML);}
+            var tpdetial = document.getElementsByClassName("tpdetial");
+            for(var i=0;i<tpdetial.length;i++){var mun = parseInt(tpdetial[i].getElementsByClassName("tppiao")[0].innerHTML);var bfb = (mun*100/totleTp).toFixed(2)+"%";tpdetial[i].getElementsByClassName("tppercent")[0].innerHTML = bfb;
+            }
+        }
+        if(window.location.href.indexOf("udsid=")>-1){
+            $("#ctlNext").on("click",function(){
+                console.log("执行成功！")
+                meteor.track("form", {convert_id: "1641358861914125"})
+            })
+        }
+        $("#date").datetime({
+            type:"date",
+            value:[2019,9,31],
+            success:function(res){
+                // console.log(res)
+            }
+        })
+        $("#time").datetime({
+            type:"time",
+            value:[12,28]
+        })
+        $("#datetime").datetime({
+            type:"datetime",
+            value:[2019,7,15,15,30]
+        })
+$('.btn').click(function () {
+var param={
+        'cmd':'1',
+        'stamp':$('.name').val(),
+        'time':$('#date2').val(),
+        'timenext':$('#time2').val(),
+        'syst':$('.xz option:selected').val()
+}
+    if(param.stamp.length == '10' && param.time !='' && param.timenext !=''){
+            $.ajax({
+                url:'http://10.10.77.80/cgi-bin/pgenerate?cmd=1&stamp='+param.stamp+'&time='+param.time+'&timenext='+param.timenext+'&syst='+param.syst,
+                dataType:'json',//数据类型
+                type:'GET',//类型
+                timeout:2000,//超时
+                //请求成功
+                success:function(res,status){
+                        if(res[0].data=='0'){
+                            location.href='select_template.html'
+                        }else {
+                            alert('数据错误')
+                        }
+                },
+                //失败/超时
+                error:function(XMLHttpRequest,textStatus,errorThrown){
+                    if(textStatus==='timeout'){
+                        alert('請求超時');
+                        // setTimeout(function(){
+                        //     alert('重新请求');
+                        // },2000);
+                    }
+                }
+            })
+
+
+
+    }else {
+        alert('请确保停服时间戳长度为10位且开服时间不能为空！')
+    }
+})
+    </script>
+</body>
+</html>

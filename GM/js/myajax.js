@@ -2,9 +2,9 @@
 function utils(api,type,param,res,xhr){
     $.ajax({
         type:type,
-        // url:'../js/data.json',
+        url:'../js/data.json',
         // url:'http://10.10.77.180/cgi-bin/'+api,
-        url:'http://10.10.77.83/cgi-bin/'+api,
+        // url:'http://10.10.77.83/cgi-bin/'+api,
         dataType:"json",
         crossDomain: true,
         xhrFields: {

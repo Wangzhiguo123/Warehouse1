@@ -13,5 +13,12 @@
 </head>
 <body>
 <div>这是a1</div>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/myajax.js"></script>
+<script>
+    utils('http://10.10.77.54:3000/persons/adc',JSON.stringify(),(res,xhr)=>{
+        console.log(res)
+    })
+</script>
 </body>
 </html>

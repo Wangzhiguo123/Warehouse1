@@ -8,6 +8,9 @@
         body{
             background-color: #1C232C;
         }
+        .lbs{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -19,29 +22,47 @@
     </div>
     <div class="details_content">
         <!--子元素1-->
-        <div>
+        <div class="poster">
             <!--遮罩层-->
             <div class="mask"></div>
             <!--更新公告-->
             <div class="update_announcement">
-                <div>更新公告</div>
-                <div>时间:
+                <div class="titles"></div>
+                <div>
+                    <!--时间:-->
                 <div class="time"></div>
                 </div>
             </div>
-            <!--图片-->
-            <img src="img/news.png" alt="">
+            <!--图片渲染-->
         </div>
         <!--子元素2-->
         <div class="details_data">
             <!--这里渲染数据-->
         </div>
         <!--返回-->
-        <div class="return">返回</div>
+        <div class="return">
+            <span class="lbs l1">返回</span>
+            <span class="lbs l2">Zurück</span>
+            <span class="lbs l3">Back</span>
+            <span class="lbs l4">Atrás</span>
+            <span class="lbs l5">Retour</span>
+            <span class="lbs l6">Ind.</span>
+            <span class="lbs l7">戻る</span>
+            <span class="lbs l8">이전</span>
+            <span class="lbs l9">Voltar</span>
+            <span class="lbs l10">Назад</span>
+            <span class="lbs l11">Geri</span>
+            <span class="lbs l12">返回</span>
+            <span class="lbs l13"></span>
+            <span class="lbs l14"></span>
+            <span class="lbs l15"></span>
+            <span class="lbs l16"></span>
+        </div>
     </div>
 </div>
 <script src="js/jquery-1.11.3.js"></script>
 <script src="js/myajax.js"></script>
+<script src="js/request.js"></script>
 <script>
     // 获取后台参数
     (function ($) {
@@ -53,10 +74,12 @@
     })(jQuery);
     // uid为上一个页面传过来的参名
     var index = $.getUrlParam('index');
-
-utils('','GET',{},(res,xhr)=>{
-        $('.time').append(res.data[index].time)
-        $('.details_data').append(res.data[index].content)
+    // content
+    utils(language_data+'content','GET',{},(res,xhr)=>{
+        $('.titles').append(res[index].title)
+        $('.time').append(res[index].button)
+        $('.poster').append('<img src="img/'+res[index].image+'.png">')
+        $('.details_data').append(res[index].content)
     })
 
 $('.return').click(function () {

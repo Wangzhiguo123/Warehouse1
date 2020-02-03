@@ -80,11 +80,13 @@
     function wzg(url,data,callback){
         // try {
             $.ajax({
-                url:'https://easy-mock.com/mock/5caff09431c675529c365621/example'+url,
+                // url:'https://easy-mock.com/mock/5caff09431c675529c365621/example'+url,
+                url:'http://gogs.sleepbanana.com:8080/rewards',
                 type:"POST",
                 data:data,
                 dataType:'json',
                 success:function(data){
+                    console.log('成功')
                     // console.log('调用成功')
                     // console.log(data)
                     // try {
@@ -109,9 +111,6 @@
 
     // 调用
     // var new_url = '/mock';
-    wzg('/mock',{
-
-     })
 
     function sc(){
         var str = document.getElementById("textId").value;
@@ -166,25 +165,6 @@
                 $('#container').append(loadDiv);
                 console.log("成功")
             }
-            //发送ajax请求获取数据
-            // $.ajax({
-            //     type: "POST",
-            //     url: "load.php",
-            //     success: function(data){
-            //         //加载成功,移除用于提示用户的动态gif图片
-            //         $('#container .loading').remove();
-            //         //追加后端返回的数据
-            //         $('#container').append(data);
-            //     }
-            // });
-        }
-    });
-
-
-
-
-
-
 
     // console.log('---------------js运行机制题--------------------')
     // setTimeout(function() {

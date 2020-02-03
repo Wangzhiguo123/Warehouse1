@@ -10,7 +10,6 @@
     <div><span>账号名:</span><input class="name" type="text"></div>
     <div><span>　UID: </span><input class="uin" type="text"></div>
     <div><span>密　码:</span><input class="pwd" type="password"></div>
-    <div class="introduce">*输入任意一个条件查询账号与绑定邮箱的相互对应关系</div>
     <button class="btn">提交</button>
     <div class="texts"></div>
 </div>
@@ -27,7 +26,6 @@
             'try':'16095123'
         }
         utils('bindname','GET',param,(res,xhr)=>{
-            console.log(res)
             if(res.content.Result=='-1'){
                 alert('数据错误！')
             }else if(res.content.Result=='0'){

@@ -1,0 +1,166 @@
+@media (min-width: 240px) {
+  html {
+    font-size: 2.5263157895px; } }
+@media (min-width: 320px) {
+  html {
+    font-size: 3.3684210526px; } }
+@media (min-width: 360px) {
+  html {
+    font-size: 3.7894736842px; } }
+@media (min-width: 375px) {
+  html {
+    font-size: 3.9473684211px; } }
+@media (min-width: 412px) {
+  html {
+    font-size: 4.3368421053px; } }
+@media (min-width: 480px) {
+  html {
+    font-size: 5.0526315789px; } }
+@media (min-width: 540px) {
+  html {
+    font-size: 5.6842105263px; } }
+@media (min-width: 640px) {
+  html {
+    font-size: 6.7368421053px; } }
+@media (min-width: 720px) {
+  html {
+    font-size: 7.5789473684px; } }
+@media (min-width: 768px) {
+  html {
+    font-size: 8.0842105263px; } }
+@media (min-width: 1024px) {
+  html {
+    font-size: 10.7789473684px; } }
+@media (min-width: 1200px) {
+  html {
+    font-size: 12.6315789474px; } }
+@media (min-width: 1440px) {
+  html {
+    font-size: 15.1578947368px; } }
+@media (min-width: 1600px) {
+  html {
+    font-size: 16.8421052632px; } }
+@media (min-width: 1800px) {
+  html {
+    font-size: 18.9473684211px; } }
+@media (min-width: 1920px) {
+  html {
+    font-size: 20.2105263158px; } }
+p.intro {
+  font-size: 3.2rem; }
+
+p.another-intro {
+  font-size: 3rem;
+  height: 5rem;
+  margin: 1.6rem; }
+
+.title {
+  padding: 12px 0;
+  width: 100%;
+  margin: 0 0 25px 0;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  background: #3ea2ee; }
+
+.box {
+  display: flex;
+  justify-content: space-around; }
+
+.menu {
+  width: 20%;
+  background: #d7d7d7; }
+
+.content {
+  width: 70%; }
+
+.menu_title {
+  padding: 0.5rem;
+  font-size: 12px;
+  text-align: center;
+  margin: 20px 0;
+  cursor: pointer; }
+
+ul {
+  list-style: none;
+  padding: 0; }
+
+.child_title {
+  font-size: 12px;
+  line-height: 30px;
+  color: black;
+  background: white; }
+
+.child_title:hover {
+  color: #baabff; }
+
+.menu_title:hover {
+  color: #baabff; }
+
+.input_box > div {
+  margin: 20px 0; }
+
+.input_box > div > span {
+  width: 80px;
+  font-size: 16px; }
+
+.input_box > div > input {
+  border:1px solid #ccc;
+  width: 200px;
+  height: 30px;
+  text-indent: 1em;
+}
+
+.introduce {
+  color: #FF0000; }
+
+.btn {
+  width: 100px; }
+.return,.submits{
+    width: 93px;
+    height: 30px;
+    background-color: rgba(22, 155, 213, 1);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+.submits_ok{
+    margin-top: 10px;
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+.b{
+    display: none;
+}
+.describes{
+    color: #0000FF;
+    font-size: 16px;
+    margin: 20px 0;
+    display: flex;
+}
+.previews{
+    color: black;
+}
+.select_template{
+    display: flex;
+    font-size: 12px;
+}
+.select_template>div,.describes>div{
+    border: 1px solid rgba(0, 0, 0, 0.29);
+    width: 120px;
+    margin: 0 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+h2{
+    font-size: 22px;
+    font-weight: bold;
+}
+/*# sourceMappingURL=common.css.map */

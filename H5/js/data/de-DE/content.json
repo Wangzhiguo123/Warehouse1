@@ -1,0 +1,19 @@
+[
+    {
+        "id":1,
+        "title":"Halloween-Bonuspaket",
+        "content":"Halloween-Bonuspaket11111",
+        "image":"image_1",
+        "button":"2019/11/30 0:00",
+        "url":1
+
+    },
+	{
+        "id":2,
+        "title":"Halloween-Bonuspaket2",
+        "content":"Halloween-Bonuspaket2222222222",
+        "image":"image_1",
+        "button":"2019/11/31 0:00",
+        "url":1
+    }
+]

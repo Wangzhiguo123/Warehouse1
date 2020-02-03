@@ -1,5 +1,6 @@
 <template>
-    <div>A
+    <div>test：a1
+      <div>这是从vuex缓存的state值：{{adc}}</div>
     <div>这是A的数据：{{data}}</div>
 <div @click="wzg_1">传值</div>
 <div v-bind="se"></div>
@@ -11,6 +12,11 @@
       data(){
         return{
           data:'178'
+        }
+      },
+      computed:{
+        adc(){
+          return this.$store.state.a;
         }
       },
       methods:{
@@ -32,7 +38,7 @@
         })
       },
       created() {
-
+// console.log(this.$store.state.a)
       }
     }
 </script>

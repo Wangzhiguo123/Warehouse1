@@ -64,7 +64,7 @@ var methods = {
             );
         })
         res.data =null
-        b=arr
+        // b=arr
         arr =[]
     }
 })

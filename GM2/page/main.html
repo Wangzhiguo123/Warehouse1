@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主界面</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="icon" type="image/png" href="../image/favicon-32x32.png" sizes="32x32" />
+    <style>
+        #ifr{
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="title">GM</div>
+<div class="box">
+    <div class="menu">
+    </div>
+    <div class="content">
+
+        <iframe id="ifr" src="" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+</div>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/myajax.js"></script>
+<script src="../js/login.js"></script>
+<script>
+    // 事件触发
+
+    // 事件处理
+    var methods = {
+// GM命令
+        gm_command:function(){
+            var param={
+                'cmd':2
+            }
+            utils('pgmstop','GET',param,(res,xhr)=>{
+                if(res.data==undefined){
+                    if(res[0].data=='3'){
+                        alert('尚未登录！点击将直接跳转到登录页面！')
+                        location.href='login.html'
+                    }
+                }
+                $.each(res.data,function (data,item) {
+                    $('.menu').append(
+                        '<ul class="parents_ul">'+
+                        '<li class="menu_title">'+item.title +'</li>'
+                        +'</ul>'
+                    )
+                })
+
+                $('.menu_title').click(function () {
+                    var data =$(this).text()
+                    methods.ifr_nav(data)
+                })
+            })
+
+        },
+        // iframe导航
+        ifr_nav:function (data) {
+                if(data=='停服公告'){
+                    data='choose_time'
+                } else if(data=='分服策略'){
+                    data='points_strategy'
+                } else if(data=='批量GM命令'){
+                    data='gm_command'
+                } else{
+                    console.log('无【'+data+'】的页面数据')
+                }
+                $("#ifr").attr("src", ''+data+'.html');
+        },
+
+    }
+    //初始化
+    methods.gm_command()
+</script>
+</body>
+</html>

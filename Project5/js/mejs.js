@@ -2,7 +2,8 @@ $(function () {
 
     $('#add_btn').click(function () {
         methods.addHandle()
-        methods.wzg('tr>td:last-child>:last-child')
+        // methods.wzg('tr>td:last-child>:last-child')
+        methods.wzg('.del')
     })
 
     $('#show_tbody').on('click','.edit', function () {
@@ -44,11 +45,14 @@ var addEnter = true,
     trIndex,
     hasNullMes = false,
     tarInp = $('#xztb input'),
-    // arr=[],
+    num = 3,//每页显示3条数据
+    page = '',
     tarSel = $('#xztb select');
 
     myAjax('get','/proxy',{},(res)=>{
     arr.push(res)
+        page = arr[0].length/num
+        console.log(page)
         // return(sj())
     // container.innerHTML = res.name;
         $.each(arr[0],function sj(data,item) {
@@ -67,7 +71,8 @@ var addEnter = true,
                 '</tr>'
             );
         })
-        methods.wzg('tr>td:last-child>:last-child')
+        // methods.wzg('tr>td:last-child>:last-child')
+        methods.wzg('.del')
 },'json');
 
 var methods = {
@@ -90,7 +95,8 @@ var methods = {
                 $('#show_tbody').append('<tr>' + tdStr + '</tr>');
                 $('#renyuan').modal('hide');
                 // dels('tr>td:last-child>:last-child')
-                methods.wzg('tr>td:last-child>:last-child')
+                // methods.wzg('tr>td:last-child>:last-child')
+                methods.wzg('.del')
             }
         }else{
             methods.setStr();
@@ -106,16 +112,19 @@ var methods = {
     $(dom).click(function () {
         console.log('成功')
         $(this).parents('tr').remove()
+        // $('.del').parents.remove()
     })
 },
     editHandle: function (the_index) {
-        methods.wzg('tr>td:last-child>:last-child')
+        console.log(the_index)
+        // methods.wzg('tr>td:last-child>:last-child')
         var tar = $('#show_tbody tr').eq(the_index);
         var nowConArr = [];
         for (var i=0; i<tar.find('td').length-1;i++) {
             var a = tar.children('td').eq(i).html();
             nowConArr.push(a);
-            methods.wzg('tr>td:last-child>:last-child')
+            console.log(a)
+            // methods.wzg('tr>td:last-child>:last-child')
         }
 
         $('#renyuan').modal('show');

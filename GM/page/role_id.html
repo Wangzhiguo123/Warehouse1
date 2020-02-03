@@ -8,11 +8,11 @@
 <body>
 <div class="input_box">
     <select name="" id="" class="xz">
+        <option value="3">昵称(角色/联盟)</option>
         <option value="1">联盟ID</option>
         <option value="2">联盟名</option>
-        <option value="3">联盟昵称</option>
     </select>
-    <div class="a"><span>联盟ID/名/昵称:</span><input class="id" type="text"></div>
+    <div class="a"><span>昵称(角色/联盟)/ID/名:</span><input class="id" type="text"></div>
     <div class="introduce">*输入任意一个条件即可</div>
     <button class="btn">提交</button>
 </div>
@@ -26,14 +26,6 @@
             'flag':$('.xz option:selected').val(),
         }
         location.href='http://10.10.77.83/cgi-bin/pgmquery?cmd=2&uin='+param.uin+'&flag='+param.flag
-        // utils('pgmquery','GET',param,(res,xhr)=>{
-        //     console.log(res)
-            // uin=11111&flag=1
-            // $.each(res.data,function (data,item) {
-            //     $('body').append(
-            //     )
-            // })
-        // })
     })
 </script>
 </body>

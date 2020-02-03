@@ -1,0 +1,19 @@
+[
+    {
+        "id":1,
+        "title":"title",
+        "content":"The best time to use up your GEC has arrived! During the event, you can receive great rewards for a number of GEC usage tasks!",
+        "image":"image_1",
+        "button":"2019/11/30 0:00",
+        "url":1
+
+    },
+	{
+        "id":2,
+        "title":"title2",
+        "content":"The best time to use up your GEC has arrived! During the event, you can receive great rewards for a number of GEC usage tasks!",
+        "image":"image_1",
+        "button":"2019/11/31 0:00",
+        "url":1
+    }
+]
