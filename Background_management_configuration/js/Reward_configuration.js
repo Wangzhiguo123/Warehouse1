@@ -73,6 +73,7 @@ var methods = {
             if (xhr=='success'){
                 arr.push(res.data)
                 $("#show_tbody tr").remove();
+                console.log(res.data)
                 $.each(res.data,function (data,item) {
                     $('#show_tbody').append(
                         '<tr>'+
@@ -116,6 +117,7 @@ var methods = {
                     }
                     $(".a1").empty();
                     $(".sk span").remove();
+                    console.log(res.data)
                     $.each(res.data,function (data,item) {
                         $('.a1').append(
                             '<tr>'+
@@ -140,52 +142,18 @@ var methods = {
     },
     // 编辑
     editHandle: function (the_index) {
+        // console.log(the_index)
         z++
         var tar = $('#show_tbody tr').eq(the_index);
+        // console.log(tar)
         var nowConArr = [];
+        // console.log(tar.find('td').length-1)
         for (var i=0; i<tar.find('td').length-1;i++) {
             var a = tar.children('td').eq(i).html();
+            // console.log(a)
             nowConArr.push(a);
         }
-        // Array.prototype.unique1 = function(){
-        //     var res = [this[0]];
-        //     for(var i = 1; i < this.length; i++){
-        //         var repeat = false;
-        //         for(var j = 0; j < res.length; j++){
-        //             if(this[i] == res[j]){
-        //                 repeat = true;
-        //                 break;
-        //             }
-        //         }
-        //         if(!repeat){
-        //             res.push(this[i]);
-        //         }
-        //     }
-        //     return res;
-        // }
-        // console.log(newdata.unique1())
-
-        // for(var i = 0; i < nowConArr.length; i++){
-        //     var repeat = false;
-        //         for(var j = 0; j < newdata.length; j++){
-        //             if(nowConArr[i] == newdata[j]){
-        //                 repeat = true;
-        //                 // console.log('重复了')
-        //                 break;
-        //             }
-        //     }
-        //     if(!repeat){
-        //         // newdata.push(nowConArr[j]);
-        //         newdata.push(nowConArr[i])
-        //         // console.log('成功了')
-        //     }
-        // }
-
-        // 所有新增数据
-        // console.log(newdata)
-        // 单个新增数据
-        // console.log(nowConArr)
-        // console.log(arr)
+        console.log(nowConArr)
         $('.a1').append(
             '<tr>'+
             '<td>'+
